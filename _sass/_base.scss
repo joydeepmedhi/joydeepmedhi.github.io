@@ -590,12 +590,12 @@ pre {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   [data-theme="dark"] & {
-    background-color: $card-bg-dark;
+    background-color: $card-background-dark;
     border: 1px solid $border-color-dark;
   }
   
   [data-theme="light"] & {
-    background-color: $card-bg-light;
+    background-color: $card-background-light;
     border: 1px solid $border-color-light;
   }
   
