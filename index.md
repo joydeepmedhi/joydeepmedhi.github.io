@@ -8,6 +8,7 @@ title: Home
     <img src="/assets/images/profile.png" alt="Joydeep Medhi profile photo" class="profile-pic" />
     <h1 class="animate-text">Joydeep Medhi</h1>
     <p class="lead">AI/ML Scientist</p>
+    <p class="education"><strong>B.Tech & M.Tech</strong> in Mathematics and Computing from <strong>IIT Delhi</strong></p>
     <p class="location">Bengaluru, India</p>
     <p class="lead-subtitle">Specializing in Computer Vision, Generative AI, and Deep Learning solutions.</p>
     {% include social-links.html %}

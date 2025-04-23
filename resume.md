@@ -9,30 +9,26 @@ permalink: /resume/
 Bengaluru - 560066, INDIA
 medhijoydeep@gmail.com | [LinkedIn](https://linkedin.com/in/joydeepmedhi) | [GitHub](https://github.com/joydeepmedhi)
 
-<a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download Resume PDF</a>
+<a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="simple-button" download><i class="fas fa-download"></i> Download PDF</a>
 
 <style>
-.btn-primary {
+.simple-button {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
   margin: 1rem 0;
-  background-color: #0ea5e9;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  color: inherit;
 }
 
-.btn-primary:hover {
-  background-color: #0284c7;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.simple-button:hover {
+  background-color: rgba(128, 128, 128, 0.1);
 }
 
-.btn-primary i {
+.simple-button i {
   margin-right: 0.5rem;
 }
 </style>
