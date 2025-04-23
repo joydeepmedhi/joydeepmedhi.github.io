@@ -1,15 +1,16 @@
 title: Joydeep Medhi
-description: Lead Data Scientist | Machine Learning Research Engineer
+description: AI Scientist
 author: Joydeep Medhi
 email: medhijoydeep@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joydeepmedhi.github.io" # the base hostname & protocol for your site
-phone: "+91 8802207985"
 location: "Bengaluru - 560066, INDIA"
 
 # Social profiles - edit these with your own
 github_username: joydeepmedhi
 linkedin_username: joydeepmedhi
+instagram_username: joydeepmedhi
+twitter_username: medhijoydeep
 
 # Build settings
 markdown: kramdown
