@@ -11,6 +11,32 @@ medhijoydeep@gmail.com | [LinkedIn](https://linkedin.com/in/joydeepmedhi) | [Git
 
 <a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download Resume PDF</a>
 
+<style>
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1rem 0;
+  background-color: #0ea5e9;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary i {
+  margin-right: 0.5rem;
+}
+</style>
+
 ---
 
 ## Work Experience
