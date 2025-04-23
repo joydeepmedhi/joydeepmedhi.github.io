@@ -6,29 +6,39 @@ permalink: /social-feed/
 
 # Social Feed
 
-<div class="section">
-  <h2 class="section-title">Instagram Feed</h2>
-  <div class="instagram-feed">
-    <p class="feed-intro">Check out some of my latest posts on Instagram <a href="https://instagram.com/joydeepmedhi" target="_blank" rel="noopener">@joydeepmedhi</a></p>
-    
-    <div class="instagram-container">
-      <!-- Instagram Feed will be loaded here via JavaScript -->
-      <div id="instagram-feed" class="social-grid"></div>
+<!-- Twitter Feed Section (on top) -->
+<div class="section social-feed-top">
+  <h2 class="section-title">Latest on X / Twitter</h2>
+  <div class="twitter-feed">
+    <div class="twitter-container">
+      <a class="twitter-timeline" data-theme="light" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="3" href="https://twitter.com/medhijoydeep?ref_src=twsrc%5Etfw">Tweets by @medhijoydeep</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="text-center mt-2">
+      <a href="https://twitter.com/medhijoydeep" target="_blank" rel="noopener" class="button button-outline">View more on X/Twitter</a>
     </div>
   </div>
 </div>
 
+<!-- Instagram Feed Section -->
 <div class="section">
-  <h2 class="section-title">X / Twitter Feed</h2>
-  <div class="twitter-feed">
-    <p class="feed-intro">Follow me on X (formerly Twitter) <a href="https://x.com/medhijoydeep" target="_blank" rel="noopener">@medhijoydeep</a></p>
-    
-    <div class="twitter-container">
-      <!-- X/Twitter Feed will be loaded here via JavaScript -->
-      <div id="twitter-feed" class="social-grid"></div>
+  <h2 class="section-title">Instagram Feed</h2>
+  <div class="instagram-feed">
+    <p class="feed-intro">Check out my travel photography and adventures on Instagram <a href="https://instagram.com/meek.traveller_/" target="_blank" rel="noopener">@meek.traveller_</a></p>
+    <div class="instagram-container">
+      <!-- Instagram Embed using LightWidget for public feeds -->
+      <iframe src="https://cdn.lightwidget.com/widgets/your-widget-id.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;" title="Instagram Feed" height="400"></iframe>
+      <div class="text-center mt-2">
+        <a href="https://instagram.com/meek.traveller_/" target="_blank" rel="noopener" class="button button-outline">View more on Instagram</a>
+      </div>
     </div>
   </div>
 </div>
+
+<!--
+  NOTE: Replace 'your-widget-id' in the iframe src above with the actual LightWidget or other embed service widget ID for meek.traveller_.
+  Free public Instagram embeds are limited by Instagram's API restrictions. For a real feed, use a service like LightWidget, SnapWidget, or Instafeed.js.
+-->
 
 <script>
   // This is a simplified version that would need to be replaced with actual API calls
