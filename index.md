@@ -4,12 +4,16 @@ title: Home
 ---
 
 <div class="hero">
-  <img src="/assets/images/profile.png" alt="Joydeep Medhi profile photo" class="profile-pic" style="width:120px;height:120px;border-radius:50%;margin-bottom:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);object-fit:cover;"/>
-  <h1>Joydeep Medhi</h1>
-  <p class="lead">Lead Data Scientist // Machine Learning Research Engineer</p>
-  <p> Bengaluru, India</p>
-  <p class="lead-subtitle">Specializing in Computer Vision, Generative AI, and Deep Learning solutions.</p>
-  {% include social-links.html %}
+  <div class="hero-content">
+    <img src="/assets/images/profile.png" alt="Joydeep Medhi profile photo" class="profile-pic" />
+    <h1>Joydeep Medhi</h1>
+    <p class="lead">Lead Data Scientist // Machine Learning Research Engineer</p>
+    <p>Bengaluru, India</p>
+    <p class="lead-subtitle">Specializing in Computer Vision, Generative AI, and Deep Learning solutions.</p>
+    <div class="hero-social">
+      {% include social-links.html %}
+    </div>
+  </div>
 </div>
 
 <div class="section">

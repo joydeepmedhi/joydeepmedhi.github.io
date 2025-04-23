@@ -155,6 +155,49 @@ img {
   border-radius: $border-radius;
 }
 
+// Hero section styles
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid $accent-color;
+}
+.hero-social {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+.hero-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  transition: transform 0.15s;
+}
+.hero-social a:hover {
+  transform: scale(1.12);
+  color: $accent-color;
+}
+
 // Terminal-like elements
 .terminal {
   font-family: $font-family-mono;
