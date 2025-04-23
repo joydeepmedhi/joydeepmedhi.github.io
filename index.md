@@ -8,7 +8,6 @@ title: Home
     <img src="/assets/images/profile.png" alt="Joydeep Medhi profile photo" class="profile-pic" />
     <h1 class="animate-text">Joydeep Medhi</h1>
     <p class="lead">AI/ML Scientist</p>
-    <p class="education"><strong>B.Tech & M.Tech</strong> in Mathematics and Computing from <strong>IIT Delhi</strong></p>
     <p class="location">Bengaluru, India</p>
     <p class="lead-subtitle">Specializing in Computer Vision, Generative AI, and Deep Learning solutions.</p>
     {% include social-links.html %}
@@ -42,6 +41,15 @@ title: Home
     <li class="skill-item">Embedded AI</li>
     <li class="skill-item">AI Strategy & R&D</li>
   </ul>
+</div>
+
+<div class="section education-section">
+  <h2 class="section-title">Education</h2>
+  <div class="education-highlight">
+    <p><strong>B.Tech & M.Tech Dual Degree</strong> in Mathematics and Computing</p>
+    <p class="education-institute">Indian Institute of Technology Delhi (IITD)</p>
+    <p class="education-year">2013 - 2018</p>
+  </div>
 </div>
 
 <div class="section">

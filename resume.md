@@ -37,56 +37,34 @@ medhijoydeep@gmail.com | [LinkedIn](https://linkedin.com/in/joydeepmedhi) | [Git
 
 ## Work Experience
 
-**Lowe’s Companies Inc** (Bengaluru, India)
+**Lowe's Companies Inc** (Bengaluru, India)
 _LEAD DATA SCIENTIST - AI/ML_ (July 2022 - Present)
 
-*   Spearheaded advanced R&D initiatives, driving innovation in Computer Vision and AI solutions for omni-channel retailer.
-*   Led the Customer Experience Optimization project, including:
-    *   Developed real-time multi-person tracking systems, using trajectory analysis to map customer interactions and associate engagements.
-    *   Integrated semi-supervised learning and active learning frameworks to enhance object detection mAP by 15%.
-    *   Successfully implemented the Customer Service Alerting System, driving over $1M in incremental revenue, with an estimated enterprise impact of $500M.
-*   Pioneered Generative AI solutions, including:
-    *   Delivered a PoC for a Voice Assistant, leveraging Retrieval-Augmented Generation (RAG) and Vision-Language Models (VLMs).
-    *   Developed VLM-based action recognition models PoC, automating complex behavioral analytics and improving in-store customer interaction statistics.
-*   Architected and led the R&D of Multi-Camera Multi-Target Tracking (MTMC) systems, designing models to enhance cross-camera tracking.
-*   Optimized self-checkout systems by implementing cutting-edge self-supervised learning techniques for product recognition and counting, achieving over 25% efficiency gains.
-*   Drove enterprise-wide AI adoption by conducting workshops and interactive demos, empowering technical and non-technical teams to scale AI-driven solutions.
+*   Led R&D initiatives in Computer Vision and AI solutions for retail, driving $1M+ incremental revenue with estimated $500M enterprise impact
+*   Developed customer experience optimization through real-time multi-person tracking and trajectory analysis
+*   Pioneered Generative AI solutions using RAG and VLMs for voice assistants and action recognition
+*   Architected Multi-Camera Multi-Target Tracking (MTMC) systems for enhanced cross-camera tracking
+*   Optimized self-checkout systems with self-supervised learning, achieving 25%+ efficiency gains
 
 **Mercedes-Benz Research and Development India** (Bengaluru, India & Stuttgart, Germany)
 _SENIOR ML RESEARCH ENGINEER_ (Dec 2018 - June 2022)
 
-*   Designed Computer Vision/Deep Learning based solution for Car Interior Scene Understanding of MBUX Interior Assistant.
-*   Key Technical researcher for Multi-Camera Multi-Person Human Pose Estimation, Gesture Recognition, Tracking and Occupancy Detection
-    *   Designed efficient CNNs from scratch for Human Pose Estimation to run on Embedded Hardware for real-time inference.
-    *   Implemented CNNs inspired from Stack Hourglass, HR-Net and end-to-end training and validation pipeline for production.
-    *   Improved PCKh accuracy of the model by adapting Student-Teacher training strategy, variable gaussian heatmaps, limb prediction.
-    *   Designed the algorithm to handle corner cases such as Occlusion, Objects, Pets, etc. to achieve production KPIs.
-    *   Proposed novel algorithms/modifications to improve accuracy of 3D detection for Sunroof Gestures, fingertip proximity to screen.
-*   Lead Researcher and Developer for Face Recognition and Authentication Module for Mercedes Cars
-    *   Explored and Implemented different metric learning based approaches to train Face Recognition CNNs achieving high FAR & FRR.
-    *   Worked on Unsupervised Domain Adaptation and use of synthetic data to reduce real data requirements.
-    *   Defined Data Collection, Data Analysis, Data Annotation definition and pipelines, designed evaluation methods for KPI.
-*   Used Torch7, PyTorch framework in a Distributed/Multi-GPU setting. Optimized production training code - saved 100s of GPU hours.
-*   Worked with different Hardware/FPGA & Software teams to ensure smooth integration of quantized deep learning models in low-compute automotive embedded devices working in real time.
-*   Video demos: [Door closing](<Link to video>), [Gesture Sunroof](<Link to video>)
+*   Designed Computer Vision solutions for MBUX Interior Assistant, focusing on human pose estimation and gesture recognition
+*   Developed efficient CNNs for embedded hardware, achieving real-time inference with optimized accuracy
+*   Led Face Recognition and Authentication Module development using metric learning and domain adaptation techniques
+*   Optimized production training code in distributed/multi-GPU environments, saving hundreds of GPU hours
+*   Collaborated with hardware/FPGA teams to integrate quantized models into low-compute automotive devices
 
 **Silversparro Technologies** (Gurgaon, India)
 _DEEP LEARNING RESEARCH ENGINEER_ (July 2018 - Nov 2018)
 
-*   Responsible for researching existing literature & developing new algorithms for computer vision applications (CCTV) in retail industry.
-*   Developed Deep Learning models to detect persons & classify their gender and Age-Group from CCTV footage for retail statistics
-    *   0.85 ROC-AUC achieved on imbalanced Age Data & 88% accuracy achieved on Gender Data using transfer learning with CNNs.
-*   Proposed and Implemented new techniques for anchor box initialization using KMeans clustering in Faster-RCNN
-    *   Convergence time decreased by 50 % and mAP & F1-score increased by 6 % and 7.3 % respectively.
-*   Implemented new features for Tensorflow Object Detection API such as continuous validation during training & new validation metrics.
+*   Developed CV solutions for Automated Attendance System using Face Recognition and Anti-Spoofing models
 
-**CBRC, KAUST** (Jeddah, Saudi Arabia)
-_RESEARCHER AT BIO-ONTOLOGY RESEARCH GROUP_ (Supervisor: Prof. Dr. Robert Hoehndorf) (May 2017 - July 2017)
+**CBRC, KAUST** (Thuwal, Saudi Arabia)
+_RESEARCHER, BIO-ONTOLOGY RESEARCH GROUP_ (May 2017 - July 2017)
 
-*   Worked at the intersection of Artificial Intelligence & Bioinformatics with focus on developing Machine Learning solutions for Life Sciences.
-*   Classification of causative disease variants with mutation from genome on imbalanced datasets.
-*   Successfully implemented and explored different Deep Neural Network architectures utilizing large genome sequencing data and ontology and performed statistical tests for feature selection. Worked on High-Performance GPU clusters for implementation and fine-tuning of DNNs.
-*   Achieved significantly improved ROC-AUC of 0.967 and Avg. Precision 0.964 on test data for fine-tuned model.
+*   Developed novel deep learning methods for protein function prediction using sequence and structure data
+*   Achieved ROC-AUC of 0.967 and Avg. Precision 0.964 on disease variant classification using GPU-optimized DNNs
 
 ---
 
