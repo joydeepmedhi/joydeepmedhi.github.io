@@ -98,6 +98,18 @@ title: Home
       </div>
       <a href="https://github.com/joydeepmedhi/vehicle_detection_tracking" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
     </div>
+    
+    <div class="project-card">
+      <h3 class="project-title">Retail Shelf Empty Space Detection</h3>
+      <p class="project-description">Computer vision solution for detecting empty spaces in retail store shelves and racks. Helps optimize inventory management and improve restocking efficiency in retail environments.</p>
+      <div class="project-tech">
+        <span class="tech-tag">Computer Vision</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Deep Learning</span>
+        <span class="tech-tag">Retail Analytics</span>
+      </div>
+      <a href="https://github.com/joydeepmedhi/bbox_detection" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+    </div>
   </div>
 </div>
 
