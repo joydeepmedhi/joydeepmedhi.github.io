@@ -17,10 +17,10 @@ title: Home
 <div class="section">
   <h2 class="section-title">About Me</h2>
   <p>
-    I am a Lead Data Scientist and Machine Learning Research Engineer based in Bengaluru, India, with a strong background in **Computer Vision**, **Generative AI (LLMs, VLMs, RAG)**, and **Deep Learning**. With a B.Tech & M.Tech Dual Degree in Mathematics and Computing from IIT Delhi, I focus on developing innovative AI solutions for complex real-world problems.
+    I am a Lead Data Scientist and Machine Learning Research Engineer based in Bengaluru, India, with a strong background in <strong>Computer Vision</strong>, <strong>Generative AI (LLMs, VLMs, RAG)</strong>, and <strong>Deep Learning</strong>. With a B.Tech & M.Tech Dual Degree in Mathematics and Computing from IIT Delhi, I focus on developing innovative AI solutions for complex real-world problems.
   </p>
   <p>
-    My experience spans leading R&D initiatives at **Lowe's Innovation Labs**, driving significant revenue impact through AI-driven customer experience optimization, and developing core ML components for **Mercedes-Benz R&D**, including advanced driver-assistance systems (MBUX Interior Assistant) involving pose estimation, gesture recognition, and face authentication. I am passionate about pushing the boundaries of AI and translating research into tangible products.
+    My experience spans leading R&D initiatives at <strong>Lowe's Innovation Labs</strong>, driving significant revenue impact through AI-driven customer experience optimization, and developing core ML components for <strong>Mercedes-Benz R&D</strong>, including advanced driver-assistance systems (MBUX Interior Assistant) involving pose estimation, gesture recognition, and face authentication. I am passionate about pushing the boundaries of AI and translating research into tangible products.
   </p>
 </div>
 
