@@ -28,6 +28,54 @@ title: Blog
     {% endif %}
   </div>
 
+<script>
+// Minimal client-side hashtag filter for GitHub Pages
+(function() {
+  function getTagParam() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('tag') ? params.get('tag').toLowerCase() : null;
+  }
+  function filterPostsByTag(tag) {
+    var posts = document.querySelectorAll('.post-list .post-item');
+    posts.forEach(function(post) {
+      const tags = post.getAttribute('data-tags') || '';
+      if (!tag || tags.includes(tag)) {
+        post.style.display = '';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  }
+  function highlightActiveTag(tag) {
+    var links = document.querySelectorAll('.hashtag-link');
+    links.forEach(function(link) {
+      var linkTag = link.textContent.replace(/^#/, '').toLowerCase();
+      if (tag && linkTag === tag) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+  var tag = getTagParam();
+  if (tag) {
+    filterPostsByTag(tag);
+    highlightActiveTag(tag);
+  }
+})();
+</script>
+
+<style>
+/* Minimal highlight for active hashtag */
+.hashtag-link.active {
+  background: var(--hashtag-hover-bg, #e0e7ef);
+  color: var(--hashtag-hover-color, #007acc);
+  border-color: var(--hashtag-hover-border, #b3c7e6);
+  font-weight: 600;
+}
+</style>
+
+
   {% assign tag_filter = page.url | split: '?tag=' | last %}
   {% if tag_filter == page.url %}
     {% assign tag_filter = nil %}
@@ -41,7 +89,7 @@ title: Blog
   {% if filtered_posts.size > 0 %}
     <ul class="post-list">
       {% for post in filtered_posts %}
-      <li class="post-item">
+      <li class="post-item" data-tags="{% assign allposttags = post.categories | concat: post.tags | uniq %}{% for tag in allposttags %}{{ tag | downcase }} {% endfor %}">
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </h2>
@@ -63,3 +111,51 @@ title: Blog
     <p>No posts yet. Check back soon!</p>
   {% endif %}
 </div>
+
+<script>
+// Minimal client-side hashtag filter for GitHub Pages
+(function() {
+  function getTagParam() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('tag') ? params.get('tag').toLowerCase() : null;
+  }
+  function filterPostsByTag(tag) {
+    var posts = document.querySelectorAll('.post-list .post-item');
+    posts.forEach(function(post) {
+      const tags = post.getAttribute('data-tags') || '';
+      if (!tag || tags.includes(tag)) {
+        post.style.display = '';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  }
+  function highlightActiveTag(tag) {
+    var links = document.querySelectorAll('.hashtag-link');
+    links.forEach(function(link) {
+      var linkTag = link.textContent.replace(/^#/, '').toLowerCase();
+      if (tag && linkTag === tag) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+  var tag = getTagParam();
+  if (tag) {
+    filterPostsByTag(tag);
+    highlightActiveTag(tag);
+  }
+})();
+</script>
+
+<style>
+/* Minimal highlight for active hashtag */
+.hashtag-link.active {
+  background: var(--hashtag-hover-bg, #e0e7ef);
+  color: var(--hashtag-hover-color, #007acc);
+  border-color: var(--hashtag-hover-border, #b3c7e6);
+  font-weight: 600;
+}
+</style>
+
