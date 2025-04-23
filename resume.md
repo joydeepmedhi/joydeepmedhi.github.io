@@ -7,7 +7,9 @@ permalink: /resume/
 # Joydeep Medhi
 **LEAD DATA SCIENTIST | MACHINE LEARNING RESEARCH ENGINEER**
 Bengaluru - 560066, INDIA
-(+91) 8802207985 | medhijoydeep@gmail.com | [LinkedIn](https://linkedin.com/in/joydeepmedhi) | [GitHub](https://github.com/joydeepmedhi)
+medhijoydeep@gmail.com | [LinkedIn](https://linkedin.com/in/joydeepmedhi) | [GitHub](https://github.com/joydeepmedhi)
+
+<a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download Resume PDF</a>
 
 ---
 

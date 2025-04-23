@@ -289,56 +289,43 @@ img {
   
   [data-theme="dark"] & {
     background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   [data-theme="light"] & {
-    background-color: rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: rgba(0, 0, 0, 0.05);
+    color: $text-color-light;
   }
   
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    text-decoration: none;
     
     [data-theme="dark"] & {
-      background-color: rgba(255, 255, 255, 0.12);
-      border-color: $accent-color;
+      background-color: rgba(255, 255, 255, 0.2);
     }
     
     [data-theme="light"] & {
-      background-color: rgba(0, 0, 0, 0.06);
-      border-color: $accent-color;
-    }
-    
-    .svg-icon {
-      transform: scale(1.15);
-    }
-    
-    .username {
-      color: $accent-color;
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
   
   .svg-icon {
-    width: 1.4rem;
-    height: 1.4rem;
-    transition: transform 0.2s ease;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.75rem;
     
     [data-theme="dark"] & {
-      fill: $accent-color;
+      fill: $text-color-dark;
     }
     
     [data-theme="light"] & {
-      fill: darken($accent-color, 10%);
+      fill: $text-color-light;
     }
   }
   
   .username {
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.2s ease;
   }
 }
 
@@ -538,29 +525,113 @@ pre {
   padding: 0 $spacing-unit;
 }
 
-// Cards
-.card {
-  padding: $spacing-unit / 2;
-  margin-bottom: $spacing-unit;
-  border-radius: $border-radius;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+// Publication styles
+.publication-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   
   [data-theme="dark"] & {
-    background-color: $card-background-dark;
-    border: 1px solid $border-color-dark;
+    background-color: rgba(255, 255, 255, 0.05);
   }
   
   [data-theme="light"] & {
-    background-color: $card-background-light;
-    border: 1px solid $border-color-light;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.02);
   }
   
   &:hover {
     transform: translateY(-3px);
     
     [data-theme="dark"] & {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    [data-theme="light"] & {
+      background-color: rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $accent-color;
+  }
+  
+  .publication-venue {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    
+    [data-theme="dark"] & {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    [data-theme="light"] & {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+  .publication-description {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+}
+
+// Cards
+.card {
+  padding: $spacing-unit / 2;
+  margin-bottom: $spacing-unit / 2;
+  border-radius: $border-radius;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  [data-theme="dark"] & {
+    background-color: $card-bg-dark;
+    border: 1px solid $border-color-dark;
+  }
+  
+  [data-theme="light"] & {
+    background-color: $card-bg-light;
+    border: 1px solid $border-color-light;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Blog styles
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.post-item {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  
+  [data-theme="dark"] & {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  [data-theme="light"] & {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    
+    [data-theme="dark"] & {
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
     
     [data-theme="light"] & {
