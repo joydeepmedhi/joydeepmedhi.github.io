@@ -3,7 +3,7 @@ description: Lead Data Scientist | Machine Learning Research Engineer
 author: Joydeep Medhi
 email: medhijoydeep@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://joydeepmedhi.github.io" # the base hostname & protocol for your site
 phone: "+91 8802207985"
 location: "Bengaluru - 560066, INDIA"
 
