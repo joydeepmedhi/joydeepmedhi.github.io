@@ -198,6 +198,55 @@ img {
   color: $accent-color;
 }
 
+// Responsive styles
+@media (max-width: 900px) {
+  .hero {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding: 0 1rem;
+  }
+  .hero-content {
+    gap: 0.3rem;
+  }
+  .profile-pic {
+    width: 90px;
+    height: 90px;
+  }
+  .hero-social {
+    gap: 1rem;
+  }
+  .project-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  .hero-content {
+    gap: 0.15rem;
+  }
+  .profile-pic {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+  }
+  .hero-social {
+    gap: 0.5rem;
+    font-size: 1.2rem;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .project-card {
+    padding: 1rem;
+  }
+}
+
 // Terminal-like elements
 .terminal {
   font-family: $font-family-mono;
