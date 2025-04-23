@@ -1,0 +1,36 @@
+title: Joydeep Medhi
+description: Lead Data Scientist | Machine Learning Research Engineer
+author: Joydeep Medhi
+email: medhijoydeep@gmail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+phone: "+91 8802207985"
+location: "Bengaluru - 560066, INDIA"
+
+# Social profiles - edit these with your own
+github_username: joydeepmedhi
+linkedin_username: joydeepmedhi
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Theme settings
+theme_mode: dark # dark or light
+accent_color: "#64ffda"
+
+# Collections
+collections:
+  - featured_work
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - README.md

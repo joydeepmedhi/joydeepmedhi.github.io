@@ -1,0 +1,675 @@
+// Header
+.site-header {
+  padding: $spacing-unit 0;
+  margin-bottom: $spacing-unit;
+  
+  [data-theme="dark"] & {
+    border-bottom: 1px solid $border-color-dark;
+  }
+  
+  [data-theme="light"] & {
+    border-bottom: 1px solid $border-color-light;
+  }
+  
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .site-title {
+    font-family: $font-family-mono;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    
+    [data-theme="dark"] & {
+      color: $text-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      color: $text-color-light;
+    }
+    
+    &:hover {
+      text-decoration: none;
+    }
+    
+    .title-prefix {
+      color: $accent-color;
+    }
+  }
+}
+
+// Navigation
+.site-nav {
+  display: flex;
+  align-items: center;
+  
+  .nav-trigger {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  .page-link {
+    margin-left: 20px;
+    font-family: $font-family-mono;
+    position: relative;
+    
+    [data-theme="dark"] & {
+      color: $text-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      color: $text-color-light;
+    }
+    
+    &:hover {
+      text-decoration: none;
+      color: $accent-color;
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: $accent-color;
+      transition: width 0.2s ease;
+    }
+    
+    &:hover::after {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: $mobile-width) {
+    position: absolute;
+    top: 15px;
+    right: $spacing-unit / 2;
+    
+    label[for="nav-trigger"] {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 36px;
+      z-index: 2;
+      cursor: pointer;
+    }
+    
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+      
+      svg {
+        fill: $accent-color;
+      }
+    }
+    
+    input ~ .trigger {
+      clear: both;
+      display: none;
+    }
+    
+    input:checked ~ .trigger {
+      display: block;
+      padding-bottom: 5px;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      border-radius: $border-radius;
+      padding: $spacing-unit / 2;
+      width: 180px;
+      
+      [data-theme="dark"] & {
+        background-color: $card-background-dark;
+        border: 1px solid $border-color-dark;
+      }
+      
+      [data-theme="light"] & {
+        background-color: $card-background-light;
+        border: 1px solid $border-color-light;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+    .page-link {
+      display: block;
+      padding: 8px 0;
+      margin: 0;
+      
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+// Theme toggle
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .theme-icon {
+    fill: currentColor;
+    
+    [data-theme="dark"] & {
+      color: $text-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      color: $text-color-light;
+    }
+    
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  
+  .theme-icon-light {
+    [data-theme="dark"] & {
+      display: block;
+    }
+    
+    [data-theme="light"] & {
+      display: none;
+    }
+  }
+  
+  .theme-icon-dark {
+    [data-theme="dark"] & {
+      display: none;
+    }
+    
+    [data-theme="light"] & {
+      display: block;
+    }
+  }
+}
+
+// Content
+.content {
+  padding: $spacing-unit 0 $spacing-unit * 2;
+  min-height: calc(100vh - 200px);
+}
+
+// Hero section
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: $spacing-unit * 2 0;
+  
+  .hero-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: $spacing-unit;
+    border: 3px solid $accent-color;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-unit / 4;
+    
+    &::before {
+      content: none;
+    }
+  }
+  
+  .hero-subtitle {
+    font-family: $font-family-mono;
+    font-size: 1.2rem;
+    margin-bottom: $spacing-unit;
+    
+    [data-theme="dark"] & {
+      color: $secondary-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      color: $secondary-color-light;
+    }
+  }
+  
+  .hero-description {
+    max-width: 600px;
+    margin-bottom: $spacing-unit;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: $spacing-unit / 2;
+    
+    @media screen and (max-width: $mobile-width) {
+      flex-direction: column;
+    }
+  }
+}
+
+// Section
+.section {
+  margin-bottom: $spacing-unit * 2;
+  
+  .section-title {
+    margin-bottom: $spacing-unit;
+    padding-bottom: $spacing-unit / 4;
+    
+    [data-theme="dark"] & {
+      border-bottom: 1px solid $border-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      border-bottom: 1px solid $border-color-light;
+    }
+  }
+}
+
+// Skills
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-left: 0;
+  
+  .skill-item {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-family: $font-family-mono;
+    font-size: 0.9rem;
+    
+    [data-theme="dark"] & {
+      background-color: rgba(100, 255, 218, 0.1);
+      border: 1px solid rgba(100, 255, 218, 0.3);
+      color: $accent-color;
+    }
+    
+    [data-theme="light"] & {
+      background-color: rgba(100, 255, 218, 0.2);
+      border: 1px solid rgba(100, 255, 218, 0.4);
+      color: darken($accent-color, 30%);
+    }
+  }
+}
+
+// Timeline for resume
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    
+    [data-theme="dark"] & {
+      background-color: $border-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      background-color: $border-color-light;
+    }
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: $spacing-unit;
+    padding-left: $spacing-unit;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      left: -4px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $accent-color;
+    }
+    
+    .timeline-date {
+      font-family: $font-family-mono;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+      
+      [data-theme="dark"] & {
+        color: $secondary-color-dark;
+      }
+      
+      [data-theme="light"] & {
+        color: $secondary-color-light;
+      }
+    }
+    
+    .timeline-title {
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+      
+      &::before {
+        content: none;
+      }
+    }
+    
+    .timeline-subtitle {
+      font-style: italic;
+      margin-bottom: 10px;
+      
+      [data-theme="dark"] & {
+        color: $secondary-color-dark;
+      }
+      
+      [data-theme="light"] & {
+        color: $secondary-color-light;
+      }
+    }
+  }
+}
+
+// Blog
+.post-list {
+  list-style: none;
+  margin-left: 0;
+  
+  .post-item {
+    margin-bottom: $spacing-unit;
+    padding-bottom: $spacing-unit;
+    
+    [data-theme="dark"] & {
+      border-bottom: 1px solid $border-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      border-bottom: 1px solid $border-color-light;
+    }
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  .post-link {
+    font-family: $font-family-mono;
+    font-size: 1.3rem;
+    font-weight: 700;
+    
+    [data-theme="dark"] & {
+      color: $text-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      color: $text-color-light;
+    }
+    
+    &:hover {
+      color: $accent-color;
+      text-decoration: none;
+    }
+  }
+  
+  .post-meta {
+    font-family: $font-family-mono;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    
+    [data-theme="dark"] & {
+      color: $secondary-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      color: $secondary-color-light;
+    }
+  }
+  
+  .post-excerpt {
+    margin-bottom: 10px;
+  }
+}
+
+// Post
+.post {
+  .post-header {
+    margin-bottom: $spacing-unit;
+  }
+  
+  .post-title {
+    font-size: 2rem;
+    
+    &::before {
+      content: none;
+    }
+  }
+  
+  .post-meta {
+    font-family: $font-family-mono;
+    font-size: 0.9rem;
+    margin-bottom: $spacing-unit / 2;
+    
+    [data-theme="dark"] & {
+      color: $secondary-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      color: $secondary-color-light;
+    }
+    
+    .post-date {
+      margin-right: 10px;
+    }
+    
+    .post-category {
+      margin-right: 5px;
+      
+      [data-theme="dark"] & {
+        color: $accent-color;
+      }
+      
+      [data-theme="light"] & {
+        color: darken($accent-color, 20%);
+      }
+    }
+  }
+  
+  .post-content {
+    margin-bottom: $spacing-unit;
+  }
+  
+  .post-navigation {
+    margin-top: $spacing-unit;
+    padding-top: $spacing-unit / 2;
+    
+    [data-theme="dark"] & {
+      border-top: 1px solid $border-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      border-top: 1px solid $border-color-light;
+    }
+    
+    .post-navigation-links {
+      display: flex;
+      justify-content: space-between;
+      
+      .prev, .next {
+        max-width: 45%;
+      }
+    }
+  }
+}
+
+// Contact
+.contact-form {
+  margin-bottom: $spacing-unit;
+  
+  .form-group {
+    margin-bottom: $spacing-unit / 2;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: $font-family-mono;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: $border-radius;
+    font-family: $font-family-sans;
+    
+    [data-theme="dark"] & {
+      background-color: $card-background-dark;
+      border: 1px solid $border-color-dark;
+      color: $text-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      background-color: $card-background-light;
+      border: 1px solid $border-color-light;
+      color: $text-color-light;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: $accent-color;
+    }
+  }
+  
+  textarea {
+    min-height: 150px;
+  }
+}
+
+// Footer
+.site-footer {
+  padding: $spacing-unit 0;
+  
+  [data-theme="dark"] & {
+    border-top: 1px solid $border-color-dark;
+  }
+  
+  [data-theme="light"] & {
+    border-top: 1px solid $border-color-light;
+  }
+  
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-col-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-unit;
+    
+    @media screen and (max-width: $mobile-width) {
+      flex-direction: column;
+    }
+  }
+  
+  .footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: $spacing-unit / 2;
+    
+    @media screen and (max-width: $mobile-width) {
+      margin-bottom: $spacing-unit;
+    }
+  }
+  
+  .footer-heading {
+    font-family: $font-family-mono;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    margin-left: 0;
+    
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  
+  .social-media-list {
+    list-style: none;
+    margin-left: 0;
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    a {
+      display: flex;
+      align-items: center;
+      
+      [data-theme="dark"] & {
+        color: $text-color-dark;
+      }
+      
+      [data-theme="light"] & {
+        color: $text-color-light;
+      }
+      
+      &:hover {
+        color: $accent-color;
+        text-decoration: none;
+      }
+    }
+    
+    .svg-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+    }
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    
+    [data-theme="dark"] & {
+      color: $secondary-color-dark;
+    }
+    
+    [data-theme="light"] & {
+      color: $secondary-color-light;
+    }
+    
+    .heart {
+      color: $error-color;
+    }
+    
+    .footer-code {
+      font-family: $font-family-mono;
+      margin-top: 5px;
+      
+      .footer-date {
+        color: $accent-color;
+      }
+    }
+  }
+}

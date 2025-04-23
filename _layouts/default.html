@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="{{ site.theme_mode | default: 'dark' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  {% seo %}
+</head>
+<body>
+  <div class="container">
+    {% include header.html %}
+    
+    <main class="content">
+      {{ content }}
+    </main>
+    
+    {% include footer.html %}
+  </div>
+  
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="footer-heading">{{ site.title }}</p>
+        <p>{{ site.description }}</p>
+      </div>
+      
+      <div class="footer-col">
+        <p class="footer-heading">Links</p>
+        <ul class="footer-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/resume/' | relative_url }}">Resume</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <p class="footer-heading">Connect</p>
+        {% include social-links.html %}
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }} • Built with <span class="heart">❤</span> using Jekyll</p>
+      <p class="footer-code">const lastUpdated = "<span class="footer-date">{{ site.time | date: "%Y-%m-%d" }}</span>";</p>
+    </div>
+  </div>
+</footer>

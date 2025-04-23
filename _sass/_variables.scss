@@ -1,0 +1,39 @@
+// Typography
+$font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+$font-family-sans: 'Inter', 'Open Sans', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// Colors - Dark Mode
+$background-color-dark: #0d1117;
+$text-color-dark: #e6edf3;
+$secondary-color-dark: #8b949e;
+$border-color-dark: #30363d;
+$code-background-dark: #161b22;
+$card-background-dark: #161b22;
+$hover-color-dark: #21262d;
+
+// Colors - Light Mode
+$background-color-light: #f8f9fa;
+$text-color-light: #24292e;
+$secondary-color-light: #6a737d;
+$border-color-light: #e1e4e8;
+$code-background-light: #f1f1f1;
+$card-background-light: #ffffff;
+$hover-color-light: #f1f1f1;
+
+// Accent Colors
+$accent-color: #64ffda;
+$accent-color-secondary: #58a6ff;
+$error-color: #f85149;
+$success-color: #56d364;
+$warning-color: #e3b341;
+
+// Layout
+$content-width: 800px;
+$spacing-unit: 30px;
+$border-radius: 6px;
+
+// Breakpoints
+$mobile-width: 600px;
+$tablet-width: 900px;
