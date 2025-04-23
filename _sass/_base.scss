@@ -223,11 +223,11 @@ img {
   }
 }
 .profile-pic {
-  width: 130px;
-  height: 130px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   border: 3px solid transparent;
   background-origin: border-box;
@@ -245,50 +245,64 @@ img {
 .social-links-container {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin: 1.2rem 0;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 600px;
 }
 
 .social-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.8rem;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
   border-radius: 2rem;
   transition: all 0.2s ease;
   text-decoration: none;
+  margin: 0.3rem;
+  min-width: 120px;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   
   [data-theme="dark"] & {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   [data-theme="light"] & {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
   
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     text-decoration: none;
     
     [data-theme="dark"] & {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: $accent-color;
     }
     
     [data-theme="light"] & {
-      background-color: rgba(0, 0, 0, 0.08);
+      background-color: rgba(0, 0, 0, 0.06);
+      border-color: $accent-color;
     }
     
     .svg-icon {
-      transform: scale(1.1);
+      transform: scale(1.15);
+    }
+    
+    .username {
+      color: $accent-color;
     }
   }
   
   .svg-icon {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
     transition: transform 0.2s ease;
     
     [data-theme="dark"] & {
@@ -301,8 +315,9 @@ img {
   }
   
   .username {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
+    transition: color 0.2s ease;
   }
 }
 
@@ -338,15 +353,18 @@ img {
     gap: 0.3rem;
   }
   .profile-pic {
-    width: 110px;
-    height: 110px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 1rem;
   }
   .social-links-container {
-    gap: 0.8rem;
+    gap: 0.5rem;
+    max-width: 500px;
   }
   .social-link {
-    padding: 0.4rem 0.7rem;
+    padding: 0.5rem 0.8rem;
+    min-width: 110px;
+    margin: 0.2rem;
   }
   .project-grid {
     gap: 1rem;
@@ -371,41 +389,30 @@ img {
     font-size: 1.8rem;
     margin-top: 0.3rem;
     margin-bottom: 0.1rem;
-    
-    &::before {
-      left: -1.2rem;
-      font-size: 1.5rem;
-    }
   }
-  .location {
-    font-size: 0.85rem;
-    margin-top: -0.1rem;
-    
-    &::before {
-      font-size: 0.8rem;
-    }
+  .animate-text::before {
+    left: -1.2rem;
+    font-size: 1.5rem;
   }
   .lead {
-    font-size: 0.9rem;
-  }
-  .lead-subtitle {
-    font-size: 0.85rem;
-    text-align: center;
-    padding: 0 0.5rem;
+    font-size: 1rem;
   }
   .social-links-container {
-    gap: 0.5rem;
-    margin-top: 0.8rem;
+    gap: 0.3rem;
+    margin: 0.8rem 0;
+    max-width: 100%;
   }
   .social-link {
-    padding: 0.3rem 0.6rem;
+    padding: 0.4rem 0.6rem;
+    min-width: 100px;
+    margin: 0.15rem;
   }
   .social-link .username {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
   .social-link .svg-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
   }
   .project-grid {
     grid-template-columns: 1fr;
@@ -413,6 +420,9 @@ img {
   }
   .project-card {
     padding: 1rem;
+  }
+  .section {
+    padding: 1rem 0.5rem;
   }
 }
 
