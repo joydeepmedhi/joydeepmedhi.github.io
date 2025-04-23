@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}. Lead Data Scientist and ML Research Engineer specializing in Computer Vision, Generative AI, and Deep Learning solutions.">
   <meta name="keywords" content="AI, ML, Computer Vision, Deep Learning, Machine Learning, Data Science, AI Scientist, Portfolio, Generative AI, LLM, VLM, RAG, Object Detection, Faster-RCNN, YOLOv5, PyTorch, TensorFlow, Retail Analytics, IIT Delhi{% if page.categories %}, {{ page.categories | join: ', ' }}{% endif %}">
   <meta name="author" content="{{ site.author }}">
@@ -54,9 +57,20 @@
   
   <!-- Page load animation -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.add('loaded');
     });
+    
+    // Register service worker for cache control
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js?v=1.1.' + new Date().getTime()).then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>
