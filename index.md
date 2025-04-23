@@ -6,9 +6,9 @@ title: Home
 <div class="hero">
   <div class="hero-content">
     <img src="/assets/images/profile.png" alt="Joydeep Medhi profile photo" class="profile-pic" />
-    <h1>Joydeep Medhi</h1>
+    <h1 class="animate-text">Joydeep Medhi</h1>
     <p class="lead">Lead Data Scientist // Machine Learning Research Engineer</p>
-    <p>Bengaluru, India</p>
+    <p class="location">Bengaluru, India</p>
     <p class="lead-subtitle">Specializing in Computer Vision, Generative AI, and Deep Learning solutions.</p>
     <div class="hero-social">
       {% include social-links.html %}

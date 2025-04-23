@@ -170,15 +170,142 @@ img {
   align-items: center;
   gap: 0.6rem;
 }
+
+.animate-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, $accent-color, adjust-hue($accent-color, 40deg));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-shift 8s ease infinite;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  
+  &::before {
+    content: "#";
+    position: absolute;
+    left: -1.5rem;
+    color: $accent-color;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-top: -0.2rem;
+  
+  &::before {
+    content: "📍";
+    font-size: 0.9rem;
+  }
+}
 .profile-pic {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 0.8rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border: 2px solid $accent-color;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  border: 3px solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(to bottom, transparent, transparent), 
+                    linear-gradient(135deg, $accent-color, adjust-hue($accent-color, 40deg));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
 }
+// Social links styling
+.social-links-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 2rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  
+  [data-theme="dark"] & {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  [data-theme="light"] & {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    
+    [data-theme="dark"] & {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    [data-theme="light"] & {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+    
+    .svg-icon {
+      transform: scale(1.1);
+    }
+  }
+  
+  .svg-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: transform 0.2s ease;
+    
+    [data-theme="dark"] & {
+      fill: $accent-color;
+    }
+    
+    [data-theme="light"] & {
+      fill: darken($accent-color, 10%);
+    }
+  }
+  
+  .username {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
 .hero-social {
   display: flex;
   flex-direction: row;
@@ -186,6 +313,7 @@ img {
   margin-top: 0.5rem;
   justify-content: center;
 }
+
 .hero-social a {
   display: flex;
   align-items: center;
@@ -193,6 +321,7 @@ img {
   font-size: 1.7rem;
   transition: transform 0.15s;
 }
+
 .hero-social a:hover {
   transform: scale(1.12);
   color: $accent-color;
@@ -209,11 +338,15 @@ img {
     gap: 0.3rem;
   }
   .profile-pic {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
+    margin-bottom: 1rem;
   }
-  .hero-social {
-    gap: 1rem;
+  .social-links-container {
+    gap: 0.8rem;
+  }
+  .social-link {
+    padding: 0.4rem 0.7rem;
   }
   .project-grid {
     gap: 1rem;
@@ -222,21 +355,57 @@ img {
 
 @media (max-width: 600px) {
   .hero {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
     padding: 0 0.5rem;
   }
   .hero-content {
-    gap: 0.15rem;
+    gap: 0.25rem;
   }
   .profile-pic {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 0.5rem;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.8rem;
   }
-  .hero-social {
+  .animate-text {
+    font-size: 1.8rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.1rem;
+    
+    &::before {
+      left: -1.2rem;
+      font-size: 1.5rem;
+    }
+  }
+  .location {
+    font-size: 0.85rem;
+    margin-top: -0.1rem;
+    
+    &::before {
+      font-size: 0.8rem;
+    }
+  }
+  .lead {
+    font-size: 0.9rem;
+  }
+  .lead-subtitle {
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  .social-links-container {
     gap: 0.5rem;
-    font-size: 1.2rem;
+    margin-top: 0.8rem;
+  }
+  .social-link {
+    padding: 0.3rem 0.6rem;
+  }
+  .social-link .username {
+    font-size: 0.8rem;
+  }
+  .social-link .svg-icon {
+    width: 1rem;
+    height: 1rem;
   }
   .project-grid {
     grid-template-columns: 1fr;
