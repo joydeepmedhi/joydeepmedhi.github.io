@@ -33,38 +33,3 @@ This section showcases some of the key projects I have worked on, highlighting m
 
 </div>
 
-<style>
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.project-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.project-card h3 {
-  margin-top: 0;
-  color: var(--heading-color);
-}
-
-.project-card p {
-  margin-bottom: 1rem;
-  color: var(--text-color);
-}
-
-.project-card a.button {
-  margin-top: auto; /* Push button to bottom */
-}
-</style>
