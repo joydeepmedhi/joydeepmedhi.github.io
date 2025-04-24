@@ -40,3 +40,7 @@ Thumbs.db
 # Build files
 dist/
 build/
+
+# Docker configuration
+Dockerfile
+docker-compose.yml
