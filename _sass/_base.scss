@@ -155,29 +155,6 @@ pre {
   color: inherit;
 }
 
-pre {
-  margin-bottom: $spacing-unit / 2;
-  padding: $spacing-unit / 2;
-  overflow-x: auto;
-  border-radius: $border-radius;
-  
-  [data-theme="dark"] & {
-    background-color: $code-background-dark;
-    border: 1px solid $border-color-dark;
-  }
-  
-  [data-theme="light"] & {
-    background-color: $code-background-light;
-    border: 1px solid $border-color-light;
-  }
-  
-  code {
-    background: none;
-    padding: 0;
-    font-size: 0.9em;
-    line-height: 1.5;
-  }
-}
 
 hr {
   margin: $spacing-unit 0;
