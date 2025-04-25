@@ -11,6 +11,7 @@ github_username: joydeepmedhi
 linkedin_username: joydeepmedhi
 instagram_username: joydeepmedhi
 twitter_username: medhijoydeep
+image: /favicon.svg
 
 # Build settings
 markdown: kramdown
@@ -18,10 +19,12 @@ permalink: /blog/:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Theme settings
 theme_mode: dark # dark or light
 accent_color: "#64ffda"
+twitter_username: medhijoydeep
 
 # Content Security Policy
 content_security_policy:

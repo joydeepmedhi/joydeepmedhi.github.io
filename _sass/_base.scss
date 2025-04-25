@@ -863,6 +863,73 @@ pre {
   margin-top: $spacing-unit;
 }
 
+// Footer layout styles
+.site-footer {
+  background: $background-color-dark;
+  color: $text-color-dark;
+  padding: 2.5rem 0 1.5rem 0;
+  font-size: 1rem;
+  margin-top: 3rem;
+  [data-theme="light"] & {
+    background: $background-color-light;
+    color: $text-color-light;
+  }
+}
+
+.footer-wrapper {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+.footer-col-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+}
+
+.footer-col {
+  flex: 1 1 0;
+  min-width: 180px;
+}
+
+.footer-bottom {
+  text-align: center;
+  opacity: 0.8;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: inherit;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .footer-bottom {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 // Footer tech elements
 .footer-code {
   font-family: $font-family-mono;
@@ -880,6 +947,7 @@ pre {
   font-size: 0.9rem;
   opacity: 0.8;
   margin-top: 0.25rem;
+  text-align: center;
 }
 
 .tech-stack {
