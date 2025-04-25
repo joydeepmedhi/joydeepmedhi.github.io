@@ -182,14 +182,14 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.3rem;
 }
 
 .animate-text {
@@ -244,24 +244,26 @@ img {
   }
 }
 .profile-pic {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  border: 3px solid transparent;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border: 4px solid $accent-color;
   background-origin: border-box;
   background-clip: content-box, border-box;
-  background-image: linear-gradient(to bottom, transparent, transparent), 
-                    linear-gradient(135deg, $accent-color, adjust-hue($accent-color, 40deg));
+  background-image: linear-gradient(to bottom, transparent, transparent),
+    linear-gradient(135deg, $accent-color, adjust-hue($accent-color, 40deg));
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+  display: block;
+
   &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transform: scale(1.04);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
   }
 }
+
 // Social links styling
 .social-links-container {
   display: flex;
@@ -361,9 +363,9 @@ img {
     gap: 0.3rem;
   }
   .profile-pic {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 1rem;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1.2rem;
   }
   .social-links-container {
     gap: 0.5rem;
@@ -389,9 +391,9 @@ img {
     gap: 0.25rem;
   }
   .profile-pic {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 0.8rem;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 0.7rem;
   }
   .animate-text {
     font-size: 1.8rem;
