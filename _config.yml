@@ -23,6 +23,19 @@ plugins:
 theme_mode: dark # dark or light
 accent_color: "#64ffda"
 
+# Content Security Policy
+content_security_policy:
+  connect-src:
+    - "self"
+    - https://www.google-analytics.com
+    - https://analytics.google.com
+  script-src:
+    - "self"
+    - https://www.googletagmanager.com
+  img-src:
+    - "self"
+    - https://www.googletagmanager.com
+
 # Collections
 collections:
   - featured_work

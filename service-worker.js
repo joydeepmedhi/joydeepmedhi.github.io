@@ -39,26 +39,18 @@ self.addEventListener('activate', event => {
 });
 
 // Fetch event - network first, fallback to cache
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  
+  // Bypass Google Analytics requests
+  if (url.hostname === 'www.google-analytics.com' || url.hostname === 'www.googletagmanager.com') {
+    return fetch(event.request);
+  }
+
+  // Existing caching strategy
   event.respondWith(
-    fetch(event.request)
-      .then(response => {
-        // Clone the response to store in cache
-        const responseToCache = response.clone();
-        
-        // Only cache successful responses
-        if (response.status === 200) {
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(event.request, responseToCache);
-            });
-        }
-        
-        return response;
-      })
-      .catch(() => {
-        // If network request fails, try to serve from cache
-        return caches.match(event.request);
-      })
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
   );
 });
