@@ -14,31 +14,58 @@ Computer vision has evolved dramatically in recent years, particularly with the 
 Modern object detection frameworks like YOLO, Faster R-CNN, and RetinaNet leverage multi-scale feature representations to detect objects of varying sizes. One particularly effective approach is Feature Pyramid Networks (FPN), which creates a top-down pathway with lateral connections to build feature maps at multiple scales.
 
 ```python
+import torch.nn as nn
+import torch.nn.functional as F
+
 class FeaturePyramidNetwork(nn.Module):
     def __init__(self, in_channels, out_channels=256):
         super(FeaturePyramidNetwork, self).__init__()
-        
         # Lateral connections
         self.lateral_conv1 = nn.Conv2d(in_channels[0], out_channels, kernel_size=1)
         self.lateral_conv2 = nn.Conv2d(in_channels[1], out_channels, kernel_size=1)
         self.lateral_conv3 = nn.Conv2d(in_channels[2], out_channels, kernel_size=1)
-        
         # Smooth layers
         self.smooth_conv1 = nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1)
         self.smooth_conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1)
         self.smooth_conv3 = nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1)
-        
+
     def forward(self, inputs):
         c3, c4, c5 = inputs
-        
         # Lateral connections
         p5 = self.lateral_conv3(c5)
         p4 = self.lateral_conv2(c4) + F.interpolate(p5, scale_factor=2)
         p3 = self.lateral_conv1(c3) + F.interpolate(p4, scale_factor=2)
-        
         # Smooth layers
         p3 = self.smooth_conv1(p3)
         p4 = self.smooth_conv2(p4)
+        p5 = self.smooth_conv3(p5)
+        return [p3, p4, p5]
+```
+
+#### FPN Architecture Diagram
+
+```
+Input Feature Maps
+   c3   c4   c5
+    |    |    |
+   [1x1 conv (lateral connections)]
+    |    |    |
+    |    |   p5 <---------+
+    |    |    |           |
+    |   p4 <---+          |
+    |    |    |           |
+   p3 <---+   |           |
+           |  |           |
+           +--+-----------+
+           (upsample & add)
+```
+
+- **c3, c4, c5**: Feature maps from backbone (e.g., ResNet)
+- **Lateral conv**: 1x1 convolution to unify channel dims
+- **Upsample & add**: Top-down pathway with addition
+- **Smooth conv**: 3x3 convolution for each output
+
+This structure enables robust multi-scale detection for objects of different sizes, and is foundational to modern detectors like RetinaNet and Mask R-CNN.
         p5 = self.smooth_conv3(p5)
         
         return [p3, p4, p5]
@@ -143,11 +170,60 @@ def photometric_loss(predicted_img, target_img, mask=None):
 
 The key insight is using view synthesis as a supervisory signal: if we can predict depth correctly, we should be able to warp one frame to another given the camera motion.
 
+#### Self-Supervised Depth Estimation — View Synthesis Diagram
+
+```
+      Frame t                Frame t+1
+   +------------+        +------------+
+   |  RGB Img   |        |  RGB Img   |
+   +-----+------+        +-----+------+
+         |                     |
+         v                     v
+   +-------------------------------+
+   |   Depth & Pose Networks       |
+   +-------------------------------+
+         |                     |
+         v                     v
+   Predicted Depth        Camera Motion (E)
+         |                     |
+         +----------+----------+
+                    |
+                    v
+          View Synthesis (Warp t+1 to t)
+                    |
+                    v
+             Photometric Loss
+```
+
+**Key Insight:** If depth and pose are predicted correctly, we can synthesize (warp) one frame to match the other, and use the difference as a training signal.
+
 ## Conclusion and Future Directions
 
 These advanced techniques have significantly pushed the boundaries of computer vision. Looking forward, I'm particularly excited about:
 
 1. **Neural Radiance Fields (NeRF)** for novel view synthesis
+
+   NeRF learns a continuous 3D representation from multiple views, enabling novel view synthesis:
+
+   ```
+         Camera 1         Camera 2
+            |                |
+     +------+------+  +------+
+     | 2D Image |     | 2D Image |
+     +----------+     +----------+
+            \            /
+             \          /
+              \        /
+                +----+
+                | 3D |
+                |NeRF|
+                +----+
+                  |
+                  v
+           Render Novel View
+   ```
+   - NeRF learns a continuous 3D scene from images, and can render the scene from any new viewpoint!
+
 2. **Foundation models** like CLIP that bridge vision and language
 3. **Diffusion models** for high-quality image generation and editing
 

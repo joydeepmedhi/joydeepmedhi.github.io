@@ -121,15 +121,38 @@ code {
   font-family: $font-family-mono;
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  font-size: 0.9em;
-  
-  [data-theme="dark"] & {
-    background-color: $code-background-dark;
-  }
-  
-  [data-theme="light"] & {
-    background-color: $code-background-light;
-  }
+  font-size: 0.95em;
+  transition: background 0.2s, color 0.2s;
+  background: var(--code-bg, #23272e);
+  color: var(--code-fg, #f8f8f8);
+}
+
+pre {
+  background: var(--pre-bg, #181c1f);
+  color: var(--pre-fg, #f8f8f8);
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  font-size: 1em;
+  transition: background 0.2s, color 0.2s;
+}
+
+[data-theme="dark"] {
+  --code-bg: #23272e;
+  --code-fg: #f8f8f8;
+  --pre-bg: #181c1f;
+  --pre-fg: #f8f8f8;
+}
+[data-theme="light"] {
+  --code-bg: #f4f6f8;
+  --code-fg: #23272e;
+  --pre-bg: #f4f6f8;
+  --pre-fg: #23272e;
+}
+
+.highlight, pre code {
+  background: inherit;
+  color: inherit;
 }
 
 pre {
