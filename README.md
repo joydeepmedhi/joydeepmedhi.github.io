@@ -1,36 +1,72 @@
-# Personal Portfolio - Joydeep Medhi
+# Joydeep Medhi — Data Science Portfolio
 
-This repository contains the source code for my personal portfolio website, built using GitHub Pages and Markdown.
+This repository contains the source code for my professional portfolio website, built with Jekyll, GitHub Pages, and Markdown. It is designed for easy editing, modern SEO, and a minimal, coder-friendly look.
 
-## Overview
+---
 
-The portfolio showcases my professional experience, skills, projects, and publications as a Lead Data Scientist and Machine Learning Research Engineer.
+## 🚀 Features
+- **Modern, minimal design** — clean, responsive, and easy to customize
+- **SEO optimized** — powered by `jekyll-seo-tag`, `jekyll-sitemap`, and rich social meta
+- **Favicon & Apple Touch Icon** — custom JM branding for all devices
+- **Blog, Resume, Publications, Social Feed** — all editable in Markdown
+- **Easy deployment** — works on GitHub Pages or Docker/Jekyll locally
+- **Analytics-ready** — Google Analytics integration included
+- **Accessible & mobile-friendly**
 
-## Local Development & Preview
+---
 
-This portfolio uses simple Markdown files for content and doesn't require a complex build process like Jekyll for local previewing.
+## 🛠️ Local Development
 
-1.  **Prerequisites**: Ensure you have [Node.js](https://nodejs.org/) installed.
-2.  **Run the Local Server**:
-    Open your terminal in the project directory (`portfolio`) and run:
-    ```bash
-    node server.js
-    ```
-3.  **View in Browser**: Open your web browser and navigate to `http://localhost:8080/preview.html`.
+### Using Docker (Recommended)
+1. **Install Docker** if you haven’t already.
+2. In the project directory, run:
+   ```bash
+   docker-compose up --build
+   ```
+3. Open your browser to [http://localhost:4000](http://localhost:4000)
+   - Live reload is enabled for fast editing.
+   - Sitemap is available at `/sitemap.xml`.
 
-    *   This `preview.html` file provides a static preview of the site's structure and home page content.
-    *   The navigation links in the preview will point to the respective `.md` files (`resume.md`, `projects.md`, etc.), allowing you to view their raw content locally.
+### Using Bundler/Jekyll (Alternative)
+1. Install Ruby, Bundler, and Jekyll.
+2. Run:
+   ```bash
+   bundle install
+   bundle exec jekyll serve
+   ```
+3. Visit [http://localhost:4000](http://localhost:4000)
 
-## Content Management
+---
 
-*   **Pages**: Edit the content directly in the Markdown files (e.g., `index.md`, `resume.md`, `projects.md`, `publications.md`).
-*   **Blog Posts**: Add new Markdown files to the `blog/_posts` directory following the naming convention `YYYY-MM-DD-your-post-title.md`.
-*   **Configuration**: Modify basic site settings like title and description in `_config.yml`.
-*   **Styling**: Customize the look and feel by editing the CSS within `_includes/head.html` or the main `preview.html` for local testing styles.
+## ✍️ Editing Content
+- **Pages:** Edit Markdown files like `index.md`, `resume.md`, `projects.md`, `publications.md`, etc.
+- **Blog:** Add posts to `blog/_posts/` using `YYYY-MM-DD-title.md` format.
+- **Config:** Change site settings, social links, and meta in `_config.yml`.
+- **Styling:** Edit `_sass/_base.scss` for CSS. Favicon and icons in project root.
 
-## Deployment
+---
 
-This site is configured for GitHub Pages.
+## 🌐 Deployment
+- **GitHub Pages:**
+  - Push to the `main` branch. GitHub Pages will build and deploy automatically.
+  - Live at: [https://joydeepmedhi.github.io](https://joydeepmedhi.github.io)
+- **Custom Domain:** Set in your repo settings and update `_config.yml`.
 
-*   Changes pushed to the `main` branch will automatically trigger a rebuild and deployment.
-*   The live site is available at: [https://joydeepmedhi.github.io](https://joydeepmedhi.github.io)
+---
+
+## 🧠 SEO & Best Practices
+- **Meta tags:** Managed by `jekyll-seo-tag` and `_config.yml`.
+- **Sitemap:** Auto-generated at `/sitemap.xml` for search engines.
+- **robots.txt:** Present for crawler instructions.
+- **Social sharing:** Optimized for Twitter, LinkedIn, and more.
+- **Favicon:** Provided in `.ico` and `.svg` formats; Apple touch icon included.
+
+---
+
+## 📄 License & Credits
+- MIT License. Feel free to fork and adapt.
+- Built by Joydeep Medhi — Lead Data Scientist & ML Research Engineer
+
+---
+
+**Questions or suggestions?** Open an issue or contact me at [medhijoydeep@gmail.com](mailto:medhijoydeep@gmail.com).
