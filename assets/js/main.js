@@ -96,6 +96,9 @@ function highlightCodeBlocks() {
   if (codeBlocks.length > 0) {
     // Simple syntax highlighting for code blocks
     codeBlocks.forEach(block => {
+      // Skip if already server-highlighted: contains HTML span, avoid double highlight
+      if (block.querySelector('span')) return;
+      
       // Keywords to highlight
       const keywords = ['function', 'const', 'let', 'var', 'return', 'if', 'else', 'for', 'while', 'class', 'import', 'export', 'from', 'async', 'await', 'try', 'catch'];
       const types = ['string', 'number', 'boolean', 'null', 'undefined', 'true', 'false'];

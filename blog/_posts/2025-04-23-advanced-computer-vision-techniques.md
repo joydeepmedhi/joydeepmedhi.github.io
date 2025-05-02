@@ -141,7 +141,7 @@ This approach allows for real-time multi-person pose estimation, which we levera
 
 Traditional depth estimation required stereo pairs or LiDAR data for supervision. Recent advances in self-supervised learning have enabled training depth estimation models using only monocular video sequences by leveraging geometric constraints.
 
-```python
+```
 class DepthNet(nn.Module):
     # Simplified depth estimation network
     def __init__(self):
