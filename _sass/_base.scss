@@ -971,3 +971,44 @@ pre {
   letter-spacing: 0.5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* ==========================================================================
+   SMOTE Visualizations
+   ========================================================================== */
+
+// Canvas container for all SMOTE animations
+.canvas-container {
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+  background: #f8f8f8;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.canvas-container canvas {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.canvas-container + h2, 
+.canvas-container + h3 {
+  margin-top: 2rem;
+}
+
+// Add spacing between visualizations in the blog post
+#standard-smote-canvas,
+#borderline-smote-canvas,
+#adasyn-canvas,
+#kmeans-smote-canvas {
+  margin-bottom: 3rem;
+}
+
+// Ensure visualizations are responsive
+@media (max-width: 767px) {
+  .canvas-container canvas {
+    height: 350px; // Slightly smaller on mobile
+  }
+}
