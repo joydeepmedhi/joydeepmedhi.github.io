@@ -644,8 +644,47 @@ document.addEventListener('DOMContentLoaded', function() {
                       radius: 5
                     }
                   ];
-                }
+                } else {
+                    // Find closest minority point
+                    const closestPoint = findClosestMinorityPoint(borderlinePoint, minorityPoints);
+                    if (closestPoint) {
+                      state.highlightedPoints = [
+                        { 
+                          ...borderlinePoint, 
+                          color: '#ff8f00', // orange
+                          radius: 5
+                        },
+                        { 
+                          ...closestPoint, 
+                          color: '#9c27b0', // purple
+                          radius: 5
+                        }
+                      ];
+                    }
+                  }
                 
+                state.currentMinorityIndex++;
+              } else {
+                // If no borderline points, select any minority point
+                const randomIndex = Math.floor(Math.random() * minorityPoints.length);
+                const point = minorityPoints[randomIndex];
+                const closestPoint = findClosestMinorityPoint(point, minorityPoints);
+    
+                if (closestPoint) {
+                  state.highlightedPoints = [
+                    { 
+                      ...point, 
+                      color: '#ff8f00', // orange
+                      radius: 5
+                    },
+                    { 
+                      ...closestPoint, 
+                      color: '#9c27b0', // purple
+                      radius: 5
+                    }
+                  ];
+                }
+    
                 state.currentMinorityIndex++;
               }
             }
@@ -2674,24 +2713,24 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             }
             
-            // Add some majority points close to where minority will be
-            for (let i = 0; i < 5; i++) {
-            majorityPoints.push({
-                x: plotArea.x + plotArea.width * 0.35 + Math.random() * (plotArea.width * 0.3),
-                y: plotArea.y + plotArea.height * 0.35 + Math.random() * (plotArea.height * 0.3),
-                radius: 3
-            });
+            // Add more majority points close to where minority will be
+            for (let i = 0; i < 15; i++) {
+                majorityPoints.push({
+                    x: plotArea.x + plotArea.width * 0.35 + Math.random() * (plotArea.width * 0.3),
+                    y: plotArea.y + plotArea.height * 0.35 + Math.random() * (plotArea.height * 0.3),
+                    radius: 3
+                });
             }
             
             // Minority class (smaller number of points in a tighter cluster)
             for (let i = 0; i < config.minorityPoints; i++) {
-            minorityPoints.push({
-                x: plotArea.x + plotArea.width * 0.35 + Math.random() * (plotArea.width * 0.3),
-                y: plotArea.y + plotArea.height * 0.35 + Math.random() * (plotArea.height * 0.3),
-                radius: 3,
-                neighbors: [],
-                isBorderline: false // Will be set later
-            });
+                minorityPoints.push({
+                    x: plotArea.x + plotArea.width * 0.35 + Math.random() * (plotArea.width * 0.3),
+                    y: plotArea.y + plotArea.height * 0.35 + Math.random() * (plotArea.height * 0.3),
+                    radius: 3,
+                    neighbors: [],
+                    isBorderline: false // Will be set later
+                });
             }
             break;
             
@@ -2817,25 +2856,28 @@ document.addEventListener('DOMContentLoaded', function() {
         const k = 5; // Number of neighbors to check
         
         minorityPoints.forEach(point => {
-        // Get k nearest majority points
-        const majorityNeighbors = majorityPoints
-            .map(p => ({
-            point: p,
-            distance: Math.sqrt(Math.pow(p.x - point.x, 2) + Math.pow(p.y - point.y, 2))
-            }))
-            .sort((a, b) => a.distance - b.distance)
-            .slice(0, k)
-            .map(d => d.point);
+            // Find k nearest neighbors from ALL points (not just majority)
+            const allNeighbors = [...majorityPoints, ...minorityPoints.filter(p => p !== point)]
+              .map(p => ({
+                point: p,
+                distance: Math.sqrt(Math.pow(p.x - point.x, 2) + Math.pow(p.y - point.y, 2))
+              }))
+              .sort((a, b) => a.distance - b.distance)
+              .slice(0, k);
+
+            // Count majority class neighbors
+            const majorityNeighbors = allNeighbors.filter(n => 
+                majorityPoints.some(p => p.x === n.point.x && p.y === n.point.y)
+            );
         
-        // Store majority neighbors for visualization
-        point.majorityNeighbors = majorityNeighbors;
-        
-        // Calculate ratio of majority neighbors to determine if it's a borderline point
-        const totalNeighbors = k;
-        const majorityRatio = majorityNeighbors.length / totalNeighbors;
-        
-        // If more than half but not all neighbors are from majority class, it's borderline
-        point.isBorderline = majorityRatio > 0.5 && majorityRatio < 1.0;
+            // Store majority neighbors for visualization
+            point.majorityNeighbors = majorityNeighbors.map(n => n.point);
+            
+            // Calculate ratio of majority neighbors
+            const majorityRatio = majorityNeighbors.length / k;
+            
+            // If more than 30% but not all neighbors are from majority class, it's borderline
+            point.isBorderline = majorityRatio >= 0.3 && majorityRatio < 0.8;
         });
     }
     
@@ -2915,5 +2957,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // Threshold is relative to the closest support vector to avoid hardcoding
         point.isSupportVector = closestDistance < 120; // Tuned for visualization
         });
+    }
+
+    function findClosestMinorityPoint(point, minorityPoints) {
+        const otherPoints = minorityPoints.filter(p => p !== point);
+        if (otherPoints.length === 0) return null;
+        
+        let closestPoint = otherPoints[0];
+        let minDistance = Math.sqrt(Math.pow(closestPoint.x - point.x, 2) + 
+                                  Math.pow(closestPoint.y - point.y, 2));
+        
+        otherPoints.forEach(p => {
+          const distance = Math.sqrt(Math.pow(p.x - point.x, 2) + 
+                                    Math.pow(p.y - point.y, 2));
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestPoint = p;
+          }
+        });
+        
+        return closestPoint;
     }
 });
