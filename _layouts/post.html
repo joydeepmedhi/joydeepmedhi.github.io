@@ -5,12 +5,12 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <div class="post-meta">
-      <span class="post-date">{{ page.date | date: "%b %-d, %Y" }}</span>
+      <span class="post-date">{{ page.date | date: "%b %-d, %Y" }} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
       {% if page.categories.size > 0 %}
       <span class="post-categories">
-        {% for category in page.categories %}
-        <span class="post-category">#{{ category }}</span>
-        {% endfor %}
+        {% for category in page.categories %}{% if category != "blog" %}
+        <a class="post-category" href="{{ '/blog/' | relative_url }}?tag={{ category | downcase }}">#{{ category }}</a>
+        {% endif %}{% endfor %}
       </span>
       {% endif %}
     </div>
@@ -21,6 +21,7 @@ layout: default
   </div>
 
   <div class="post-navigation">
+    <p><a href="{{ '/blog/' | relative_url }}">&larr; All posts</a></p>
     <div class="post-navigation-links">
       {% if page.previous.url %}
       <a class="prev" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>

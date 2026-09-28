@@ -2,10 +2,9 @@
 layout: post
 title: "Advanced Computer Vision Techniques in Deep Learning"
 date: 2025-04-23 10:00:00 +0530
+description: "A technical deep dive into multi-scale feature representations, attention mechanisms and other advanced deep learning techniques for computer vision."
 categories: [computer-vision, deep-learning, research]
 ---
-
-# Advanced Computer Vision Techniques in Deep Learning
 
 Computer vision has evolved dramatically in recent years, particularly with the advent of deep learning architectures. In this technical deep dive, I'll explore some advanced techniques that have revolutionized the field and share insights from my experience implementing these methods in production environments.
 

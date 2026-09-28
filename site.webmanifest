@@ -1,15 +1,21 @@
 {
   "name": "Joydeep Medhi | AI/ML Scientist",
   "short_name": "Joydeep Medhi",
+  "start_url": "/",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/favicon.png",
+      "sizes": "64x64",
       "type": "image/png"
     }
   ],

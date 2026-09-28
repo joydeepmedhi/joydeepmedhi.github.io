@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Computer vision and deep learning projects by Joydeep Medhi, including object detection, tracking and retail analytics."
 title: Projects
 permalink: /projects/
 ---
@@ -19,7 +20,7 @@ This section showcases some of the key projects I have worked on, highlighting m
       <span class="tech-tag">Computer Vision</span>
       <span class="tech-tag">Object Detection</span>
     </div>
-    <a href="https://github.com/joydeepmedhi/Anchor-Boxes-with-KMeans" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+    <a href="https://github.com/joydeepmedhi/Anchor-Boxes-with-KMeans" class="project-link" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
   </div>
   
   <div class="project-card">
@@ -31,7 +32,7 @@ This section showcases some of the key projects I have worked on, highlighting m
       <span class="tech-tag">OpenCV</span>
       <span class="tech-tag">Tracking</span>
     </div>
-    <a href="https://github.com/joydeepmedhi/vehicle_detection_tracking" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+    <a href="https://github.com/joydeepmedhi/vehicle_detection_tracking" class="project-link" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
   </div>
   
   <div class="project-card">
@@ -43,7 +44,7 @@ This section showcases some of the key projects I have worked on, highlighting m
       <span class="tech-tag">Deep Learning</span>
       <span class="tech-tag">Retail Analytics</span>
     </div>
-    <a href="https://github.com/joydeepmedhi/bbox_detection" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+    <a href="https://github.com/joydeepmedhi/bbox_detection" class="project-link" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
   </div>
 </div>
 

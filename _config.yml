@@ -1,17 +1,40 @@
 title: Joydeep Medhi
-description: AI Scientist
+tagline: AI/ML Scientist
+description: >-
+  Lead Data Scientist and ML Research Engineer in Bengaluru, specializing in
+  Computer Vision, Generative AI (LLMs, VLMs, RAG) and Deep Learning.
 author: Joydeep Medhi
 email: medhijoydeep@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joydeepmedhi.github.io" # the base hostname & protocol for your site
 location: "Bengaluru - 560066, INDIA"
+lang: en_US
 
 # Social profiles - edit these with your own
 github_username: joydeepmedhi
 linkedin_username: joydeepmedhi
-instagram_username: joydeepmedhi
 twitter_username: medhijoydeep
-image: /favicon.svg
+instagram_username: meek.traveller_
+
+logo: /apple-touch-icon.png
+
+# jekyll-seo-tag settings
+twitter:
+  username: medhijoydeep
+  card: summary
+social:
+  name: Joydeep Medhi
+  links:
+    - https://github.com/joydeepmedhi
+    - https://www.linkedin.com/in/joydeepmedhi
+    - https://x.com/medhijoydeep
+
+# Default image for social share cards (jekyll-seo-tag reads page.image)
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/profile.png
 
 # Build settings
 markdown: kramdown
@@ -22,27 +45,12 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+feed:
+  path: feed.xml
+
 # Theme settings
-theme_mode: dark # dark or light
+theme_mode: dark # default theme when the visitor has no saved/system preference
 accent_color: "#64ffda"
-twitter_username: medhijoydeep
-
-# Content Security Policy
-content_security_policy:
-  connect-src:
-    - "self"
-    - https://www.google-analytics.com
-    - https://analytics.google.com
-  script-src:
-    - "self"
-    - https://www.googletagmanager.com
-  img-src:
-    - "self"
-    - https://www.googletagmanager.com
-
-# Collections
-collections:
-  - featured_work
 
 # Exclude from processing
 exclude:
@@ -52,3 +60,5 @@ exclude:
   - vendor
   - .git
   - README.md
+  - package.json
+  - package-lock.json

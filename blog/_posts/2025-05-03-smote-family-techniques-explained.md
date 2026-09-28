@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "SMOTE Family: Interactive Guide to Handling Imbalanced Data"
+description: "An interactive, animated guide to SMOTE and its variants for handling class imbalance through synthetic minority sample generation."
 categories: [machine-learning, data-science, visualization]
 ---
-
-# SMOTE Family: Interactive Guide to Handling Imbalanced Data
 
 Class imbalance is a common challenge in machine learning, where one class significantly outnumbers others. This imbalance can bias models toward the majority class, reducing performance on minority classes that are often more important (fraud detection, disease diagnosis, etc.).
 

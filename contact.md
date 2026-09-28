@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Get in touch with Joydeep Medhi about AI/ML projects, collaborations or opportunities."
 title: Contact
 ---
 
@@ -15,32 +16,39 @@ title: Contact
   
   <div class="section">
     <h2 class="section-title">Send a Message</h2>
-    <p>Use the form below to send me a message directly, or email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    <p>Use the form below, or email me directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
     
-    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+    <form class="contact-form" id="contact-form" action="mailto:{{ site.email }}" method="post" enctype="text/plain">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" autocomplete="name" required>
       </div>
-      
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="_replyto" required>
-      </div>
-      
+
       <div class="form-group">
         <label for="subject">Subject</label>
         <input type="text" id="subject" name="subject" required>
       </div>
-      
+
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" rows="6" required></textarea>
       </div>
-      
+
       <button type="submit" class="button">Send Message</button>
     </form>
-    
-    <p class="mt-2"><small>Note: To make this contact form work, you'll need to replace "your-form-id" in the form action with your actual Formspree form ID. <a href="https://formspree.io/" target="_blank">Sign up for Formspree</a> to get started.</small></p>
+
+    <p class="mt-2"><small>Submitting opens your email app with the message pre-filled.</small></p>
   </div>
 </div>
+
+<script>
+  // Compose the message in the visitor's mail client (no third-party form backend needed)
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var subject = document.getElementById('subject').value.trim();
+    var message = document.getElementById('message').value.trim();
+    var body = message + '\n\n— ' + name;
+    window.location.href = 'mailto:{{ site.email }}?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+</script>

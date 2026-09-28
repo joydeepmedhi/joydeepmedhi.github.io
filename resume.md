@@ -1,15 +1,16 @@
 ---
 layout: default
+description: "Resume of Joydeep Medhi: Lead Data Scientist at Lowe's, formerly Senior ML Research Engineer at Mercedes-Benz R&D, IIT Delhi alumnus."
 title: Resume
 permalink: /resume/
 ---
 
 # Joydeep Medhi
-**LEAD DATA SCIENTIST | MACHINE LEARNING RESEARCH ENGINEER**
-Bengaluru - 560066, INDIA
+**LEAD DATA SCIENTIST | MACHINE LEARNING RESEARCH ENGINEER**<br>
+Bengaluru - 560066, INDIA<br>
 medhijoydeep@gmail.com | [LinkedIn](https://linkedin.com/in/joydeepmedhi) | [GitHub](https://github.com/joydeepmedhi)
 
-<a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="simple-button" download><i class="fas fa-download"></i> Download PDF</a>
+<a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="simple-button" download><span aria-hidden="true">↓</span> Download PDF</a>
 
 <style>
 .simple-button {
