@@ -6,11 +6,14 @@ permalink: /404.html
 sitemap: false
 ---
 
-<div class="section not-found">
-  <h1 class="section-title">404 – Page not found</h1>
+<div class="not-found">
+  <header class="page-header">
+    <h1>Page not found</h1>
+    <p class="page-lede">The page you're looking for doesn't exist or has moved.</p>
+  </header>
   <pre><code>$ cd {{ page.url }}
 bash: cd: No such file or directory</code></pre>
-  <p>The page you're looking for doesn't exist or has moved. Try one of these instead:</p>
+  <p>Try one of these instead:</p>
   <ul>
     <li><a href="{{ '/' | relative_url }}">Home</a>: who I am and what I work on</li>
     <li><a href="{{ '/blog/' | relative_url }}">Blog</a>: articles on ML, computer vision and GenAI</li>

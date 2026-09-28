@@ -304,6 +304,12 @@
   }
 }
 
+// Copy buttons (BibTeX and code blocks). Code blocks scroll horizontally,
+// so the button sits on the Rouge wrapper instead of the scrolling <pre>.
+.highlight {
+  position: relative;
+}
+
 // Copy buttons (BibTeX and code blocks)
 .copy-bibtex,
 .copy-code {
@@ -473,18 +479,21 @@ a.contact-option {
     color: var(--text);
   }
 
-  ol {
+  ul {
     margin: var(--space-3) 0 0;
-    padding-left: 1.1rem;
+    padding: 0;
+    list-style: none;
+    columns: 2 16rem;
+    column-gap: var(--space-6);
   }
 
   li {
     margin-bottom: var(--space-1);
+    break-inside: avoid;
   }
 
-  .toc-h3 {
-    margin-left: var(--space-4);
-    list-style: circle;
+  .site-main & a {
+    text-decoration-color: transparent;
   }
 
   a {
@@ -647,4 +656,24 @@ a.contact-option {
   gap: var(--space-4);
   border-top: 1px solid var(--border);
   font-size: var(--text-xs);
+}
+
+// Headings inside cards sit flush with the card padding
+.card,
+.project-card,
+.social-card,
+.contact-option {
+  > h2:first-child,
+  > h3:first-child {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .card,
+  .project-card,
+  .social-card,
+  .contact-option {
+    padding: var(--space-4);
+  }
 }

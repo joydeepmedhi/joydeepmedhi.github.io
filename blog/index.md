@@ -4,9 +4,11 @@ description: "Plain-English articles on machine learning, computer vision, gener
 title: "Blog – ML, Computer Vision & AI"
 ---
 
-<div class="section">
-  <h1 class="section-title">Blog</h1>
-  <p>Thoughts, ideas, and insights on data science, programming, and technology.</p>
+<div>
+  <header class="page-header">
+    <h1>Writing</h1>
+    <p class="page-lede">Plain-English explanations of machine learning, computer vision and data science, with code you can run.</p>
+  </header>
 
   {% comment %}Posts live under blog/_posts, so Jekyll adds an implicit "blog" category to each; hide it.{% endcomment %}
   {% assign all_tags = "" | split: "" %}
@@ -16,7 +18,7 @@ title: "Blog – ML, Computer Vision & AI"
   {% assign all_tags = all_tags | uniq | sort %}
 
   <div class="hashtag-filter">
-    <strong>Browse by Hashtag:</strong>
+    <span>Topics:</span>
     {% for tag in all_tags %}{% if tag != "blog" %}
       <a href="?tag={{ tag | downcase }}" class="hashtag-link">#{{ tag }}</a>
     {% endif %}{% endfor %}
@@ -38,7 +40,6 @@ title: "Blog – ML, Computer Vision & AI"
           {% endif %}{% endfor %}
         </span>
         <p class="post-excerpt">{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncatewords: 50 }}{% endif %}</p>
-        <a href="{{ post.url | relative_url }}">Read more →</a>
       </li>
       {% endfor %}
     </ul>
@@ -74,12 +75,3 @@ title: "Blog – ML, Computer Vision & AI"
 })();
 </script>
 
-<style>
-.hashtag-link.active {
-  background: var(--hashtag-hover-bg, #e0e7ef);
-  color: var(--hashtag-hover-color, #007acc);
-  border-color: var(--hashtag-hover-border, #b3c7e6);
-  font-weight: 600;
-}
-.clear-filter { margin-left: 0.5rem; font-size: 0.9em; }
-</style>

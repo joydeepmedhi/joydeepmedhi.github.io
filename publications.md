@@ -5,19 +5,21 @@ description: "Publications and patents by Joydeep Medhi in 6DoF pose estimation,
 permalink: /publications/
 ---
 
-<div class="section">
-  <h1 class="section-title">Publications and Patents</h1>
-  <p>Research from my time at Mercedes-Benz Research &amp; Development India, mostly on understanding what happens inside a vehicle cabin using cameras.</p>
+<div>
+  <header class="page-header">
+    <h1>Publications &amp; Patents</h1>
+    <p class="page-lede">Research from my time at Mercedes-Benz Research &amp; Development India, mostly on understanding what happens inside a vehicle cabin using cameras.</p>
+  </header>
 
-  <div class="subsection">
-    <h2>Publications</h2>
+  <section class="section">
+    <h2 class="section-title">Publications</h2>
     {% for paper in site.data.publications.papers %}
       {% include publication.html paper=paper %}
     {% endfor %}
-  </div>
+  </section>
 
-  <div class="subsection">
-    <h2>Patents Filed</h2>
+  <section class="section">
+    <h2 class="section-title">Patents filed</h2>
     <p class="patents-intro">Filed through Mercedes-Benz Research &amp; Development India. Recognised with the <em>High Quality Patent Award</em> and <em>Implemented Product Patent Award</em> (2022).</p>
     {% assign patents = site.data.publications.patents | sort: "year" | reverse %}
     {% for patent in patents %}
@@ -32,7 +34,7 @@ permalink: /publications/
       {% endif %}
     </article>
     {% endfor %}
-  </div>
+  </section>
 </div>
 
 <script>

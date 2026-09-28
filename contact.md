@@ -5,9 +5,11 @@ description: "Contact Joydeep Medhi about AI consulting, computer vision and gen
 permalink: /contact/
 ---
 
-<div class="section">
-  <h1 class="section-title">Get in Touch</h1>
-  <p>Whether you have a project in mind, a research idea, or just a question about something I've written, I'd like to hear from you. Pick whatever fits best:</p>
+<div>
+  <header class="page-header">
+    <h1>Get in touch</h1>
+    <p class="page-lede">Whether you have a project in mind, a research idea, or just a question about something I've written, I'd like to hear from you. Pick whatever fits best:</p>
+  </header>
 
   <div class="contact-options">
     <a class="contact-option" href="{{ '/consulting/' | relative_url }}">

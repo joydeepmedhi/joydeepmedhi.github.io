@@ -111,8 +111,9 @@ a {
 }
 
 // Links inside running text stay underlined so they are recognisable
-.prose a,
-.post-content a {
+.site-main p > a:not(.button),
+.site-main li > a:not(.button),
+.site-main td > a {
   text-decoration-color: var(--border-strong);
 
   &:hover {
