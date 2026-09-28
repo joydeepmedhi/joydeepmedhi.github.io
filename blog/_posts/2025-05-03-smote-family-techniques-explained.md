@@ -91,7 +91,7 @@ A minority point surrounded by majority neighbours might get ten synthetic neigh
 
 ## KMeans-SMOTE: respect the clusters
 
-Real minority classes are often **multi-modal**. "Fraud" might really be three different scams that look nothing like each other. Standard SMOTE can draw a line from scam A to scam C and invent a transaction that looks like neither.
+Real minority classes are often **multimodal**. "Fraud" might really be three different scams that look nothing like each other. Standard SMOTE can draw a line from scam A to scam C and invent a transaction that looks like neither.
 
 KMeans-SMOTE (Douzas et al., 2018) fixes this by clustering first.
 

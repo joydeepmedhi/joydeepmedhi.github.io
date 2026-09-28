@@ -1,6 +1,6 @@
 # Open-source projects, shown on the homepage and /projects/
 - title: "Anchor Box Initialisation with K-Means for Faster R-CNN"
-  description: "K-means clustering over ground-truth boxes to pick anchor shapes for Faster R-CNN, halving convergence time and adding 6% mAP on custom datasets."
+  description: "K-means clustering over ground-truth boxes to pick anchor shapes for Faster R-CNN, halving convergence time with +6% mAP and +7.3% F1 on custom datasets."
   tech: ["TensorFlow", "Object Detection", "Faster R-CNN"]
   url: "https://github.com/joydeepmedhi/Anchor-Boxes-with-KMeans"
 - title: "Vehicle Detection and Tracking"

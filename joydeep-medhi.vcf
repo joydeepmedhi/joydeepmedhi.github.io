@@ -1,0 +1,18 @@
+---
+layout: null
+sitemap: false
+permalink: /joydeep-medhi.vcf
+---
+BEGIN:VCARD
+VERSION:3.0
+N:Medhi;Joydeep;;;
+FN:{{ site.author }}
+TITLE:Lead Data Scientist — Computer Vision\, Generative AI\, ML Systems
+ORG:Lowe's Companies Inc.
+EMAIL;TYPE=INTERNET,PREF:{{ site.email }}
+ADR;TYPE=WORK:;;;Bengaluru;Karnataka;;India
+URL:{{ site.url }}/
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/{{ site.linkedin_username }}
+URL;TYPE=GitHub:https://github.com/{{ site.github_username }}
+NOTE:Computer vision\, generative AI (LLMs\, VLMs\, RAG) and ML systems. Resume: {{ site.url }}{{ site.data.resume.pdf }}
+END:VCARD

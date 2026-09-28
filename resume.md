@@ -1,102 +1,127 @@
 ---
 layout: default
-description: "Resume of Joydeep Medhi: Lead Data Scientist at Lowe's, formerly Senior ML Research Engineer at Mercedes-Benz R&D, IIT Delhi alumnus."
-title: "Resume – Lead Data Scientist (AI/ML)"
+title: "Resume – Lead Data Scientist (CV & GenAI)"
+description: "Resume of Joydeep Medhi, Lead Data Scientist at Lowe's: CV & GenAI programme, 10+ engineers, $1B+ projected impact. Ex-Mercedes-Benz R&D, 5 patents, IIT Delhi."
 permalink: /resume/
 ---
+{%- assign r = site.data.resume -%}
 
-<header class="page-header">
-  <h1>Resume</h1>
-  <p class="page-lede">Lead Data Scientist · Machine Learning Research Engineer · Bengaluru, India</p>
+<header class="page-header resume-header">
+  <p class="eyebrow">Resume · updated {{ r.updated | date: "%b %Y" }}</p>
+  <h1>Joydeep Medhi</h1>
+  <p class="page-lede">{{ r.headline }}</p>
+  <p class="resume-contact">
+    Bengaluru, India ·
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a> ·
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="me noopener">linkedin.com/in/{{ site.linkedin_username }}</a> ·
+    <a href="https://github.com/{{ site.github_username }}" rel="me noopener">github.com/{{ site.github_username }}</a>
+  </p>
   <p class="cta-row">
-    <a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="button" download>Download PDF</a>
-    <a href="mailto:medhijoydeep@gmail.com" class="button button-outline">Email</a>
-    <a href="https://linkedin.com/in/joydeepmedhi" class="button button-outline" rel="noopener">LinkedIn</a>
+    <a class="button" href="{{ r.pdf | relative_url }}" download>Download PDF</a>
+    <a class="button button-outline" href="mailto:{{ site.email }}?subject=Opportunity%20for%20Joydeep%20Medhi">Email me</a>
+    <a class="button button-outline" href="{{ '/joydeep-medhi.vcf' | relative_url }}" download>Save contact</a>
   </p>
 </header>
 
----
+{% include metrics.html %}
 
-## Work Experience
+<section class="section" aria-labelledby="profile">
+  <h2 class="section-title" id="profile">Profile</h2>
+  <p class="resume-profile">{{ r.profile }}</p>
+</section>
 
-**Lowe's Companies Inc** (Bengaluru, India)
-_LEAD DATA SCIENTIST - AI/ML_ (July 2022 - Present)
+<section class="section" aria-labelledby="experience">
+  <h2 class="section-title" id="experience">Experience</h2>
+  {% for job in r.experience %}
+  <article class="role">
+    <header class="role-header">
+      <h3 class="role-title">{{ job.title }}</h3>
+      <span class="role-dates">{{ job.start }} — {{ job.end }}</span>
+    </header>
+    <p class="role-org">{{ job.org }}{% if job.org_note %} — {{ job.org_note }}{% endif %} · {{ job.location }}</p>
+    <ul class="role-highlights">
+      {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
+    </ul>
+  </article>
+  {% endfor %}
 
-*   Led R&D initiatives in Computer Vision and AI solutions for retail, driving $100M+ in business impact
-*   Developed customer experience optimization through real-time multi-person tracking and trajectory analysis
-*   Pioneered Generative AI solutions using RAG and VLMs for voice assistants and action recognition
-*   Architected Multi-Camera Multi-Target Tracking (MTMC) systems for enhanced cross-camera tracking
-*   Optimized self-checkout systems with self-supervised learning, achieving 25%+ efficiency gains
+  <h3 class="resume-subhead">Earlier roles</h3>
+  {% for job in r.earlier %}
+  <article class="role role-compact">
+    <header class="role-header">
+      <h4 class="role-title">{{ job.title }} — {{ job.org }}</h4>
+      <span class="role-dates">{{ job.dates }} · {{ job.location }}</span>
+    </header>
+    <p>{{ job.summary }}</p>
+  </article>
+  {% endfor %}
+</section>
 
-**Mercedes-Benz Research and Development India** (Bengaluru, India & Stuttgart, Germany)
-_SENIOR ML RESEARCH ENGINEER_ (Dec 2018 - June 2022)
+<section class="section" aria-labelledby="education">
+  <h2 class="section-title" id="education">Education</h2>
+  {% for ed in r.education %}
+  <article class="role">
+    <header class="role-header">
+      <h3 class="role-title">{{ ed.school }}</h3>
+      <span class="role-dates">{{ ed.dates }}</span>
+    </header>
+    <p class="role-org">{{ ed.degree }} · {{ ed.location }}</p>
+    <p>{{ ed.details }}</p>
+  </article>
+  {% endfor %}
+</section>
 
-*   Designed Computer Vision solutions for MBUX Interior Assistant, focusing on human pose estimation and gesture recognition
-*   Developed efficient CNNs for embedded hardware, achieving real-time inference with optimized accuracy
-*   Led Face Recognition and Authentication Module development using metric learning and domain adaptation techniques
-*   Optimized production training code in distributed/multi-GPU environments, saving hundreds of GPU hours
-*   Collaborated with hardware/FPGA teams to integrate quantized models into low-compute automotive devices
+<section class="section" aria-labelledby="skills">
+  <h2 class="section-title" id="skills">Technical skills</h2>
+  <dl class="spec-list">
+    {% for s in r.skills %}
+    <dt>{{ s.area }}</dt>
+    <dd>{{ s.items }}</dd>
+    {% endfor %}
+  </dl>
+</section>
 
-**Silversparro Technologies** (Gurgaon, India)
-_DEEP LEARNING RESEARCH ENGINEER_ (July 2018 - Nov 2018)
+<section class="section" aria-labelledby="pubs">
+  <h2 class="section-title" id="pubs">Publications and patents <a class="section-more" href="{{ '/publications/' | relative_url }}">Details →</a></h2>
+  {% for paper in site.data.publications.papers %}
+  <p><strong>{{ paper.title }}</strong><br><span class="role-org">{{ paper.venue }} — peer-reviewed publication · <a href="{{ paper.links[0].url }}" rel="noopener">arXiv</a></span></p>
+  {% endfor %}
+  <p class="resume-subhead-inline">Patents filed — Mercedes-Benz R&amp;D India, 2020–2022</p>
+  <ul class="role-highlights">
+    {% for p in site.data.publications.patents %}<li>{{ p.title }}</li>{% endfor %}
+  </ul>
+</section>
 
-*   Developed CV solutions for Automated Attendance System using Face Recognition and Anti-Spoofing models
+<section class="section" aria-labelledby="awards">
+  <h2 class="section-title" id="awards">Awards and recognition</h2>
+  <dl class="spec-list spec-list-awards">
+    {% for a in r.awards %}
+    <dt>{{ a.when }}</dt>
+    <dd>{{ a.what }}</dd>
+    {% endfor %}
+  </dl>
+</section>
 
-**CBRC, KAUST** (Thuwal, Saudi Arabia)
-_RESEARCHER, BIO-ONTOLOGY RESEARCH GROUP_ (May 2017 - July 2017)
+<section class="section" aria-labelledby="leadership">
+  <h2 class="section-title" id="leadership">Leadership and community</h2>
+  <ul class="role-highlights">
+    {% for l in r.leadership %}<li>{{ l }}</li>{% endfor %}
+  </ul>
+</section>
 
-*   Developed novel deep learning methods for protein function prediction using sequence and structure data
-*   Achieved ROC-AUC of 0.967 and Avg. Precision 0.964 on disease variant classification using GPU-optimized DNNs
+<section class="section" aria-labelledby="themes">
+  <h2 class="section-title" id="themes">Research and product themes</h2>
+  <div class="themes-grid">
+    {% for t in r.themes %}
+    <div class="theme">
+      <h3 class="theme-name">{{ t.name }}</h3>
+      <p>{{ t.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
 
----
-
-## Education
-
-**Indian Institute of Technology Delhi (IITD)** (New Delhi, India)
-_B.TECH & M.TECH DUAL DEGREE IN MATHEMATICS AND COMPUTING - EQF LEVEL 7_ (July 2013 – June 2018)
-
-*   **Relevant Coursework:** Probability and Stochastic Processes, Linear Algebra, Statistical Methods, Data Structures, Algorithm Design and Analysis, Machine Learning, Data Mining, Optimization Methods, DBMS, OS, Computer Networks, Bio-informatics, Image Processing.
-*   **Head Teaching Assistant** (Jul 2017 - Dec 2017): Computer Programming Class (60 students).
-*   **Master’s Thesis:** Calculus on Normed Vector Spaces (Supervisor: Prof. Dr. Amit Priyadarshi, IIT Delhi)
-
----
-
-## Skills
-
-*   **Programming Languages:** Python, Lua, C++, MATLAB, JAVA, SQL
-*   **Tools & Platforms:** Weka, Git, Version Control, Linux, NVIDIA CUDA, GPU, Docker
-*   **Machine Learning Frameworks:** PyTorch, Torch7, Numpy, Tensorflow, Keras, OpenCV, Detectron, Pandas, Scikit-learn
-*   **AI Technologies:** LLM, HuggingFace, Langchain, GenAI, NLP, Computer Vision, RAG, GraphRAG, Agentic AI, VLM, Deepstream
-*   **Computer Vision:** Camera Calibrations, Image Processing, SLAM, 3D Vision
-
----
-
-## Publications and Patents Filed
-
-*   [End-to-end differentiable 6DoF object pose estimation with local and global constraints](https://arxiv.org/abs/2011.11078), DiffCVGP Workshop, NeurIPS 2020
-*   System and Method for Dynamic Adjustment of Sound Zone for A Passenger in a Vehicle, 2020
-*   System and Method for Hand Cropping for Hand Pose Recognition, 2020
-*   System and Method for Occupancy Detection within a Vehicle, 2021
-*   System for Predicting User Rating for in-car Entertainment Recommendation, 2021
-*   System and Method for 6DoF pose estimation of a Child-Seat inside a passenger vehicle, 2022
-
----
-
-## Awards and Recognition
-
-*   **2024:** 3rd Place in Lowe’s Techwide AI Global Hackathon for Multimodal GenAI Application (Lowe’s Companies Inc, Bengaluru)
-*   **2023:** 2 ideas selected in Lowe’s Top 5 AI Strategy (Lowe’s Companies Inc)
-*   **2022:** High Quality Patent Award (Mercedes-Benz Research & Development India)
-*   **2022:** Implemented Product Patent Award (Mercedes-Benz Research & Development India)
-*   **2021:** Product Innovation Award - Top 5 products (Mercedes-Benz Research & Development India)
-*   **2020:** Silver Award - Best Performing Team Member (Mercedes-Benz Research & Development India)
-*   **2012:** 2nd Position, Chemistry Olympiad (Guwahati University)
-*   **2011 - 2013:** Top Board Performance - Class X & XII (Assam), National Merit Award (Govt. of India)
-
----
-
-## Organisational Skills
-
-*   Excellent communication skills in English to present complex algorithms/ideas in simple terms.
-*   Scientific team-leading and mentoring skills gained from current work experience.
-*   Good organisational skills gained as Executive of the Sparks Forum, responsible for organising events and promoting events.
+<p class="resume-footnote">
+  Prefer paper? <a href="{{ r.pdf | relative_url }}" download>Download the PDF</a> (2 pages).
+  The <a href="{{ r.previous_pdf | relative_url }}">previous version (October 2024)</a> is archived.
+</p>

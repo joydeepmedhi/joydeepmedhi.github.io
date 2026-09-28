@@ -1,9 +1,9 @@
 title: Joydeep Medhi
-tagline: AI/ML Scientist – Computer Vision & GenAI
+tagline: Lead Data Scientist – Computer Vision & GenAI
 description: >-
-  Joydeep Medhi is a Lead Data Scientist and AI/ML Scientist in Bengaluru,
-  India, building Computer Vision and Generative AI systems (LLMs, VLMs, RAG,
-  agentic AI). IIT Delhi alumnus; available for AI consulting and advisory.
+  Joydeep Medhi is a Lead Data Scientist in Bengaluru, India, with 8+ years
+  shipping computer vision and generative AI (LLMs, VLMs, RAG, agentic AI) at
+  Lowe's and Mercedes-Benz R&D. IIT Delhi, NeurIPS 2020, five patents.
 author: Joydeep Medhi
 email: medhijoydeep@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -32,6 +32,11 @@ social:
 
 # Default image for social share cards (jekyll-seo-tag reads page.image)
 defaults:
+  # Keep archived resumes out of the sitemap so search shows the current one
+  - scope:
+      path: "assets/files/archive"
+    values:
+      sitemap: false
   - scope:
       path: ""
     values:
@@ -79,5 +84,4 @@ exclude:
   - vendor
   - .git
   - README.md
-  - package.json
   - package-lock.json
