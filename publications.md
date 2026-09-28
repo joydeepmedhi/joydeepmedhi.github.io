@@ -1,47 +1,49 @@
 ---
 layout: default
-description: "Publications and patents by Joydeep Medhi in 6DoF pose estimation, in-cabin sensing and automotive AI."
 title: Publications & Patents
+description: "Publications and patents by Joydeep Medhi in 6DoF pose estimation, in-cabin sensing and automotive AI."
 permalink: /publications/
 ---
 
 <div class="section">
   <h1 class="section-title">Publications and Patents</h1>
+  <p>Research from my time at Mercedes-Benz Research &amp; Development India, mostly on understanding what happens inside a vehicle cabin using cameras.</p>
 
   <div class="subsection">
     <h2>Publications</h2>
-    <div class="publication-item">
-      <h3>End-to-end differentiable 6DoF object pose estimation with local and global constraints</h3>
-      <p class="publication-venue">DiffCVGP Workshop, NeurIPS 2020</p>
-      <p class="publication-description">A novel approach for estimating 6DoF object poses using differentiable optimization with both local and global constraints.</p>
-    </div>
+    {% for paper in site.data.publications.papers %}
+      {% include publication.html paper=paper %}
+    {% endfor %}
   </div>
 
   <div class="subsection">
     <h2>Patents Filed</h2>
-    <div class="publication-item">
-      <h3>System and Method for Dynamic Adjustment of Sound Zone for A Passenger in a Vehicle (2020)</h3>
-      <p class="publication-description">An innovative system that dynamically adjusts sound zones within a vehicle cabin based on passenger position and preferences.</p>
-    </div>
-    
-    <div class="publication-item">
-      <h3>System and Method for Hand Cropping for Hand Pose Recognition (2020)</h3>
-      <p class="publication-description">A technique for accurate hand region cropping to improve the performance of hand pose recognition systems.</p>
-    </div>
-    
-    <div class="publication-item">
-      <h3>System and Method for Occupancy Detection in a Vehicle (2021)</h3>
-      <p class="publication-description">A computer vision-based system for detecting and tracking occupants within a vehicle environment.</p>
-    </div>
-    
-    <div class="publication-item">
-      <h3>System for Predicting User Rating for in-car Entertainment Recommendation (2021)</h3>
-      <p class="publication-description">A machine learning system that predicts user ratings for entertainment content in vehicles to provide personalized recommendations.</p>
-    </div>
-    
-    <div class="publication-item">
-      <h3>System and Method for 6DoF pose estimation of a Child-Seat inside a passenger vehicle (2022)</h3>
-      <p class="publication-description">A computer vision approach for accurately estimating the 6-degree-of-freedom pose of child seats within passenger vehicles.</p>
-    </div>
+    <p class="patents-intro">Filed through Mercedes-Benz Research &amp; Development India. Recognised with the <em>High Quality Patent Award</em> and <em>Implemented Product Patent Award</em> (2022).</p>
+    {% assign patents = site.data.publications.patents | sort: "year" | reverse %}
+    {% for patent in patents %}
+    <article class="publication-item patent-item">
+      <span class="pub-badge">Patent filed · {{ patent.year }}</span>
+      <h3>{% if patent.url %}<a href="{{ patent.url }}" target="_blank" rel="noopener">{{ patent.title }}</a>{% else %}{{ patent.title }}{% endif %}</h3>
+      <p class="publication-description">{{ patent.summary }}</p>
+      {% if patent.tags %}
+      <div class="project-tech">
+        {% for tag in patent.tags %}<span class="tech-tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
   </div>
 </div>
+
+<script>
+  // Copy-to-clipboard for BibTeX blocks
+  document.querySelectorAll('.copy-bibtex').forEach(function(button) {
+    button.addEventListener('click', function() {
+      var text = button.parentElement.querySelector('code').textContent;
+      navigator.clipboard.writeText(text).then(function() {
+        button.textContent = 'Copied!';
+        setTimeout(function() { button.textContent = 'Copy'; }, 1500);
+      });
+    });
+  });
+</script>

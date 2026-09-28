@@ -1,0 +1,53 @@
+# Papers - rendered on /publications/ and (if selected: true) on the homepage
+papers:
+  - title: "End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints"
+    authors: ["Anshul Gupta", "Joydeep Medhi", "Aratrik Chattopadhyay", "Vikram Gupta"]
+    venue: "DiffCVGP Workshop, NeurIPS 2020"
+    venue_short: "NeurIPS Workshop"
+    year: 2020
+    selected: true
+    summary: >-
+      Estimating an object's full 3D position and orientation (6DoF pose) from a single RGB image
+      becomes hard when the object is partly hidden. We make the pipeline end-to-end differentiable
+      and add two kinds of constraints: pairwise feature extraction captures local relationships
+      between object points, and a triplet regularisation term enforces global consistency. Combined
+      with better augmentation, this achieved state-of-the-art results on the challenging
+      Occlusion LINEMOD benchmark, a 9% improvement over the previous best, and competitive results on LINEMOD.
+    links:
+      - { label: "arXiv", url: "https://arxiv.org/abs/2011.11078" }
+      - { label: "PDF", url: "https://arxiv.org/pdf/2011.11078" }
+      - { label: "Workshop paper", url: "https://montrealrobotics.ca/diffcvgp/assets/papers/6.pdf" }
+      - { label: "Talk", url: "https://slideslive.com/38942640/endtoend-differentiable-6dof-object-pose-estimation-with-local-and-global-constraints" }
+    bibtex: |-
+      @inproceedings{gupta2020endtoend,
+        title     = {End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints},
+        author    = {Gupta, Anshul and Medhi, Joydeep and Chattopadhyay, Aratrik and Gupta, Vikram},
+        booktitle = {NeurIPS 2020 Workshop on Differentiable Vision, Graphics, and Physics Applied to Machine Learning (DiffCVGP)},
+        year      = {2020},
+        eprint    = {2011.11078},
+        archivePrefix = {arXiv}
+      }
+
+# Patents filed through Mercedes-Benz Research & Development India.
+# To link one, add `url:` (e.g. a Google Patents or WIPO page) once it is published.
+patents:
+  - title: "System and Method for Dynamic Adjustment of Sound Zone for a Passenger in a Vehicle"
+    year: 2020
+    summary: "Adjusts the in-cabin sound zone automatically based on where a passenger is sitting and what they prefer."
+    tags: ["Automotive", "In-cabin sensing"]
+  - title: "System and Method for Hand Cropping for Hand Pose Recognition"
+    year: 2020
+    summary: "Crops the hand region accurately from camera frames so downstream hand pose and gesture models work better."
+    tags: ["Computer Vision", "Gesture Recognition"]
+  - title: "System and Method for Occupancy Detection in a Vehicle"
+    year: 2021
+    summary: "A camera-based system that detects and tracks who is sitting where inside the vehicle."
+    tags: ["Computer Vision", "In-cabin sensing"]
+  - title: "System for Predicting User Rating for In-Car Entertainment Recommendation"
+    year: 2021
+    summary: "Predicts how a user would rate entertainment content, to personalise in-car recommendations."
+    tags: ["Recommender Systems"]
+  - title: "System and Method for 6DoF Pose Estimation of a Child Seat Inside a Passenger Vehicle"
+    year: 2022
+    summary: "Estimates the full 3D position and orientation of a child seat in the cabin, for example to check it has been installed correctly."
+    tags: ["Computer Vision", "6DoF Pose", "Safety"]
