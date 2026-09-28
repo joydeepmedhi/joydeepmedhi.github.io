@@ -1,7 +1,7 @@
 ---
 layout: default
-description: "Articles on machine learning, computer vision and data science by Joydeep Medhi."
-title: Blog
+description: "Plain-English articles on machine learning, computer vision, generative AI and data science by Joydeep Medhi, with runnable code."
+title: "Blog – ML, Computer Vision & AI"
 ---
 
 <div class="section">

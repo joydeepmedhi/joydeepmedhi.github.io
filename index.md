@@ -1,17 +1,21 @@
 ---
 layout: default
-description: "Joydeep Medhi — Lead Data Scientist and ML Research Engineer specializing in Computer Vision, Generative AI and Deep Learning."
+description: "Lead Data Scientist in Bengaluru building Computer Vision and Generative AI systems (LLMs, VLMs, RAG, agentic AI). IIT Delhi alumnus, open to AI consulting."
 ---
 
 <div class="hero">
   <div class="hero-content">
-    <img src="/assets/images/profile.png" alt="Joydeep Medhi profile photo" class="profile-pic" />
+    <picture>
+      <source srcset="/assets/images/profile.webp" type="image/webp">
+      <img src="/assets/images/profile.png" alt="Joydeep Medhi, AI/ML Scientist" class="profile-pic" width="500" height="500" fetchpriority="high" decoding="async">
+    </picture>
     <h1 class="animate-text">Joydeep Medhi</h1>
     <p class="lead">AI/ML Scientist</p>
     <p class="location">Bengaluru, India</p>
-    <p class="lead-subtitle">Specializing in Computer Vision, Generative AI, and Deep Learning solutions.</p>
+    <p class="lead-subtitle">Lead Data Scientist building <strong>Computer Vision</strong> and <strong>Generative AI</strong> systems (LLMs, VLMs, RAG and agents) that ship to production.</p>
     {% include social-links.html %}
     <p class="hero-actions">
+      <a href="/consulting/" class="button">Work with me</a>
       <a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="button button-outline" download>Download CV</a>
     </p>
   </div>
@@ -29,21 +33,17 @@ description: "Joydeep Medhi — Lead Data Scientist and ML Research Engineer spe
 
 <div class="section">
   <h2 class="section-title">Core Expertise</h2>
-  <ul class="skills-list">
-    <li class="skill-item">Computer Vision</li>
-    <li class="skill-item">Generative AI (GenAI)</li>
-    <li class="skill-item">Large Language Models (LLM)</li>
-    <li class="skill-item">Vision-Language Models (VLM)</li>
-    <li class="skill-item">Retrieval-Augmented Generation (RAG)</li>
-    <li class="skill-item">Deep Learning</li>
-    <li class="skill-item">PyTorch</li>
-    <li class="skill-item">TensorFlow</li>
-    <li class="skill-item">Multi-Camera Tracking (MTMC)</li>
-    <li class="skill-item">Pose Estimation</li>
-    <li class="skill-item">Gesture Recognition</li>
-    <li class="skill-item">Embedded AI</li>
-    <li class="skill-item">AI Strategy & R&D</li>
-  </ul>
+  <div class="expertise-grid">
+    {% for group in site.data.expertise %}
+    <section class="expertise-group">
+      <h3 class="expertise-title">{{ group.group }}</h3>
+      <p class="expertise-summary">{{ group.summary }}</p>
+      <ul class="skills-list">
+        {% for item in group.items %}<li class="skill-item">{{ item }}</li>{% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+  </div>
 </div>
 
 <div class="section education-section">
@@ -123,9 +123,10 @@ description: "Joydeep Medhi — Lead Data Scientist and ML Research Engineer spe
 </div>
 
 <div class="section">
-  <h2 class="section-title">Get In Touch</h2>
-  <p>Interested in collaborating or learning more about my work? Feel free to reach out!</p>
-  <p class="text-center">
-    <a href="/contact/" class="button button-primary">Contact Me</a>
+  <h2 class="section-title">Work With Me</h2>
+  <p>I help teams turn AI ideas into working systems, from strategy and architecture reviews to hands-on computer vision and GenAI builds. I'm also happy to talk about research collaborations, speaking and mentoring.</p>
+  <p class="text-center cta-row">
+    <a href="/consulting/" class="button">Consulting &amp; Advisory</a>
+    <a href="/contact/" class="button button-outline">Get in Touch</a>
   </p>
 </div>

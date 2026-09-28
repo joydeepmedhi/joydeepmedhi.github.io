@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   
   &::before {
     content: "# ";
-    color: $accent-color;
+    color: var(--accent-text);
     font-weight: normal;
   }
 }
@@ -76,17 +76,11 @@ a {
   text-decoration: none;
   position: relative;
   
-  [data-theme="dark"] & {
-    color: $accent-color-secondary;
-  }
-  
-  [data-theme="light"] & {
-    color: darken($accent-color-secondary, 10%);
-  }
+  color: var(--accent-text);
   
   &:hover {
     text-decoration: underline;
-    color: $accent-color;
+    color: var(--accent-text);
   }
 }
 
@@ -213,7 +207,7 @@ img {
     content: "#";
     position: absolute;
     left: -1.5rem;
-    color: $accent-color;
+    color: var(--accent-text);
     animation: blink 1.5s ease-in-out infinite;
   }
 }
@@ -355,7 +349,7 @@ img {
 
 .hero-social a:hover {
   transform: scale(1.12);
-  color: $accent-color;
+  color: var(--accent-text);
 }
 
 // Responsive styles
@@ -461,7 +455,7 @@ img {
 
 .terminal-cursor {
   display: inline-block;
-  color: $accent-color;
+  color: var(--accent-text);
   font-weight: bold;
   animation: blink 1s step-end infinite;
 }
@@ -567,7 +561,7 @@ pre {
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
     font-weight: 600;
-    color: $accent-color;
+    color: var(--accent-text);
   }
   
   .publication-venue {
@@ -747,7 +741,7 @@ pre {
   --hashtag-hover-bg: #e0e7ef;
   --hashtag-hover-color: #007acc;
   --hashtag-hover-border: #b3c7e6;
-  --text-muted: #888;
+  --text-muted: #5f6b7a;
   --text-main: #333;
 }
 
@@ -797,12 +791,12 @@ pre {
   border: none;
   
   [data-theme="dark"] & {
-    background-color: $accent-color;
+    background-color: var(--accent-text);
     color: $background-color-dark;
   }
   
   [data-theme="light"] & {
-    background-color: $accent-color;
+    background-color: var(--accent-text);
     color: $background-color-light;
   }
   
@@ -816,12 +810,12 @@ pre {
     
     [data-theme="dark"] & {
       border: 2px solid $accent-color;
-      color: $accent-color;
+      color: var(--accent-text);
     }
     
     [data-theme="light"] & {
       border: 2px solid $accent-color;
-      color: darken($accent-color, 20%);
+      color: var(--accent-text);
     }
   }
 }
@@ -836,7 +830,7 @@ pre {
 }
 
 .text-accent {
-  color: $accent-color;
+  color: var(--accent-text);
 }
 
 .mb-0 {
@@ -949,6 +943,10 @@ pre {
 
 .code-comment {
   color: #6a8759;
+
+  [data-theme="light"] .site-footer & {
+    color: #4d6b3c;
+  }
 }
 
 .footer-tech {
@@ -961,7 +959,7 @@ pre {
 .tech-stack {
   font-family: $font-family-mono;
   font-weight: 500;
-  color: $accent-color;
+  color: var(--accent-text);
 }
 
 .version-badge {
@@ -1027,7 +1025,7 @@ pre {
   font-family: $font-family-mono;
   font-size: 0.75rem;
   font-weight: 600;
-  color: $accent-color;
+  color: var(--accent-text);
   border: 1px solid rgba($accent-color, 0.4);
   background-color: rgba($accent-color, 0.08);
 }
@@ -1062,7 +1060,7 @@ pre {
   border-radius: $border-radius;
   font-family: $font-family-mono;
   font-size: 0.8rem;
-  color: $accent-color;
+  color: var(--accent-text);
   text-decoration: none;
   transition: background-color 0.2s ease;
 
@@ -1079,7 +1077,7 @@ pre {
     cursor: pointer;
     font-family: $font-family-mono;
     font-size: 0.85rem;
-    color: $accent-color;
+    color: var(--accent-text);
   }
 
   p {
@@ -1110,7 +1108,7 @@ pre {
     padding: 0.15rem 0.5rem;
     font-family: $font-family-mono;
     font-size: 0.75rem;
-    color: $accent-color;
+    color: var(--accent-text);
     background: transparent;
     border: 1px solid $accent-color;
     border-radius: $border-radius;
@@ -1146,4 +1144,192 @@ pre {
 
 .patent-item .project-tech {
   margin: 0.75rem 0 0;
+}
+
+// Theme-aware accent tokens. The brand blue ($accent-color) is too light to
+// read as text on the light background (~2.5:1), so text and filled buttons
+// use a deeper shade there and a brighter one on dark (both >= 4.5:1).
+[data-theme="dark"] {
+  --accent-text: #38bdf8;
+  --accent-fill: #0ea5e9;
+  --accent-on-fill: #0d1117;
+}
+[data-theme="light"] {
+  --accent-text: #0369a1;
+  --accent-fill: #0369a1;
+  --accent-on-fill: #ffffff;
+}
+
+.button,
+.button.button-primary,
+button.button {
+  [data-theme="dark"] &,
+  [data-theme="light"] & {
+    background-color: var(--accent-fill);
+    color: var(--accent-on-fill);
+  }
+
+  &.button-outline {
+    [data-theme="dark"] &,
+    [data-theme="light"] & {
+      background-color: transparent;
+      border-color: var(--accent-text);
+      color: var(--accent-text);
+    }
+  }
+}
+
+[data-theme="light"] .animate-text {
+  background-image: linear-gradient(90deg, #0369a1, #4338ca);
+}
+
+.pub-link,
+.copy-bibtex {
+  border-color: var(--accent-text) !important;
+}
+
+// Homepage expertise groups
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.expertise-group {
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  .skills-list {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.expertise-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.expertise-summary {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+// Call-to-action button rows
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+// Consulting page
+.lead-in {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.services-grid,
+.formats-grid,
+.fit-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.services-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.formats-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fit-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  h3 { font-size: 1.05rem; margin-top: 0; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: 0.4rem; }
+}
+
+.service-card,
+.format-card {
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--accent-text);
+  }
+
+  p { margin: 0 0 0.75rem; line-height: 1.6; }
+
+  ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+}
+
+.format-card p { margin: 0; }
+
+.process-steps {
+  padding-left: 1.3rem;
+
+  li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+}
+
+// Contact page enquiry options
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.contact-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: var(--accent-text);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  strong { color: var(--accent-text); font-family: $font-family-mono; }
+  span { color: var(--text-main); font-size: 0.92rem; line-height: 1.5; }
+}
+
+.contact-form select {
+  width: 100%;
+  padding: 0.6rem;
+  font: inherit;
+  border-radius: $border-radius;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: inherit;
+
+  option { color: #24292e; }
 }

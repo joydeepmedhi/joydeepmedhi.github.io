@@ -23,7 +23,7 @@
     text-decoration: none;
     
     .title-prefix {
-      color: $accent-color;
+      color: var(--accent-text);
     }
   }
 }
@@ -64,7 +64,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: $accent-color;
+      background-color: var(--accent-text);
       transition: width 0.3s ease;
     }
     

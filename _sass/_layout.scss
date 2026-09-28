@@ -37,7 +37,7 @@
     }
     
     .title-prefix {
-      color: $accent-color;
+      color: var(--accent-text);
     }
   }
 }
@@ -70,7 +70,7 @@
     
     &:hover {
       text-decoration: none;
-      color: $accent-color;
+      color: var(--accent-text);
     }
     
     &::after {
@@ -80,7 +80,7 @@
       height: 2px;
       bottom: -4px;
       left: 0;
-      background-color: $accent-color;
+      background-color: var(--accent-text);
       transition: width 0.2s ease;
     }
     
@@ -180,7 +180,7 @@
     }
     
     &:hover {
-      color: $accent-color;
+      color: var(--accent-text);
     }
   }
   
@@ -299,15 +299,15 @@
     font-size: 0.9rem;
     
     [data-theme="dark"] & {
-      background-color: rgba(100, 255, 218, 0.1);
-      border: 1px solid rgba(100, 255, 218, 0.3);
-      color: $accent-color;
+      background-color: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent-text);
     }
     
     [data-theme="light"] & {
-      background-color: rgba(100, 255, 218, 0.2);
-      border: 1px solid rgba(100, 255, 218, 0.4);
-      color: darken($accent-color, 30%);
+      background-color: rgba(3, 105, 161, 0.07);
+      border: 1px solid rgba(3, 105, 161, 0.3);
+      color: var(--accent-text);
     }
   }
 }
@@ -347,7 +347,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: $accent-color;
+      background-color: var(--accent-text);
     }
     
     .timeline-date {
@@ -424,7 +424,7 @@
     }
     
     &:hover {
-      color: $accent-color;
+      color: var(--accent-text);
       text-decoration: none;
     }
   }
@@ -483,11 +483,11 @@
       margin-right: 5px;
       
       [data-theme="dark"] & {
-        color: $accent-color;
+        color: var(--accent-text);
       }
       
       [data-theme="light"] & {
-        color: darken($accent-color, 20%);
+        color: var(--accent-text);
       }
     }
   }
@@ -553,7 +553,7 @@
     
     &:focus {
       outline: none;
-      border-color: $accent-color;
+      border-color: var(--accent-text);
     }
   }
   
@@ -635,7 +635,7 @@
       }
       
       &:hover {
-        color: $accent-color;
+        color: var(--accent-text);
         text-decoration: none;
       }
     }
@@ -668,7 +668,7 @@
       margin-top: 5px;
       
       .footer-date {
-        color: $accent-color;
+        color: var(--accent-text);
       }
     }
   }

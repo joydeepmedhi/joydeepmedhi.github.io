@@ -14,8 +14,10 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <meta name="keywords" content="AI, ML, Computer Vision, Deep Learning, Machine Learning, Data Science, AI Scientist, Portfolio, Generative AI, LLM, VLM, RAG, Object Detection, Faster-RCNN, YOLOv5, PyTorch, TensorFlow, Retail Analytics, IIT Delhi{% if page.categories %}, {{ page.categories | join: ', ' }}{% endif %}">
+  {%- capture expertise_keywords -%}{% for group in site.data.expertise %}{{ group.items | join: ', ' }}{% unless forloop.last %}, {% endunless %}{% endfor %}{%- endcapture %}
+  <meta name="keywords" content="{% if page.categories %}{{ page.categories | join: ', ' }}, {% endif %}{{ expertise_keywords | escape }}, IIT Delhi, Bengaluru">
   <meta name="theme-color" content="#0ea5e9">
+  {% if page.sitemap == false %}<meta name="robots" content="noindex">{% endif %}
   <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
@@ -30,6 +32,7 @@
 
   {% comment %}jekyll-seo-tag emits <title>, description, canonical, Open Graph, Twitter card and JSON-LD{% endcomment %}
   {% seo %}
+  {% include structured-data.html %}
 </head>
 <body>
   <div class="container">

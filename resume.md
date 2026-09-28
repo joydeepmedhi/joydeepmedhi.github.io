@@ -1,7 +1,7 @@
 ---
 layout: default
 description: "Resume of Joydeep Medhi: Lead Data Scientist at Lowe's, formerly Senior ML Research Engineer at Mercedes-Benz R&D, IIT Delhi alumnus."
-title: Resume
+title: "Resume – Lead Data Scientist (AI/ML)"
 permalink: /resume/
 ---
 

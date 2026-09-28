@@ -42,7 +42,7 @@
   margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 600;
-  color: $accent-color;
+  color: var(--accent-text);
 }
 
 .project-description {
@@ -78,7 +78,7 @@
   gap: 0.5rem;
   text-decoration: none;
   font-weight: 500;
-  color: $accent-color;
+  color: var(--accent-text);
   
   &:hover {
     text-decoration: underline;
