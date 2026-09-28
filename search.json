@@ -1,0 +1,36 @@
+---
+layout: null
+sitemap: false
+permalink: /search.json
+---
+{%- comment -%}
+  Search index for the ⌘K palette. Posts are always rendered before pages, so
+  their full text is safe to include. Pages are described from front matter and
+  _data files instead of their rendered content, which may not exist yet when
+  this file is built.
+{%- endcomment -%}
+{%- capture expertise -%}{% for g in site.data.expertise %}{{ g.group }} {{ g.items | join: ' ' }} {% endfor %}{%- endcapture -%}
+{%- capture papers -%}{% for p in site.data.publications.papers %}{{ p.title }} {{ p.venue }} {{ p.authors | join: ' ' }} {% endfor %}{%- endcapture -%}
+{%- capture patents -%}{% for p in site.data.publications.patents %}{{ p.title }} {{ p.summary }} {% endfor %}{%- endcapture -%}
+{%- capture projects -%}{% for p in site.data.projects %}{{ p.title }} {{ p.description }} {{ p.tech | join: ' ' }} {% endfor %}{%- endcapture -%}
+{%- capture services -%}{% for s in site.data.consulting.services %}{{ s.name }} {{ s.description }} {% endfor %}{%- endcapture -%}
+[
+{%- for post in site.posts %}
+  {
+    "type": "Post",
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "description": {{ post.description | default: '' | jsonify }},
+    "tags": {{ post.categories | where_exp: "c", "c != 'blog'" | join: ' ' | jsonify }},
+    "content": {{ post.content | strip_html | strip_newlines | normalize_whitespace | jsonify }}
+  },
+{%- endfor %}
+  { "type": "Page", "title": "Home", "url": {{ '/' | relative_url | jsonify }}, "description": {{ site.description | strip_newlines | jsonify }}, "tags": "", "content": {{ expertise | strip_newlines | jsonify }} },
+  { "type": "Page", "title": "Resume", "url": {{ '/resume/' | relative_url | jsonify }}, "description": "Experience at Lowe's, Mercedes-Benz R&D, Silversparro and KAUST; IIT Delhi; skills and awards.", "tags": "", "content": {{ expertise | append: ' CV curriculum vitae PDF download awards education IIT Delhi' | strip_newlines | jsonify }} },
+  { "type": "Page", "title": "Projects", "url": {{ '/projects/' | relative_url | jsonify }}, "description": "Open-source computer vision and deep learning projects.", "tags": "", "content": {{ projects | strip_newlines | jsonify }} },
+  { "type": "Page", "title": "Publications & Patents", "url": {{ '/publications/' | relative_url | jsonify }}, "description": "NeurIPS 2020 workshop paper and five filed patents.", "tags": "", "content": {{ papers | append: patents | strip_newlines | jsonify }} },
+  { "type": "Page", "title": "Writing", "url": {{ '/blog/' | relative_url | jsonify }}, "description": "All blog posts on machine learning, computer vision and data science.", "tags": "blog posts articles", "content": "" },
+  { "type": "Page", "title": "Consulting", "url": {{ '/consulting/' | relative_url | jsonify }}, "description": "AI strategy, generative AI, computer vision and edge deployment consulting.", "tags": "", "content": {{ services | strip_newlines | jsonify }} },
+  { "type": "Page", "title": "Contact", "url": {{ '/contact/' | relative_url | jsonify }}, "description": "Email, collaboration, speaking, mentoring and consulting enquiries.", "tags": "email message hire", "content": "" },
+  { "type": "Page", "title": "Elsewhere", "url": {{ '/social-feed/' | relative_url | jsonify }}, "description": "X, LinkedIn, GitHub and Instagram.", "tags": "social twitter instagram github linkedin", "content": "" }
+]

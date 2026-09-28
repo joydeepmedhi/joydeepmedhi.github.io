@@ -51,6 +51,11 @@ defaults:
 booking_url: ""
 
 # Build settings
+sass:
+  style: compressed
+  # GitHub Pages (LibSass) needs @import; hide Dart Sass's deprecation notice
+  silence_deprecations: [import]
+
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:year/:month/:day/:title/
@@ -63,7 +68,7 @@ feed:
   path: feed.xml
 
 # Theme settings
-theme_mode: dark # default theme when the visitor has no saved/system preference
+theme_mode: light # default theme when the visitor has no saved/system preference
 accent_color: "#64ffda"
 
 # Exclude from processing

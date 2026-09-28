@@ -1,0 +1,23 @@
+// Syntax highlighting (Rouge). Code blocks have a dark background in both
+// themes, so one dark palette keeps every token readable.
+
+.highlight {
+  .c, .ch, .cm, .c1, .cs, .cpf { color: #7f9f6f; font-style: italic; } // Comments
+  .cp { color: #c586c0; }                                                // Preprocessor
+  .err { color: #f44747; background: none; }
+  .k, .kc, .kd, .kn, .kp, .kr, .ow { color: #6fb3f2; }                  // Keywords
+  .kt { color: #4ec9b0; }                                                // Types
+  .o { color: #d4d4d4; }                                                 // Operators
+  .s, .sa, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss { color: #e0a47a; }  // Strings
+  .m, .mb, .mf, .mh, .mi, .mo, .il { color: #b5cea8; }                  // Numbers
+  .na { color: #9cdcfe; }                                                // Attributes
+  .nb, .bp { color: #4fc1ff; }                                           // Builtins, self
+  .nc, .nn { color: #4ec9b0; }                                           // Classes, modules
+  .nf, .fm { color: #dcdcaa; }                                           // Functions
+  .ne { color: #4ec9b0; }                                                // Exceptions
+  .nd { color: #dcdcaa; }                                                // Decorators
+  .no, .nv, .vc, .vg, .vi { color: #9cdcfe; }                           // Constants, variables
+  .nt { color: #6fb3f2; }                                                // Tags
+  .gd { color: #f44747; }                                                // Diff deleted
+  .gi { color: #7f9f6f; }                                                // Diff inserted
+}

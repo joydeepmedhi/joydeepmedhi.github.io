@@ -1,0 +1,74 @@
+// Design tokens. Everything visual is driven by these CSS custom properties,
+// so themes switch without Sass colour functions (and without deprecations).
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fbfbf8;
+  --bg-elev: #ffffff;
+  --surface: #f2f2ed;
+  --text: #1b1d1f;
+  --text-2: #3b4046;
+  --muted: #5b616a;
+  --border: #e2e2db;
+  --border-strong: #cdcdc4;
+  --accent: #0f766e;
+  --accent-hover: #0b5c56;
+  --accent-soft: rgba(15, 118, 110, 0.08);
+  --accent-contrast: #ffffff;
+  --inline-code-bg: #ecece6;
+  --shadow: 0 1px 2px rgba(20, 20, 10, 0.04), 0 8px 24px rgba(20, 20, 10, 0.05);
+  --overlay: rgba(251, 251, 248, 0.82);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e1012;
+  --bg-elev: #15181b;
+  --surface: #171a1d;
+  --text: #e8e6e1;
+  --text-2: #c8c6c0;
+  --muted: #9ba0a7;
+  --border: #25292e;
+  --border-strong: #353b41;
+  --accent: #2dd4bf;
+  --accent-hover: #5eead4;
+  --accent-soft: rgba(45, 212, 191, 0.1);
+  --accent-contrast: #0e1012;
+  --inline-code-bg: #1d2125;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --overlay: rgba(14, 16, 18, 0.8);
+}
+
+:root {
+  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-xs: 0.78rem;
+  --text-sm: 0.88rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.55rem;
+  --text-2xl: 2.1rem;
+  --text-3xl: 2.8rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  --measure: 46rem;
+  --wide: 62rem;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  // Code blocks stay dark in both themes (matches the syntax palette)
+  --code-bg: #16191c;
+  --code-fg: #e6e6e3;
+}

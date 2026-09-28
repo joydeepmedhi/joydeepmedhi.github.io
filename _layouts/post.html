@@ -1,14 +1,16 @@
 ---
 layout: default
 ---
-<article class="post">
+<div class="reading-progress" aria-hidden="true"></div>
+
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+    <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+    {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
     <div class="post-meta">
-      <span class="post-date">{{ page.date | date: "%b %-d, %Y" }} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
-      {% if page.last_modified_at %}
-      <span class="post-updated">Updated {{ page.last_modified_at | date: "%b %-d, %Y" }}</span>
-      {% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      <span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+      {% if page.last_modified_at %}<span>Updated {{ page.last_modified_at | date: "%b %-d, %Y" }}</span>{% endif %}
       {% if page.categories.size > 0 %}
       <span class="post-categories">
         {% for category in page.categories %}{% if category != "blog" %}
@@ -19,19 +21,27 @@ layout: default
     </div>
   </header>
 
-  <div class="post-content">
+  {% comment %}Filled in by post.js from the article's h2/h3 headings{% endcomment %}
+  <details class="toc" hidden>
+    <summary>On this page</summary>
+    <ul></ul>
+  </details>
+
+  <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
 
-  <div class="post-navigation">
-    <p><a href="{{ '/blog/' | relative_url }}">&larr; All posts</a></p>
+  <nav class="post-navigation" aria-label="More posts">
     <div class="post-navigation-links">
       {% if page.previous.url %}
-      <a class="prev" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>
+      <a class="prev" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
       {% endif %}
       {% if page.next.url %}
-      <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &raquo;</a>
+      <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>
       {% endif %}
     </div>
-  </div>
+    <p><a href="{{ '/blog/' | relative_url }}">← All posts</a></p>
+  </nav>
 </article>
+
+<script src="{{ '/assets/js/post.js' | relative_url }}" defer></script>

@@ -5,34 +5,15 @@ title: "Resume – Lead Data Scientist (AI/ML)"
 permalink: /resume/
 ---
 
-# Joydeep Medhi
-**LEAD DATA SCIENTIST | MACHINE LEARNING RESEARCH ENGINEER**<br>
-Bengaluru - 560066, INDIA<br>
-medhijoydeep@gmail.com | [LinkedIn](https://linkedin.com/in/joydeepmedhi) | [GitHub](https://github.com/joydeepmedhi)
-
-<a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="simple-button" download><span aria-hidden="true">↓</span> Download PDF</a>
-
-<style>
-.simple-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 500;
-  margin: 1rem 0;
-  background-color: transparent;
-  color: inherit;
-}
-
-.simple-button:hover {
-  background-color: rgba(128, 128, 128, 0.1);
-}
-
-.simple-button i {
-  margin-right: 0.5rem;
-}
-</style>
+<header class="page-header">
+  <h1>Resume</h1>
+  <p class="page-lede">Lead Data Scientist · Machine Learning Research Engineer · Bengaluru, India</p>
+  <p class="cta-row">
+    <a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="button" download>Download PDF</a>
+    <a href="mailto:medhijoydeep@gmail.com" class="button button-outline">Email</a>
+    <a href="https://linkedin.com/in/joydeepmedhi" class="button button-outline" rel="noopener">LinkedIn</a>
+  </p>
+</header>
 
 ---
 

@@ -5,9 +5,11 @@ description: "AI consulting with Joydeep Medhi: AI strategy, generative AI and R
 permalink: /consulting/
 ---
 
-<div class="section">
-  <h1 class="section-title">Consulting</h1>
-  <p>I take on a small number of advisory engagements alongside my full-time role, drawing on applied AI work at Lowe's and Mercedes-Benz R&amp;D.</p>
+<div>
+  <header class="page-header">
+    <h1>Consulting</h1>
+    <p class="page-lede">I take on a small number of advisory engagements alongside my full-time role, drawing on applied AI work at Lowe's and Mercedes-Benz R&amp;D.</p>
+  </header>
 
   <ul class="service-list">
     {% for service in site.data.consulting.services %}

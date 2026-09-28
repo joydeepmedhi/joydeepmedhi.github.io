@@ -5,9 +5,11 @@ title: Social Feed
 permalink: /social-feed/
 ---
 
-<div class="section">
-  <h1 class="section-title">Social Feed</h1>
-  <p class="feed-intro">Where to follow along — AI/ML thoughts, code, and travel photography.</p>
+<div>
+  <header class="page-header">
+    <h1>Elsewhere</h1>
+    <p class="page-lede">Where to follow along — AI/ML thoughts, code, and travel photography.</p>
+  </header>
 
   <div class="social-cards">
     <a class="social-card" href="https://x.com/{{ site.twitter_username }}" target="_blank" rel="noopener">
@@ -53,48 +55,3 @@ permalink: /social-feed/
   })();
 </script>
 
-<style>
-  .feed-intro {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-  }
-
-  .social-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-
-  .social-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    padding: 1.25rem;
-    border: 1px solid var(--border-color, rgba(128, 128, 128, 0.3));
-    border-radius: 8px;
-    background-color: var(--card-bg, transparent);
-    text-decoration: none;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-
-  .social-card:hover {
-    transform: translateY(-3px);
-    border-color: currentColor;
-  }
-
-  .social-card-name {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-  }
-
-  .social-card-handle {
-    font-size: 0.9rem;
-    opacity: 0.8;
-  }
-
-  .social-card-desc {
-    font-size: 0.9rem;
-    color: var(--text-color, inherit);
-    opacity: 0.85;
-  }
-</style>
