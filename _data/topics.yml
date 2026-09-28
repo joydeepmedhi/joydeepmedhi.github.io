@@ -1,0 +1,23 @@
+# Blog topics. Each has a crawlable page at /blog/topics/<slug>/.
+# A post belongs to a topic when the slug is in its `categories`.
+computer-vision:
+  name: "Computer Vision"
+  description: "Posts on computer vision: object detection, feature pyramids, attention, pose estimation and self-supervised depth, with runnable PyTorch code."
+deep-learning:
+  name: "Deep Learning"
+  description: "Deep learning explained from intuition to working code: architectures, training tricks and what actually matters in production."
+machine-learning:
+  name: "Machine Learning"
+  description: "Practical machine learning: evaluation, imbalanced data, resampling and the mistakes that make results look better than they are."
+data-science:
+  name: "Data Science"
+  description: "Data science for beginners and practitioners: learning paths, first projects, honest evaluation and common pitfalls."
+research:
+  name: "Research"
+  description: "Research ideas in computer vision and AI, and where the field has moved: foundation models, 3D scenes and depth estimation."
+tutorial:
+  name: "Tutorials"
+  description: "Step-by-step tutorials with complete, tested Python code you can run today."
+visualization:
+  name: "Visualization"
+  description: "Interactive visualisations and animations that make machine learning algorithms easier to understand."

@@ -69,3 +69,26 @@
     update();
   }
 })();
+
+// Copy-link share button and language labels on code blocks
+(function () {
+  var copy = document.querySelector('.share-copy');
+  if (copy && navigator.clipboard) {
+    copy.hidden = false;
+    copy.addEventListener('click', function () {
+      navigator.clipboard.writeText(copy.dataset.url).then(function () {
+        copy.textContent = 'Link copied';
+        setTimeout(function () { copy.textContent = 'Copy link'; }, 1500);
+      });
+    });
+  }
+
+  document.querySelectorAll('.post-content div[class*="language-"]').forEach(function (block) {
+    var m = block.className.match(/language-([a-z0-9+#-]+)/i);
+    if (!m || m[1] === 'plaintext') return;
+    var label = document.createElement('span');
+    label.className = 'code-lang';
+    label.textContent = m[1];
+    block.insertBefore(label, block.firstChild);
+  });
+})();

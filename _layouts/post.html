@@ -1,47 +1,97 @@
 ---
 layout: default
 ---
+{%- assign topics = page.categories | where_exp: "c", "c != 'blog'" -%}
+{%- assign first_topic = topics | first -%}
+{%- assign share_url = site.url | append: page.url -%}
+{%- assign minutes = page.reading_time | default: 0 -%}
+{%- if minutes == 0 -%}{%- assign minutes = content | strip_html | number_of_words | divided_by: 200 | plus: 1 -%}{%- endif -%}
 <div class="reading-progress" aria-hidden="true"></div>
 
-<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span>
+  <a href="{{ '/blog/' | relative_url }}">Writing</a>{% if site.data.topics[first_topic] %}<span aria-hidden="true">/</span>
+  <a href="{{ '/blog/topics/' | append: first_topic | append: '/' | relative_url }}">{{ site.data.topics[first_topic].name }}</a>{% endif %}
+</nav>
+
+<article class="post">
   <header class="post-header">
-    <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+    <h1 class="post-title">{{ page.title }}</h1>
     {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
     <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-      <span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
-      {% if page.last_modified_at %}<span>Updated {{ page.last_modified_at | date: "%b %-d, %Y" }}</span>{% endif %}
-      {% if page.categories.size > 0 %}
-      <span class="post-categories">
-        {% for category in page.categories %}{% if category != "blog" %}
-        <a class="post-category" href="{{ '/blog/' | relative_url }}?tag={{ category | downcase }}">#{{ category }}</a>
-        {% endif %}{% endfor %}
-      </span>
-      {% endif %}
+      <span>By <a href="{{ '/' | relative_url }}" rel="author">{{ site.author }}</a></span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+      <span>{{ minutes }} min read</span>
+      {% if page.last_modified_at %}<span>Updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time></span>{% endif %}
     </div>
+    {% if topics.size > 0 %}
+    <p class="post-categories">
+      {% for category in topics %}{% if site.data.topics[category] %}
+      <a class="post-category" href="{{ '/blog/topics/' | append: category | append: '/' | relative_url }}">#{{ category }}</a>
+      {% endif %}{% endfor %}
+    </p>
+    {% endif %}
   </header>
 
-  {% comment %}Filled in by post.js from the article's h2/h3 headings{% endcomment %}
+  {% comment %}Filled in by post.js from the article's h2 headings{% endcomment %}
   <details class="toc" hidden>
     <summary>On this page</summary>
     <ul></ul>
   </details>
 
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content">
     {{ content }}
   </div>
 
-  <nav class="post-navigation" aria-label="More posts">
-    <div class="post-navigation-links">
-      {% if page.previous.url %}
-      <a class="prev" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
-      {% endif %}
-      {% if page.next.url %}
-      <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>
-      {% endif %}
+  <footer class="post-footer">
+    <div class="share" aria-label="Share this post">
+      <span>Share:</span>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://x.com/intent/post?url={{ share_url | url_encode }}&amp;text={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer">X</a>
+      <a href="mailto:?subject={{ page.title | url_encode }}&amp;body={{ share_url | url_encode }}">Email</a>
+      <button type="button" class="share-copy" data-url="{{ share_url }}" hidden>Copy link</button>
     </div>
-    <p><a href="{{ '/blog/' | relative_url }}">← All posts</a></p>
-  </nav>
+
+    <aside class="author-box" aria-label="About the author">
+      <img src="{{ '/assets/images/profile.webp' | relative_url }}" alt="" width="64" height="64" loading="lazy">
+      <div>
+        <p class="author-name"><a href="{{ '/' | relative_url }}" rel="author">{{ site.author }}</a></p>
+        <p>Lead Data Scientist at Lowe's working on computer vision and generative AI. Previously built in-cabin perception for Mercedes-Benz MBUX; IIT Delhi, NeurIPS 2020, five patents.</p>
+        <p class="author-links"><a href="{{ '/resume/' | relative_url }}">Resume</a> · <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="me noopener noreferrer">LinkedIn</a> · <a href="https://github.com/{{ site.github_username }}" rel="me noopener noreferrer">GitHub</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+      </div>
+    </aside>
+
+    {%- assign related = "" | split: "" -%}
+    {%- for post in site.posts -%}
+      {%- if post.url == page.url -%}{%- continue -%}{%- endif -%}
+      {%- assign shared = 0 -%}
+      {%- for c in topics -%}{%- if post.categories contains c -%}{%- assign shared = shared | plus: 1 -%}{%- endif -%}{%- endfor -%}
+      {%- if shared > 0 -%}{%- assign related = related | push: post -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if related.size == 0 -%}{%- assign related = site.posts | where_exp: "p", "p.url != page.url" -%}{%- endif -%}
+    {% if related.size > 0 %}
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title" class="section-title">Keep reading</h2>
+      <ul class="post-list">
+        {% for post in related limit:2 %}{% include post-card.html post=post %}{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  </footer>
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ site.url | append: '/' | jsonify }} },
+    { "@type": "ListItem", "position": 2, "name": "Writing", "item": {{ site.url | append: '/blog/' | jsonify }} }{% if site.data.topics[first_topic] %},
+    { "@type": "ListItem", "position": 3, "name": {{ site.data.topics[first_topic].name | jsonify }}, "item": {{ site.url | append: '/blog/topics/' | append: first_topic | append: '/' | jsonify }} },
+    { "@type": "ListItem", "position": 4, "name": {{ page.title | jsonify }} }{% else %},
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }{% endif %}
+  ]
+}
+</script>
 
 <script src="{{ '/assets/js/post.js' | relative_url }}" defer></script>

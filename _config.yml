@@ -44,7 +44,7 @@ defaults:
         path: /assets/images/og-card.jpg
         width: 1200
         height: 630
-        alt: "Joydeep Medhi – AI/ML Scientist, Computer Vision & Generative AI"
+        alt: "Joydeep Medhi – Lead Data Scientist, Computer Vision & Generative AI"
 
 # Search engine ownership verification (jekyll-seo-tag). Paste the codes
 # from Google Search Console / Bing Webmaster Tools and uncomment.
