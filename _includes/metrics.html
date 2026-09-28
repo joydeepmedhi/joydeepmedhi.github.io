@@ -1,0 +1,8 @@
+<ul class="metrics" aria-label="Career highlights">
+  {% for m in site.data.resume.metrics %}
+  <li class="metric">
+    <span class="metric-value">{{ m.value }}</span>
+    <span class="metric-label">{{ m.label }}</span>
+  </li>
+  {% endfor %}
+</ul>

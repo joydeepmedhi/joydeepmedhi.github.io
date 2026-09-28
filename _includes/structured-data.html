@@ -7,28 +7,59 @@
 {%- capture knows_about -%}
   {%- for group in site.data.expertise -%}{%- for item in group.items -%}{{ item | jsonify }}{% unless forloop.last %},{% endunless %}{%- endfor -%}{% unless forloop.last %},{% endunless %}{%- endfor -%}
 {%- endcapture -%}
+{%- capture awards -%}
+  {%- for a in site.data.resume.awards -%}{{ a.what | prepend: ', ' | prepend: a.when | jsonify }}{% unless forloop.last %},{% endunless %}{%- endfor -%}
+{%- endcapture -%}
+{%- capture person_json -%}
+{
+    "@type": "Person",
+    "@id": {{ person_id | jsonify }},
+    "name": {{ site.author | jsonify }},
+    "givenName": "Joydeep",
+    "familyName": "Medhi",
+    "url": {{ site.url | append: '/' | jsonify }},
+    "image": {{ site.url | append: '/assets/images/profile.png' | jsonify }},
+    "jobTitle": {{ site.data.resume.headline | jsonify }},
+    "description": {{ site.description | strip_newlines | jsonify }},
+    "email": {{ 'mailto:' | append: site.email | jsonify }},
+    "worksFor": { "@type": "Organization", "name": "Lowe's Companies Inc.", "url": "https://www.lowes.com/" },
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Lead Data Scientist",
+      "occupationLocation": { "@type": "City", "name": "Bengaluru" },
+      "skills": {{ site.data.resume.skills | map: 'items' | join: ', ' | jsonify }}
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Delhi", "url": "https://home.iitd.ac.in/" }
+    ],
+    "award": [{{ awards }}],
+    "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" },
+    "knowsAbout": [{{ knows_about }}],
+    "sameAs": [
+      "https://github.com/{{ site.github_username }}",
+      "https://www.linkedin.com/in/{{ site.linkedin_username }}",
+      "https://x.com/{{ site.twitter_username }}"
+    ]
+  }
+{%- endcapture -%}
+{%- if page.url == '/' or page.url == '/resume/' %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": {{ person_id | jsonify }},
-  "name": {{ site.author | jsonify }},
-  "url": {{ site.url | append: '/' | jsonify }},
-  "image": {{ site.url | append: '/assets/images/profile.png' | jsonify }},
-  "jobTitle": "Lead Data Scientist, AI/ML",
-  "description": {{ site.description | jsonify }},
-  "email": {{ 'mailto:' | append: site.email | jsonify }},
-  "worksFor": { "@type": "Organization", "name": "Lowe's Companies, Inc." },
-  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Delhi", "url": "https://home.iitd.ac.in/" },
-  "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" },
-  "knowsAbout": [{{ knows_about }}],
-  "sameAs": [
-    "https://github.com/{{ site.github_username }}",
-    "https://www.linkedin.com/in/{{ site.linkedin_username }}",
-    "https://x.com/{{ site.twitter_username }}"
-  ]
+  "@type": "ProfilePage",
+  "url": {{ site.url | append: page.url | jsonify }},
+  "name": {{ page.title | default: site.title | jsonify }},
+  "dateModified": {{ site.data.resume.updated | date_to_xmlschema | jsonify }},
+  "mainEntity": {{ person_json }}
 }
 </script>
+{%- else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  {{ person_json | remove_first: "{" | strip }}
+</script>
+{%- endif %}
 {%- if page.url == '/publications/' %}
 {%- for paper in site.data.publications.papers %}
 <script type="application/ld+json">

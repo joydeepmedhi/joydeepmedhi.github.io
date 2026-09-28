@@ -33,7 +33,7 @@ papers:
 patents:
   - title: "System and Method for Dynamic Adjustment of Sound Zone for a Passenger in a Vehicle"
     year: 2020
-    summary: "Adjusts the in-cabin sound zone automatically based on where a passenger is sitting and what they prefer."
+    summary: "Uses 3D head tracking to adjust the in-cabin sound zone automatically to where a passenger is sitting."
     tags: ["Automotive", "In-cabin sensing"]
   - title: "System and Method for Hand Cropping for Hand Pose Recognition"
     year: 2020

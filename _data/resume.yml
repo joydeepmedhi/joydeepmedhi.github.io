@@ -1,0 +1,99 @@
+# Single source for resume content, transcribed from
+# assets/files/Joydeep_Medhi_Resume.pdf (August 2026 edition).
+# Used by /resume/, the homepage, structured data and search.
+
+headline: "Lead Data Scientist — Computer Vision · Generative AI · ML Systems"
+updated: 2026-08-19
+pdf: /assets/files/Joydeep_Medhi_Resume.pdf
+previous_pdf: /assets/files/archive/Joydeep_Medhi_Resume_2024-10.pdf
+
+metrics:
+  - { value: "8+ yrs", label: "Production AI in retail & automotive" }
+  - { value: "$1B+", label: "Projected sales impact from CV programmes" }
+  - { value: "5", label: "Patents filed, Mercedes-Benz R&D India" }
+  - { value: "NeurIPS", label: "6DoF pose research, 2020" }
+  - { value: "10+", label: "DS/AI engineers led cross-functionally" }
+
+profile: >-
+  Eight years building AI systems that hold up under real conditions — tight latency budgets,
+  sparse labels, unpredictable environments, and stakeholders who need answers rather than
+  experiments. My work sits at the junction of computer vision, deep learning and applied GenAI,
+  with the bulk of it shipped to production: a perception stack inside every MBUX Interior
+  Assistant vehicle, and multi-camera tracking and VLM systems running across Lowe's store network.
+
+experience:
+  - title: "Lead Data Scientist — AI/ML and Computer Vision"
+    org: "Lowe's Companies Inc."
+    org_note: "Fortune 50 retailer, $90B revenue, 1,700+ stores"
+    location: "Bengaluru, India"
+    start: "Jul 2022"
+    end: "Present"
+    short: "Lowe's"
+    summary: "Leads the computer vision and GenAI programme: multi-camera tracking, VLM/RAG assistants and checkout automation."
+    highlights:
+      - "Run the computer vision and GenAI programme across store intelligence, associate tooling, inventory optimisation and checkout automation, managing 10+ DS/AI engineers alongside product, engineering and business leadership."
+      - "Built a real-time Multi-Camera Multi-Target Tracking system for customer-service alerting; the pilot delivered $1M+ incremental revenue and underpins a $1B+ projected sales-impact programme."
+      - "Designed semi-supervised and active-learning pipelines for in-store object detection — +15% mAP with a 40% reduction in manual annotation overhead."
+      - "Improved self-checkout recognition with self-supervised contrastive pre-training — 25%+ throughput gain and a measurably lower loss-prevention error rate."
+      - "Delivered a GenAI voice assistant combining RAG, VLM visual grounding and streaming LLM inference — cut product-query resolution time by 60% in user testing."
+      - "Won 1st Prize at Lowe's AI Hackathon 2025 and 3rd Place at the global AI Hackathon 2024 (200+ teams); three proposals selected for the executive AI strategy pipeline."
+  - title: "Senior ML Research Engineer"
+    org: "Mercedes-Benz Research and Development India"
+    location: "Bengaluru, India / Stuttgart, Germany"
+    start: "Dec 2018"
+    end: "Jun 2022"
+    short: "Mercedes-Benz R&D"
+    summary: "Owned the in-cabin perception stack for the MBUX Interior Assistant on embedded automotive ECUs."
+    highlights:
+      - "Owned the in-cabin perception stack for MBUX Interior Assistant — multi-camera human pose estimation, gesture recognition, occupancy detection and scene understanding on embedded automotive ECUs at <20ms latency."
+      - "Improved PCKh accuracy through Student–Teacher training, variable Gaussian heatmaps and limb prediction; held production KPIs under occlusion, clutter, pets and out-of-distribution scenes that broke earlier models."
+      - "Led face recognition and authentication research using metric learning, unsupervised domain adaptation and synthetic-data transfer — cut real-data requirements by 35%."
+      - "Rebuilt distributed training pipelines and drove INT8 quantisation and FPGA integration — saved hundreds of GPU hours and enabled deployment on low-power AUTOSAR ECUs."
+      - "Published at NeurIPS 2020, filed five patents, and received four company awards including two for patent quality."
+
+earlier:
+  - title: "Deep Learning Research Engineer"
+    org: "Silversparro Technologies"
+    dates: "Jul — Nov 2018"
+    location: "Gurgaon"
+    summary: "CCTV retail models for detection, tracking and age/gender classification. KMeans anchor initialisation for Faster-RCNN cut convergence 50%, with +6% mAP and +7.3% F1."
+  - title: "Research Intern"
+    org: "KAUST, Computational Bioscience Research Center"
+    dates: "May — Jul 2017"
+    location: "Saudi Arabia"
+    summary: "Deep neural models for genetic disease-variant classification under Prof. Robert Hoehndorf — ROC-AUC 0.967, AP 0.964 on genome-sequencing test data."
+
+education:
+  - school: "Indian Institute of Technology Delhi"
+    degree: "B.Tech and M.Tech Dual Degree, Mathematics and Computing"
+    location: "New Delhi, India"
+    dates: "2013 — 2018"
+    details: "Master's thesis: Calculus on Normed Vector Spaces, supervised by Prof. Dr. Amit Priyadarshi. Head TA for Computer Programming, 60+ students. Coursework in machine learning, linear algebra, probability and stochastic processes, optimisation, image processing, data structures and algorithms."
+
+skills:
+  - { area: "Deep learning", items: "PyTorch, TensorFlow, Keras, Detectron2, TensorRT, ONNX, CUDA, distributed and multi-GPU training" }
+  - { area: "Computer vision", items: "MTMC tracking, object detection, human pose estimation, gesture and face recognition, 6DoF pose, 3D vision, SLAM, camera calibration, segmentation, OpenCV, DeepStream" }
+  - { area: "Generative AI", items: "HuggingFace Transformers, LangChain, RAG, GraphRAG, VLMs, agentic AI, multimodal reasoning, visual grounding, LLM fine-tuning" }
+  - { area: "Research methods", items: "Semi-supervised, self-supervised and active learning, domain adaptation, metric learning, synthetic data, contrastive learning, uncertainty-aware evaluation" }
+  - { area: "MLOps / systems", items: "Docker, Kubernetes, CI/CD, Linux, Git, model serving and monitoring, edge AI, INT8 quantisation, FPGA integration, NVIDIA GPU workflows" }
+  - { area: "Languages", items: "Python (expert), C++, SQL, MATLAB, Lua, Pandas, NumPy, scikit-learn" }
+
+awards:
+  - { when: "Lowe's 2025", what: "1st Prize, AI Hackathon — CV-driven inventory optimisation, planogram compliance, traffic-aware stocking, out-of-stock detection" }
+  - { when: "Lowe's 2024", what: "3rd Place, Techwide AI Global Hackathon (200+ teams) — multimodal GenAI application" }
+  - { when: "Lowe's 2023–25", what: "Three AI proposals selected for the executive AI strategy and innovation pipeline" }
+  - { when: "Mercedes 2022", what: "High Quality Patent Award and Implemented Product Patent Award" }
+  - { when: "Mercedes 2021", what: "Product Innovation Award, Top 5 Products" }
+  - { when: "Mercedes 2020", what: "Silver Award, Best Performing Team Member" }
+  - { when: "India 2011–13", what: "National Merit Award, Government of India — top board performer, Class X and XII" }
+
+leadership:
+  - "Own research-to-production delivery end to end — ML design reviews, evaluation plans, model hardening and executive presentations from the same seat."
+  - "Designed and ran enterprise AI workshops for 100+ engineers and business leaders at Lowe's, focused on practical CV and GenAI adoption."
+  - "Mentored junior ML engineers at Mercedes-Benz and Lowe's in experiment design, production hardening, patent writing and research communication."
+  - "Core Member and Technical Executive, Sparks Forum educational NGO, Assam (2014–2018). Executive, Entrepreneurship Development Cell, IIT Delhi (2014–2015)."
+
+themes:
+  - { name: "Perception", text: "Annotation-efficient CV, MTMC tracking, pose and gesture estimation, real-time video, edge AI under hard latency and power constraints." }
+  - { name: "Multimodal AI", text: "RAG pipelines, VLMs, visual grounding, agentic workflows, multimodal retrieval, GenAI for operational decision support." }
+  - { name: "Systems and scale", text: "Research-to-production ownership, model quantisation, GPU pipeline optimisation, hardware-aware deployment, cross-functional execution." }

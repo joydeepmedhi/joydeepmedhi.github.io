@@ -36,7 +36,7 @@ permalink: /contact/
 
   <div class="card mb-3">
     <h2 class="mb-2">Direct channels</h2>
-    <p>Email is the fastest way to reach me: <a href="mailto:{{ site.email }}">{{ site.email }}</a>. I usually reply within a few days. Recruiters: here's my <a href="/assets/files/Joydeep_Medhi_Resume.pdf" download>CV (PDF)</a>.</p>
+    <p>Email is the fastest way to reach me: <a href="mailto:{{ site.email }}">{{ site.email }}</a>. I usually reply within a few days. Recruiters: here's my <a href="/assets/files/Joydeep_Medhi_Resume.pdf" download>CV (PDF)</a>, the <a href="/resume/">web resume</a>, and a <a href="/joydeep-medhi.vcf" download>contact card</a> you can save.</p>
     {% if site.booking_url and site.booking_url != "" %}<p><a href="{{ site.booking_url }}" class="button" target="_blank" rel="noopener">Book a call</a></p>{% endif %}
     {% include social-links.html %}
   </div>

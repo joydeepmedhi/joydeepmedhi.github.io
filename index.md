@@ -1,6 +1,6 @@
 ---
 layout: default
-description: "Lead Data Scientist in Bengaluru building Computer Vision and Generative AI systems (LLMs, VLMs, RAG, agentic AI). IIT Delhi alumnus, open to AI consulting."
+description: "Joydeep Medhi, Lead Data Scientist in Bengaluru: 8+ years shipping computer vision and GenAI (VLMs, RAG, agents) at Lowe's and Mercedes-Benz. IIT Delhi, NeurIPS."
 ---
 
 <section class="intro" aria-label="Introduction">
@@ -10,32 +10,38 @@ description: "Lead Data Scientist in Bengaluru building Computer Vision and Gene
   </picture>
   <div>
     <h1 class="intro-name">Joydeep Medhi</h1>
-    <p class="intro-role">Lead Data Scientist, AI/ML<span class="sep">·</span>Lowe's<span class="sep">·</span>Bengaluru</p>
+    <p class="intro-role">Lead Data Scientist<span class="sep">·</span>Computer Vision &amp; GenAI<span class="sep">·</span>Bengaluru</p>
     <p class="intro-bio">
-      I build <strong>computer vision</strong> and <strong>generative AI</strong> systems that leave the lab and
-      run in the real world: in stores, in cars, and in products people use every day.
-      I lead CV and GenAI R&amp;D at Lowe's, and before that built the perception behind the
-      Mercedes-Benz MBUX Interior Assistant.
+      I build <strong>computer vision</strong> and <strong>generative AI</strong> systems that hold up under real
+      conditions: tight latency budgets, sparse labels and unpredictable environments. I lead the CV and GenAI
+      programme at <strong>Lowe's</strong>, and before that owned the in-cabin perception stack of the
+      <strong>Mercedes-Benz MBUX Interior Assistant</strong>.
     </p>
     {% include social-links.html %}
     <p class="cta-row">
       <a class="button" href="/assets/files/Joydeep_Medhi_Resume.pdf" download>Download CV</a>
+      <a class="button button-outline" href="/resume/">View resume</a>
       <a class="button button-outline" href="/contact/">Get in touch</a>
     </p>
   </div>
 </section>
 
+{% include metrics.html %}
+
 <section class="section prose" aria-labelledby="about">
   <h2 class="section-title" id="about">About</h2>
   <p>
-    At <strong>Lowe's Innovation Labs</strong> I lead R&amp;D in computer vision and GenAI: real-time multi-camera
-    customer tracking with <strong>$1M+ in revenue impact</strong>, and pioneering generative AI solutions built on
-    <strong>vision-language models (VLMs)</strong> and <strong>retrieval-augmented generation (RAG)</strong>.
+    At <strong>Lowe's Companies Inc.</strong>, a Fortune 50 retailer with 1,700+ stores, I run the computer vision
+    and GenAI programme across store intelligence, associate tooling, inventory and checkout automation, leading
+    <strong>10+ DS/AI engineers</strong>. Our real-time <strong>multi-camera multi-target tracking</strong> pilot
+    delivered $1M+ in incremental revenue and underpins a <strong>$1B+ projected sales-impact programme</strong>;
+    I also built a GenAI voice assistant combining <strong>RAG</strong>, <strong>VLM</strong> visual grounding and
+    streaming LLM inference.
   </p>
   <p>
-    At <strong>Mercedes-Benz R&amp;D India</strong> I developed core components of the MBUX Interior Assistant, including
-    pose estimation, gesture recognition and face authentication, deployed on low-compute automotive hardware.
-    That work led to a <a href="/publications/">NeurIPS workshop paper and five patents</a>.
+    At <strong>Mercedes-Benz R&amp;D India</strong> I owned the in-cabin perception stack for the MBUX Interior
+    Assistant: multi-camera pose estimation, gesture recognition and occupancy detection on embedded automotive
+    ECUs at under 20 ms latency. That work produced a <a href="/publications/">NeurIPS 2020 paper and five patents</a>.
     I hold a B.Tech &amp; M.Tech dual degree in Mathematics and Computing from <strong>IIT Delhi</strong>.
   </p>
 </section>
@@ -43,36 +49,34 @@ description: "Lead Data Scientist in Bengaluru building Computer Vision and Gene
 <section class="section" aria-labelledby="experience">
   <h2 class="section-title" id="experience">Experience <a class="section-more" href="/resume/">Full resume →</a></h2>
   <ol class="entries">
+    {% for job in site.data.resume.experience %}
     <li class="entry">
-      <span class="entry-meta">2022 – now</span>
+      <span class="entry-meta">{{ job.start | split: ' ' | last }} – {% if job.end == "Present" %}now{% else %}{{ job.end | split: ' ' | last }}{% endif %}</span>
       <div>
-        <h3 class="entry-title">Lead Data Scientist, AI/ML</h3>
-        <p class="entry-sub">Lowe's Companies, Inc.</p>
-        <p class="entry-body">Computer vision and GenAI R&amp;D: multi-camera tracking, VLM and RAG solutions, self-checkout optimisation.</p>
+        <h3 class="entry-title">{{ job.title }}</h3>
+        <p class="entry-sub">{{ job.org }}</p>
+        <p class="entry-body">{{ job.summary }}</p>
       </div>
     </li>
+    {% endfor %}
+    {% for job in site.data.resume.earlier %}
     <li class="entry">
-      <span class="entry-meta">2018 – 2022</span>
+      <span class="entry-meta">{{ job.dates | split: ' ' | last }}</span>
       <div>
-        <h3 class="entry-title">Senior ML Research Engineer</h3>
-        <p class="entry-sub">Mercedes-Benz Research &amp; Development India</p>
-        <p class="entry-body">MBUX Interior Assistant: pose, gesture and face recognition on embedded hardware.</p>
+        <h3 class="entry-title">{{ job.title }}</h3>
+        <p class="entry-sub">{{ job.org }}</p>
       </div>
     </li>
+    {% endfor %}
+    {% for ed in site.data.resume.education %}
     <li class="entry">
-      <span class="entry-meta">2018</span>
+      <span class="entry-meta">{{ ed.dates | replace: ' — ', ' – ' }}</span>
       <div>
-        <h3 class="entry-title">Deep Learning Research Engineer</h3>
-        <p class="entry-sub">Silversparro Technologies</p>
+        <h3 class="entry-title">{{ ed.degree }}</h3>
+        <p class="entry-sub">{{ ed.school }}</p>
       </div>
     </li>
-    <li class="entry">
-      <span class="entry-meta">2013 – 2018</span>
-      <div>
-        <h3 class="entry-title">B.Tech &amp; M.Tech, Mathematics and Computing</h3>
-        <p class="entry-sub">Indian Institute of Technology Delhi</p>
-      </div>
-    </li>
+    {% endfor %}
   </ol>
 </section>
 
@@ -128,11 +132,16 @@ description: "Lead Data Scientist in Bengaluru building Computer Vision and Gene
   </div>
 </section>
 
-<section class="section prose" aria-labelledby="contact">
-  <h2 class="section-title" id="contact">Get in touch</h2>
+<section class="section callout" aria-labelledby="contact">
+  <h2 id="contact">Hiring for computer vision, GenAI or ML systems?</h2>
   <p>
-    I'm happy to talk about research collaborations, speaking, mentoring and
-    <a href="/consulting/">select consulting work</a>. The quickest way to reach me is
-    <a href="mailto:{{ site.email }}">{{ site.email }}</a>, or use the <a href="/contact/">contact page</a>.
+    I'm happy to talk about senior and lead roles, research collaborations, speaking and
+    <a href="/consulting/">select consulting work</a>. The fastest way to reach me is
+    <a href="mailto:{{ site.email }}?subject=Opportunity%20for%20Joydeep%20Medhi">{{ site.email }}</a>.
+  </p>
+  <p class="cta-row">
+    <a class="button" href="/assets/files/Joydeep_Medhi_Resume.pdf" download>Download CV (PDF)</a>
+    <a class="button button-outline" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="me noopener">LinkedIn</a>
+    <a class="button button-outline" href="/joydeep-medhi.vcf" download>Save contact</a>
   </p>
 </section>
