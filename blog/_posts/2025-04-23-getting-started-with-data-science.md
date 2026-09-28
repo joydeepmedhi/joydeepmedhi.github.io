@@ -4,6 +4,13 @@ title: "Getting Started with Data Science: A Beginner's Guide"
 date: 2025-04-23 10:00:00 +0530
 last_modified_at: 2026-09-28 10:00:00 +0530
 description: "A realistic, no-hype learning path for aspiring data scientists: what to learn first, what you can safely skip, a complete first project in 30 lines of Python, and the mistakes that trip up most beginners."
+image:
+  path: /assets/images/posts/getting-started-with-data-science.jpg
+  width: 1200
+  height: 630
+  alt: "Cover: Getting Started with Data Science, a beginner's guide"
+thumbnail: /assets/images/posts/getting-started-with-data-science-thumb.webp
+reading_time: 10
 categories: [data-science, tutorial]
 ---
 

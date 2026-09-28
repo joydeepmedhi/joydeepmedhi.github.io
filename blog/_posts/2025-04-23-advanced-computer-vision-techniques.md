@@ -4,6 +4,13 @@ title: "Advanced Computer Vision Techniques in Deep Learning"
 date: 2025-04-23 10:00:00 +0530
 last_modified_at: 2026-09-28 10:00:00 +0530
 description: "Four ideas that quietly power modern computer vision, explained from intuition to working PyTorch code: feature pyramids, self-attention, part affinity fields and self-supervised depth."
+image:
+  path: /assets/images/posts/advanced-computer-vision-techniques.jpg
+  width: 1200
+  height: 630
+  alt: "Cover: Advanced Computer Vision Techniques in Deep Learning"
+thumbnail: /assets/images/posts/advanced-computer-vision-techniques-thumb.webp
+reading_time: 19
 categories: [computer-vision, deep-learning, research]
 ---
 

@@ -18,9 +18,9 @@ permalink: /projects/
     <ul class="project-tech">
       {% for t in project.tech %}<li class="tech-tag">{{ t }}</li>{% endfor %}
     </ul>
-    <a href="{{ project.url }}" class="project-link" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+    <a href="{{ project.url }}" class="project-link" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
   </article>
   {% endfor %}
 </div>
 
-<p>More on <a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a>. For research work, see <a href="/publications/">publications and patents</a>.</p>
+<p>More on <a href="https://github.com/{{ site.github_username }}" rel="noopener noreferrer">GitHub</a>. For research work, see <a href="/publications/">publications and patents</a>.</p>

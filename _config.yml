@@ -44,7 +44,7 @@ defaults:
         path: /assets/images/og-card.jpg
         width: 1200
         height: 630
-        alt: "Joydeep Medhi – AI/ML Scientist, Computer Vision & Generative AI"
+        alt: "Joydeep Medhi – Lead Data Scientist, Computer Vision & Generative AI"
 
 # Search engine ownership verification (jekyll-seo-tag). Paste the codes
 # from Google Search Console / Bing Webmaster Tools and uncomment.
@@ -52,7 +52,7 @@ defaults:
 #   google: YOUR_GOOGLE_CODE
 #   bing: YOUR_BING_CODE
 
-# Optional: a scheduling link (Calendly, Cal.com, ...) shown on /consulting/ and /contact/
+# Optional: a scheduling link (Calendly, Cal.com, ...) shown on /contact/
 booking_url: ""
 
 # Build settings
@@ -68,6 +68,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 feed:
   path: feed.xml

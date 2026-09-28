@@ -2,11 +2,10 @@
   <div class="wrap footer-inner">
     <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }} · {{ site.location | split: ' -' | first | default: 'Bengaluru' }}, India</p>
     <ul class="footer-links">
-      <li><a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://x.com/{{ site.twitter_username }}" rel="noopener">X</a></li>
+      <li><a href="https://github.com/{{ site.github_username }}" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://x.com/{{ site.twitter_username }}" rel="noopener noreferrer">X</a></li>
       <li><a href="mailto:{{ site.email }}">Email</a></li>
-      <li><a href="{{ '/consulting/' | relative_url }}">Consulting</a></li>
       <li><a href="{{ '/social-feed/' | relative_url }}">Social</a></li>
       <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
     </ul>

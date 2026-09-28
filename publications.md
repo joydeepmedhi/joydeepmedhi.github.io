@@ -25,7 +25,7 @@ permalink: /publications/
     {% for patent in patents %}
     <article class="publication-item patent-item">
       <span class="pub-badge">Patent filed · {{ patent.year }}</span>
-      <h3>{% if patent.url %}<a href="{{ patent.url }}" target="_blank" rel="noopener">{{ patent.title }}</a>{% else %}{{ patent.title }}{% endif %}</h3>
+      <h3>{% if patent.url %}<a href="{{ patent.url }}" target="_blank" rel="noopener noreferrer">{{ patent.title }}</a>{% else %}{{ patent.title }}{% endif %}</h3>
       <p class="publication-description">{{ patent.summary }}</p>
       {% if patent.tags %}
       <div class="project-tech">

@@ -1,0 +1,26 @@
+{%- comment -%} One post in a list. Usage: {% include post-card.html post=post featured=true %} {%- endcomment -%}
+{%- assign post = include.post -%}
+{%- assign minutes = post.reading_time | default: 0 -%}
+{%- if minutes == 0 -%}{%- assign minutes = post.content | strip_html | number_of_words | divided_by: 200 | plus: 1 -%}{%- endif -%}
+<li class="post-item{% if include.featured %} post-item-featured{% endif %}">
+  {% if post.thumbnail %}
+  <a class="post-thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ post.thumbnail | relative_url }}" alt="" width="600" height="315" loading="{% if include.featured %}eager{% else %}lazy{% endif %}" decoding="async">
+  </a>
+  {% endif %}
+  <div class="post-body">
+    <p class="post-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      · {{ minutes }} min read
+    </p>
+    {% if include.featured %}<h2 class="post-heading">{% else %}<h3 class="post-heading">{% endif %}
+      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {% if include.featured %}</h2>{% else %}</h3>{% endif %}
+    <p class="post-excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 40 }}</p>
+    <p class="post-hashtags">
+      {% for c in post.categories %}{% if site.data.topics[c] %}
+      <a href="{{ '/blog/topics/' | append: c | append: '/' | relative_url }}" class="hashtag-link">#{{ c }}</a>
+      {% endif %}{% endfor %}
+    </p>
+  </div>
+</li>

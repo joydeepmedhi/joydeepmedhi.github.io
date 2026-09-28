@@ -3,6 +3,13 @@ layout: post
 title: "SMOTE Family: Interactive Guide to Handling Imbalanced Data"
 description: "An interactive, plain-English guide to SMOTE and its variants: how each one invents new minority samples, when it helps, when it quietly hurts, and the one mistake that makes results look far better than they are."
 last_modified_at: 2026-09-28 10:00:00 +0530
+image:
+  path: /assets/images/posts/smote-family-techniques-explained.jpg
+  width: 1200
+  height: 630
+  alt: "Cover: SMOTE Family, an interactive guide to handling imbalanced data"
+thumbnail: /assets/images/posts/smote-family-techniques-explained-thumb.webp
+reading_time: 14
 categories: [machine-learning, data-science, visualization]
 ---
 

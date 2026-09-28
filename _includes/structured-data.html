@@ -78,25 +78,3 @@
 </script>
 {%- endfor %}
 {%- endif %}
-{%- if page.url == '/consulting/' %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Joydeep Medhi – AI & Computer Vision Consulting",
-  "url": {{ site.url | append: page.url | jsonify }},
-  "image": {{ site.url | append: '/assets/images/profile.png' | jsonify }},
-  "founder": { "@id": {{ person_id | jsonify }} },
-  "areaServed": "Worldwide",
-  "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN" },
-  "email": {{ site.email | jsonify }},
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Consulting services",
-    "itemListElement": [{% for s in site.data.consulting.services %}
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ s.name | jsonify }}, "description": {{ s.description | jsonify }} } }{% unless forloop.last %},{% endunless %}{% endfor %}
-    ]
-  }
-}
-</script>
-{%- endif %}

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Resume – Lead Data Scientist (CV & GenAI)"
-description: "Resume of Joydeep Medhi, Lead Data Scientist at Lowe's: CV & GenAI programme, 10+ engineers, $1B+ projected impact. Ex-Mercedes-Benz R&D, 5 patents, IIT Delhi."
+description: "Resume of Joydeep Medhi, Lead Data Scientist at Lowe's: CV & GenAI programme, 10+ engineers, $100M+ impact. Ex-Mercedes-Benz R&D, 5 patents, IIT Delhi."
 permalink: /resume/
 ---
 {%- assign r = site.data.resume -%}
@@ -13,12 +13,12 @@ permalink: /resume/
   <p class="resume-contact">
     Bengaluru, India ·
     <a href="mailto:{{ site.email }}">{{ site.email }}</a> ·
-    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="me noopener">linkedin.com/in/{{ site.linkedin_username }}</a> ·
-    <a href="https://github.com/{{ site.github_username }}" rel="me noopener">github.com/{{ site.github_username }}</a>
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="me noopener noreferrer">linkedin.com/in/{{ site.linkedin_username }}</a> ·
+    <a href="https://github.com/{{ site.github_username }}" rel="me noopener noreferrer">github.com/{{ site.github_username }}</a>
   </p>
   <p class="cta-row">
     <a class="button" href="{{ r.pdf | relative_url }}" download>Download PDF</a>
-    <a class="button button-outline" href="mailto:{{ site.email }}?subject=Opportunity%20for%20Joydeep%20Medhi">Email me</a>
+    <a class="button button-outline" href="mailto:{{ site.email }}">Email me</a>
     <a class="button button-outline" href="{{ '/joydeep-medhi.vcf' | relative_url }}" download>Save contact</a>
   </p>
 </header>
@@ -84,7 +84,7 @@ permalink: /resume/
 <section class="section" aria-labelledby="pubs">
   <h2 class="section-title" id="pubs">Publications and patents <a class="section-more" href="{{ '/publications/' | relative_url }}">Details →</a></h2>
   {% for paper in site.data.publications.papers %}
-  <p><strong>{{ paper.title }}</strong><br><span class="role-org">{{ paper.venue }} — peer-reviewed publication · <a href="{{ paper.links[0].url }}" rel="noopener">arXiv</a></span></p>
+  <p><strong>{{ paper.title }}</strong><br><span class="role-org">{{ paper.venue }} — peer-reviewed publication · <a href="{{ paper.links[0].url }}" rel="noopener noreferrer">arXiv</a></span></p>
   {% endfor %}
   <p class="resume-subhead-inline">Patents filed — Mercedes-Benz R&amp;D India, 2020–2022</p>
   <ul class="role-highlights">
