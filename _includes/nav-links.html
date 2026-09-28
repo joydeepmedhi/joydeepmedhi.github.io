@@ -1,0 +1,9 @@
+{%- comment -%}
+  Primary navigation. The active item is decided at build time from the first
+  URL segment, so unknown URLs (served by 404.html) highlight nothing.
+{%- endcomment -%}
+{%- assign section = page.url | split: '/' | where_exp: 'part', 'part != ""' | first | default: '' -%}
+{%- for item in site.data.navigation -%}
+  {%- assign item_section = item.url | split: '/' | where_exp: 'part', 'part != ""' | first | default: '' -%}
+  <a class="page-link{% if item_section == section and page.url != '/404.html' %} active{% endif %}" href="{{ item.url | relative_url }}"{% if item_section == section and page.url != '/404.html' %} aria-current="page"{% endif %}>{{ item.title }}</a>
+{%- endfor -%}

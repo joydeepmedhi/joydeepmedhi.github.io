@@ -50,10 +50,6 @@
   <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.classList.add('loaded');
-    });
-
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/service-worker.js').catch(function() {});

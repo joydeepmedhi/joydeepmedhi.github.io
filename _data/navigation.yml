@@ -1,0 +1,7 @@
+# Main navigation, in order. The footer reuses this list.
+- { title: "Home", url: "/" }
+- { title: "Resume", url: "/resume/" }
+- { title: "Projects", url: "/projects/" }
+- { title: "Publications", url: "/publications/" }
+- { title: "Blog", url: "/blog/" }
+- { title: "Contact", url: "/contact/" }
