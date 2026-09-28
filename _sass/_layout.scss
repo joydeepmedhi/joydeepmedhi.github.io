@@ -213,6 +213,7 @@
 
 .section-title {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: var(--space-3);
   margin: 0 0 var(--space-5);

@@ -1,0 +1,13 @@
+# Open-source projects, shown on the homepage and /projects/
+- title: "Anchor Box Initialisation with K-Means for Faster R-CNN"
+  description: "K-means clustering over ground-truth boxes to pick anchor shapes for Faster R-CNN, halving convergence time and adding 6% mAP on custom datasets."
+  tech: ["TensorFlow", "Object Detection", "Faster R-CNN"]
+  url: "https://github.com/joydeepmedhi/Anchor-Boxes-with-KMeans"
+- title: "Vehicle Detection and Tracking"
+  description: "A real-time pipeline for detecting and tracking vehicles in video with YOLOv5, OpenCV and PyTorch, including multi-object tracking and visualisation."
+  tech: ["PyTorch", "YOLOv5", "OpenCV", "Tracking"]
+  url: "https://github.com/joydeepmedhi/vehicle_detection_tracking"
+- title: "Retail Shelf Empty-Space Detection"
+  description: "Computer vision for spotting empty spaces on retail shelves and racks, to support inventory management and faster restocking."
+  tech: ["Computer Vision", "Python", "Deep Learning", "Retail Analytics"]
+  url: "https://github.com/joydeepmedhi/bbox_detection"
