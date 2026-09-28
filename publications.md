@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Publications & Patents
+title: "Publications & Patents in Computer Vision"
 description: "Publications and patents by Joydeep Medhi in 6DoF pose estimation, in-cabin sensing and automotive AI."
 permalink: /publications/
 ---

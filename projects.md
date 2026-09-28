@@ -1,7 +1,7 @@
 ---
 layout: default
-description: "Computer vision and deep learning projects by Joydeep Medhi, including object detection, tracking and retail analytics."
-title: Projects
+description: "Computer vision and deep learning projects by Joydeep Medhi: Faster R-CNN anchor optimisation, YOLOv5 vehicle tracking and retail shelf analytics."
+title: "Computer Vision & Deep Learning Projects"
 permalink: /projects/
 ---
 

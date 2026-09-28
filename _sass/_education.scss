@@ -21,13 +21,13 @@
   }
   
   strong {
-    color: #0ea5e9;
+    color: var(--accent-text);
     font-size: 1.1rem;
   }
   
   .education-institute {
     font-weight: 600;
-    color: #0ea5e9;
+    color: var(--accent-text);
   }
   
   .education-year {

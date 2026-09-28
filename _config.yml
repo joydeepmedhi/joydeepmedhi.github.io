@@ -1,8 +1,9 @@
 title: Joydeep Medhi
-tagline: AI/ML Scientist
+tagline: AI/ML Scientist – Computer Vision & GenAI
 description: >-
-  Lead Data Scientist and ML Research Engineer in Bengaluru, specializing in
-  Computer Vision, Generative AI (LLMs, VLMs, RAG) and Deep Learning.
+  Joydeep Medhi is a Lead Data Scientist and AI/ML Scientist in Bengaluru,
+  India, building Computer Vision and Generative AI systems (LLMs, VLMs, RAG,
+  agentic AI). IIT Delhi alumnus; available for AI consulting and advisory.
 author: Joydeep Medhi
 email: medhijoydeep@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -21,7 +22,7 @@ logo: /apple-touch-icon.png
 # jekyll-seo-tag settings
 twitter:
   username: medhijoydeep
-  card: summary
+  card: summary_large_image
 social:
   name: Joydeep Medhi
   links:
@@ -34,7 +35,20 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/profile.png
+      image:
+        path: /assets/images/og-card.jpg
+        width: 1200
+        height: 630
+        alt: "Joydeep Medhi – AI/ML Scientist, Computer Vision & Generative AI"
+
+# Search engine ownership verification (jekyll-seo-tag). Paste the codes
+# from Google Search Console / Bing Webmaster Tools and uncomment.
+# webmaster_verifications:
+#   google: YOUR_GOOGLE_CODE
+#   bing: YOUR_BING_CODE
+
+# Optional: a scheduling link (Calendly, Cal.com, ...) shown on /consulting/ and /contact/
+booking_url: ""
 
 # Build settings
 markdown: kramdown
