@@ -15,7 +15,6 @@ Most content lives in data files, so pages stay consistent:
 | `_data/publications.yml` | `/publications/`, homepage selected paper, BibTeX |
 | `_data/projects.yml` | `/projects/`, homepage open-source list |
 | `_data/expertise.yml` | homepage expertise chips, `knowsAbout` structured data, meta keywords |
-| `_data/consulting.yml` | `/consulting/` |
 | `_data/navigation.yml` | main navigation |
 
 Blog posts are Markdown files in `blog/_posts/`. The PDF resume is

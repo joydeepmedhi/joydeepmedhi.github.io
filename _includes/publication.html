@@ -9,7 +9,7 @@
   <p class="publication-venue">{{ paper.venue }}</p>
   <div class="pub-links">
     {% for link in paper.links %}
-    <a class="pub-link" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+    <a class="pub-link" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
     {% endfor %}
   </div>
   {% if paper.summary %}

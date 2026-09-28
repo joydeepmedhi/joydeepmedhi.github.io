@@ -52,7 +52,7 @@ defaults:
 #   google: YOUR_GOOGLE_CODE
 #   bing: YOUR_BING_CODE
 
-# Optional: a scheduling link (Calendly, Cal.com, ...) shown on /consulting/ and /contact/
+# Optional: a scheduling link (Calendly, Cal.com, ...) shown on /contact/
 booking_url: ""
 
 # Build settings
@@ -68,6 +68,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 feed:
   path: feed.xml

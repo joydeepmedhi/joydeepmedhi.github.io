@@ -34,7 +34,7 @@ description: "Joydeep Medhi, Lead Data Scientist in Bengaluru: 8+ years shipping
     At <strong>Lowe's Companies Inc.</strong>, a Fortune 50 retailer with 1,700+ stores, I run the computer vision
     and GenAI programme across store intelligence, associate tooling, inventory and checkout automation, leading
     <strong>10+ DS/AI engineers</strong>. Our real-time <strong>multi-camera multi-target tracking</strong> pilot
-    delivered $1M+ in incremental revenue and underpins a <strong>$1B+ projected sales-impact programme</strong>;
+    delivered $1M+ in incremental revenue and grew into a programme with <strong>$100M+ in business impact</strong>;
     I also built a GenAI voice assistant combining <strong>RAG</strong>, <strong>VLM</strong> visual grounding and
     streaming LLM inference.
   </p>
@@ -109,7 +109,7 @@ description: "Joydeep Medhi, Lead Data Scientist in Bengaluru: 8+ years shipping
     <li class="entry">
       <span class="entry-meta">GitHub</span>
       <div>
-        <h3 class="entry-title"><a href="{{ project.url }}" rel="noopener">{{ project.title }}</a></h3>
+        <h3 class="entry-title"><a href="{{ project.url }}" rel="noopener noreferrer">{{ project.title }}</a></h3>
         <p class="entry-body">{{ project.description }}</p>
       </div>
     </li>
@@ -133,15 +133,15 @@ description: "Joydeep Medhi, Lead Data Scientist in Bengaluru: 8+ years shipping
 </section>
 
 <section class="section callout" aria-labelledby="contact">
-  <h2 id="contact">Hiring for computer vision, GenAI or ML systems?</h2>
+  <h2 id="contact">Talks, advisory and collaboration</h2>
   <p>
-    I'm happy to talk about senior and lead roles, research collaborations, speaking and
-    <a href="/consulting/">select consulting work</a>. The fastest way to reach me is
-    <a href="mailto:{{ site.email }}?subject=Opportunity%20for%20Joydeep%20Medhi">{{ site.email }}</a>.
+    I'm open to talks and workshops, advisory roles and research collaborations in computer vision,
+    generative AI and ML systems. The best way to reach me is
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>, or see the <a href="/contact/">contact page</a>.
   </p>
   <p class="cta-row">
-    <a class="button" href="/assets/files/Joydeep_Medhi_Resume.pdf" download>Download CV (PDF)</a>
-    <a class="button button-outline" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="me noopener">LinkedIn</a>
-    <a class="button button-outline" href="/joydeep-medhi.vcf" download>Save contact</a>
+    <a class="button" href="/contact/">Get in touch</a>
+    <a class="button button-outline" href="/assets/files/Joydeep_Medhi_Resume.pdf" download>Download CV</a>
+    <a class="button button-outline" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="me noopener noreferrer">LinkedIn</a>
   </p>
 </section>

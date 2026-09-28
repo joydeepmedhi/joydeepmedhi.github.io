@@ -1,43 +1,41 @@
 ---
 layout: default
-title: "Contact & Consulting Enquiries"
-description: "Contact Joydeep Medhi about AI consulting, computer vision and generative AI projects, research collaboration, speaking, mentoring or job opportunities."
+title: "Contact – Talks, Advisory & Collaboration"
+description: "Contact Joydeep Medhi about talks and workshops, advisory roles, research collaboration and mentoring in computer vision and generative AI."
 permalink: /contact/
+redirect_from:
+  - /consulting/
 ---
 
 <div>
   <header class="page-header">
     <h1>Get in touch</h1>
-    <p class="page-lede">Whether you have a project in mind, a research idea, or just a question about something I've written, I'd like to hear from you. Pick whatever fits best:</p>
+    <p class="page-lede">Whether it's a talk, an advisory role, a research idea or a question about something I've written, I'd like to hear from you.</p>
   </header>
 
   <div class="contact-options">
-    <a class="contact-option" href="{{ '/consulting/' | relative_url }}">
-      <strong>Consulting &amp; advisory</strong>
-      <span>AI strategy, GenAI/RAG, computer vision and edge deployment. See how I can help.</span>
+    <a class="contact-option" href="?type=talk#message-form">
+      <strong>Talks &amp; workshops</strong>
+      <span>Conference and meetup talks, panels, guest lectures and hands-on workshops on computer vision and GenAI.</span>
+    </a>
+    <a class="contact-option" href="?type=advisory#message-form">
+      <strong>Advisory</strong>
+      <span>Advisory board or technical advisor roles for teams working in computer vision, GenAI and ML systems.</span>
     </a>
     <a class="contact-option" href="?type=collaboration#message-form">
       <strong>Research collaboration</strong>
-      <span>Papers, open-source work or joint projects in vision and generative AI.</span>
-    </a>
-    <a class="contact-option" href="?type=speaking#message-form">
-      <strong>Speaking &amp; workshops</strong>
-      <span>Talks, panels, guest lectures and hands-on team workshops.</span>
+      <span>Papers, open-source work or joint research in vision and generative AI.</span>
     </a>
     <a class="contact-option" href="?type=mentoring#message-form">
       <strong>Mentoring</strong>
       <span>Guidance for data scientists and ML engineers on skills and careers.</span>
     </a>
-    <a class="contact-option" href="?type=opportunity#message-form">
-      <strong>Recruiters &amp; opportunities</strong>
-      <span>Senior AI/ML leadership and research roles.</span>
-    </a>
   </div>
 
   <div class="card mb-3">
     <h2 class="mb-2">Direct channels</h2>
-    <p>Email is the fastest way to reach me: <a href="mailto:{{ site.email }}">{{ site.email }}</a>. I usually reply within a few days. Recruiters: here's my <a href="/assets/files/Joydeep_Medhi_Resume.pdf" download>CV (PDF)</a>, the <a href="/resume/">web resume</a>, and a <a href="/joydeep-medhi.vcf" download>contact card</a> you can save.</p>
-    {% if site.booking_url and site.booking_url != "" %}<p><a href="{{ site.booking_url }}" class="button" target="_blank" rel="noopener">Book a call</a></p>{% endif %}
+    <p>Email is the fastest way to reach me: <a href="mailto:{{ site.email }}">{{ site.email }}</a>. I usually reply within a few days. My <a href="/resume/">resume</a> (<a href="/assets/files/Joydeep_Medhi_Resume.pdf" download>PDF</a>) and a <a href="/joydeep-medhi.vcf" download>contact card</a> are here too.</p>
+    {% if site.booking_url and site.booking_url != "" %}<p><a href="{{ site.booking_url }}" class="button" target="_blank" rel="noopener noreferrer">Book a call</a></p>{% endif %}
     {% include social-links.html %}
   </div>
 
@@ -46,11 +44,10 @@ permalink: /contact/
     <div class="form-group">
       <label for="type">What's this about?</label>
       <select id="type" name="type">
-        <option value="consulting">Consulting / advisory project</option>
+        <option value="talk">Talk or workshop</option>
+        <option value="advisory">Advisory role</option>
         <option value="collaboration">Research collaboration</option>
-        <option value="speaking">Speaking or workshop</option>
         <option value="mentoring">Mentoring</option>
-        <option value="opportunity">Job opportunity</option>
         <option value="other" selected>Something else</option>
       </select>
     </div>
@@ -86,8 +83,8 @@ permalink: /contact/
     var form = document.getElementById('contact-form');
     var typeSelect = document.getElementById('type');
     var labels = {
-      consulting: 'Consulting', collaboration: 'Collaboration', speaking: 'Speaking',
-      mentoring: 'Mentoring', opportunity: 'Opportunity', other: 'Hello'
+      talk: 'Talk', advisory: 'Advisory', collaboration: 'Collaboration',
+      mentoring: 'Mentoring', other: 'Hello'
     };
 
     // Pre-select the enquiry type from ?type=... (used by links on this site)

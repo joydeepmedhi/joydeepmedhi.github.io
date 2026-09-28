@@ -1,5 +1,5 @@
 # Single source for expertise keywords. Used by the homepage "Core Expertise"
-# section, the consulting page, the Person structured data (knowsAbout) and
+# section, the Person structured data (knowsAbout) and
 # the meta keywords. Keep every item backed by the resume.
 - group: "Generative AI & LLMs"
   summary: "Building assistants and search on top of large language and vision-language models."

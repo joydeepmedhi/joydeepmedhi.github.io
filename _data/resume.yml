@@ -9,7 +9,7 @@ previous_pdf: /assets/files/archive/Joydeep_Medhi_Resume_2024-10.pdf
 
 metrics:
   - { value: "8+ yrs", label: "Production AI in retail & automotive" }
-  - { value: "$1B+", label: "Projected sales impact from CV programmes" }
+  - { value: "$100M+", label: "Business impact from CV programmes" }
   - { value: "5", label: "Patents filed, Mercedes-Benz R&D India" }
   - { value: "NeurIPS", label: "6DoF pose research, 2020" }
   - { value: "10+", label: "DS/AI engineers led cross-functionally" }
@@ -32,7 +32,7 @@ experience:
     summary: "Leads the computer vision and GenAI programme: multi-camera tracking, VLM/RAG assistants and checkout automation."
     highlights:
       - "Run the computer vision and GenAI programme across store intelligence, associate tooling, inventory optimisation and checkout automation, managing 10+ DS/AI engineers alongside product, engineering and business leadership."
-      - "Built a real-time Multi-Camera Multi-Target Tracking system for customer-service alerting; the pilot delivered $1M+ incremental revenue and underpins a $1B+ projected sales-impact programme."
+      - "Built a real-time Multi-Camera Multi-Target Tracking system for customer-service alerting; the pilot delivered $1M+ incremental revenue and grew into a programme with $100M+ in business impact."
       - "Designed semi-supervised and active-learning pipelines for in-store object detection — +15% mAP with a 40% reduction in manual annotation overhead."
       - "Improved self-checkout recognition with self-supervised contrastive pre-training — 25%+ throughput gain and a measurably lower loss-prevention error rate."
       - "Delivered a GenAI voice assistant combining RAG, VLM visual grounding and streaming LLM inference — cut product-query resolution time by 60% in user testing."
