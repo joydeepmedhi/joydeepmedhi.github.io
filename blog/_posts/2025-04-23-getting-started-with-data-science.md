@@ -2,6 +2,7 @@
 layout: post
 title: "Getting Started with Data Science: A Beginner's Guide"
 date: 2025-04-23 10:00:00 +0530
+description: "A recommended learning path for aspiring data scientists: the core skills, tools and projects to focus on when getting started."
 categories: [data-science, tutorial]
 ---
 

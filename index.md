@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+description: "Joydeep Medhi — Lead Data Scientist and ML Research Engineer specializing in Computer Vision, Generative AI and Deep Learning."
 ---
 
 <div class="hero">
@@ -85,7 +85,7 @@ title: Home
         <span class="tech-tag">Deep Learning</span>
         <span class="tech-tag">Retail Analytics</span>
       </div>
-      <a href="https://github.com/joydeepmedhi/bbox_detection" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+      <a href="https://github.com/joydeepmedhi/bbox_detection" class="project-link" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
     </div>
   </div>
   <p class="text-center mt-3">

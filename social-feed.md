@@ -1,91 +1,56 @@
 ---
 layout: default
+description: "Find Joydeep Medhi on X, LinkedIn, GitHub and Instagram."
 title: Social Feed
 permalink: /social-feed/
 ---
 
-# Social Feed
-
-<!-- Twitter Feed Section (on top) -->
-<div class="section social-feed-top">
-  <h2 class="section-title">Latest on X / Twitter</h2>
-  <div class="twitter-feed">
-    <div class="twitter-container">
-      <a class="twitter-timeline" data-theme="light" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="3" href="https://twitter.com/medhijoydeep?ref_src=twsrc%5Etfw">Tweets by @medhijoydeep</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-    <div class="text-center mt-2">
-      <a href="https://twitter.com/medhijoydeep" target="_blank" rel="noopener" class="button button-outline">View more on X/Twitter</a>
-    </div>
-  </div>
-</div>
-
-<!-- Instagram Feed Section -->
 <div class="section">
-  <h2 class="section-title">Instagram Feed</h2>
-  <div class="instagram-feed">
-    <p class="feed-intro">Check out my travel photography and adventures on Instagram <a href="https://instagram.com/meek.traveller_/" target="_blank" rel="noopener">@meek.traveller_</a></p>
-    <div class="instagram-container">
-      <!-- Instagram Embed using LightWidget for public feeds -->
-      <iframe src="https://cdn.lightwidget.com/widgets/your-widget-id.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;" title="Instagram Feed" height="400"></iframe>
-      <div class="text-center mt-2">
-        <a href="https://instagram.com/meek.traveller_/" target="_blank" rel="noopener" class="button button-outline">View more on Instagram</a>
-      </div>
-    </div>
+  <h1 class="section-title">Social Feed</h1>
+  <p class="feed-intro">Where to follow along — AI/ML thoughts, code, and travel photography.</p>
+
+  <div class="social-cards">
+    <a class="social-card" href="https://x.com/{{ site.twitter_username }}" target="_blank" rel="noopener">
+      <span class="social-card-name">X / Twitter</span>
+      <span class="social-card-handle">@{{ site.twitter_username }}</span>
+      <span class="social-card-desc">Short takes on AI, ML research and tech.</span>
+    </a>
+    <a class="social-card" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">
+      <span class="social-card-name">LinkedIn</span>
+      <span class="social-card-handle">in/{{ site.linkedin_username }}</span>
+      <span class="social-card-desc">Professional updates and career news.</span>
+    </a>
+    <a class="social-card" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
+      <span class="social-card-name">GitHub</span>
+      <span class="social-card-handle">@{{ site.github_username }}</span>
+      <span class="social-card-desc">Open-source code and experiments.</span>
+    </a>
+    <a class="social-card" href="https://instagram.com/{{ site.instagram_username }}/" target="_blank" rel="noopener">
+      <span class="social-card-name">Instagram</span>
+      <span class="social-card-handle">@{{ site.instagram_username }}</span>
+      <span class="social-card-desc">Travel photography and adventures.</span>
+    </a>
   </div>
 </div>
 
-<!--
-  NOTE: Replace 'your-widget-id' in the iframe src above with the actual LightWidget or other embed service widget ID for meek.traveller_.
-  Free public Instagram embeds are limited by Instagram's API restrictions. For a real feed, use a service like LightWidget, SnapWidget, or Instafeed.js.
--->
+<div class="section">
+  <h2 class="section-title">Latest on X</h2>
+  <div class="twitter-container">
+    <a class="twitter-timeline" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="3" href="https://twitter.com/{{ site.twitter_username }}?ref_src=twsrc%5Etfw">View posts by @{{ site.twitter_username }} on X &rarr;</a>
+  </div>
+</div>
 
 <script>
-  // This is a simplified version that would need to be replaced with actual API calls
-  // Instagram and Twitter APIs require authentication and proper setup
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    // Placeholder for Instagram feed
-    const instagramFeed = document.getElementById('instagram-feed');
-    const instagramPlaceholder = `
-      <div class="social-feed-notice">
-        <p>To display your Instagram feed, you'll need to:</p>
-        <ol>
-          <li>Set up an Instagram Basic Display API or Graph API</li>
-          <li>Create an app in the Facebook Developer Portal</li>
-          <li>Get access tokens and implement the API calls</li>
-        </ol>
-        <p>For a simpler alternative, consider embedding a widget from services like:</p>
-        <ul>
-          <li><a href="https://www.elfsight.com/instagram-feed-widget/" target="_blank">Elfsight</a></li>
-          <li><a href="https://lightwidget.com/" target="_blank">LightWidget</a></li>
-          <li><a href="https://www.powr.io/plugins/instagram-feed" target="_blank">POWr Instagram Feed</a></li>
-        </ul>
-      </div>
-    `;
-    instagramFeed.innerHTML = instagramPlaceholder;
-    
-    // Placeholder for Twitter feed
-    const twitterFeed = document.getElementById('twitter-feed');
-    const twitterPlaceholder = `
-      <div class="social-feed-notice">
-        <p>To display your X/Twitter feed, you can:</p>
-        <ol>
-          <li>Use the X (Twitter) widget by adding this code:</li>
-          <li>
-            <pre><code>&lt;a class="twitter-timeline" href="https://twitter.com/medhijoydeep"&gt;Tweets by @medhijoydeep&lt;/a&gt;
-&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</code></pre>
-          </li>
-        </ol>
-        <p>Alternatively, use a third-party service like:</p>
-        <ul>
-          <li><a href="https://www.elfsight.com/twitter-feed-widget/" target="_blank">Elfsight Twitter Feed</a></li>
-          <li><a href="https://www.powr.io/plugins/twitter-feed" target="_blank">POWr Twitter Feed</a></li>
-        </ul>
-      </div>
-    `;
-    twitterFeed.innerHTML = twitterPlaceholder;
-  });
+  // Match the embedded timeline to the site theme, then load the X widget
+  (function() {
+    var timeline = document.querySelector('.twitter-timeline');
+    if (timeline) timeline.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') || 'dark');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://platform.twitter.com/widgets.js';
+    s.charset = 'utf-8';
+    document.body.appendChild(s);
+  })();
 </script>
 
 <style>
@@ -93,44 +58,43 @@ permalink: /social-feed/
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
   }
-  
-  .social-grid {
+
+  .social-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
-    margin-top: 1.5rem;
   }
-  
-  .social-feed-notice {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
+
+  .social-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color, rgba(128, 128, 128, 0.3));
     border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    grid-column: 1 / -1;
+    background-color: var(--card-bg, transparent);
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
   }
-  
-  .social-feed-notice pre {
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 0.8rem;
-    border-radius: 4px;
-    overflow-x: auto;
-    margin: 1rem 0;
+
+  .social-card:hover {
+    transform: translateY(-3px);
+    border-color: currentColor;
   }
-  
-  .social-feed-notice code {
-    font-family: monospace;
+
+  .social-card-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+  }
+
+  .social-card-handle {
     font-size: 0.9rem;
+    opacity: 0.8;
   }
-  
-  .social-feed-notice ul, .social-feed-notice ol {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  @media (max-width: 768px) {
-    .social-grid {
-      grid-template-columns: 1fr;
-    }
+
+  .social-card-desc {
+    font-size: 0.9rem;
+    color: var(--text-color, inherit);
+    opacity: 0.85;
   }
 </style>
