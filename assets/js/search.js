@@ -14,8 +14,7 @@
   if (trigger) {
     trigger.hidden = false;
     var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
-    var kbd = trigger.querySelector('kbd');
-    if (kbd) kbd.textContent = isMac ? '⌘K' : 'Ctrl K';
+    trigger.title = 'Search (' + (isMac ? '⌘K' : 'Ctrl K') + ')';
     trigger.addEventListener('click', open);
   }
 
