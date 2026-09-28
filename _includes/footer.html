@@ -1,35 +1,14 @@
 <footer class="site-footer">
-  <div class="footer-wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col">
-        <p class="footer-heading">{{ site.title }}</p>
-        <p>{{ site.tagline }}</p>
-      </div>
-      
-      <div class="footer-col">
-        <p class="footer-heading">Links</p>
-        <ul class="footer-links">
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/resume/' | relative_url }}">Resume</a></li>
-          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-          <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/consulting/' | relative_url }}">Consulting</a></li>
-          <li><a href="{{ '/social-feed/' | relative_url }}">Social Feed</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-col">
-        <p class="footer-heading">Connect</p>
-        {% include social-links.html %}
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }} • <span class="version-badge">v1.0</span></p>
-      <p class="footer-tech">Built with <span class="tech-stack">Jekyll + SCSS + JavaScript</span></p>
-      <p class="footer-code"><span class="code-comment">// Last updated</span><br>const lastUpdated = "<span class="footer-date">{{ site.time | date: "%Y-%m-%d" }}</span>";</p>
-    </div>
+  <div class="wrap footer-inner">
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }} · {{ site.location | split: ' -' | first | default: 'Bengaluru' }}, India</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://x.com/{{ site.twitter_username }}" rel="noopener">X</a></li>
+      <li><a href="mailto:{{ site.email }}">Email</a></li>
+      <li><a href="{{ '/consulting/' | relative_url }}">Consulting</a></li>
+      <li><a href="{{ '/social-feed/' | relative_url }}">Social</a></li>
+      <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+    </ul>
   </div>
 </footer>

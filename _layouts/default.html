@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="{{ site.theme_mode | default: 'dark' }}">
+<html lang="en" data-theme="{{ site.theme_mode | default: 'light' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +9,15 @@
       var theme;
       try { theme = localStorage.getItem('theme'); } catch (e) {}
       if (theme !== 'light' && theme !== 'dark') {
-        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : '{{ site.theme_mode | default: 'dark' }}';
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '{{ site.theme_mode | default: 'light' }}';
       }
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
   {%- capture expertise_keywords -%}{% for group in site.data.expertise %}{{ group.items | join: ', ' }}{% unless forloop.last %}, {% endunless %}{% endfor %}{%- endcapture %}
   <meta name="keywords" content="{% if page.categories %}{{ page.categories | join: ', ' }}, {% endif %}{{ expertise_keywords | escape }}, IIT Delhi, Bengaluru">
-  <meta name="theme-color" content="#0ea5e9">
+  <meta name="theme-color" content="#fbfbf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1012" media="(prefers-color-scheme: dark)">
   {% if page.sitemap == false %}<meta name="robots" content="noindex">{% endif %}
   <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
@@ -25,7 +26,7 @@
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} - Blog" href="{{ '/feed.xml' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
   {% include google-analytics.html %}
@@ -35,20 +36,19 @@
   {% include structured-data.html %}
 </head>
 <body>
-  <div class="container">
-    {% include header.html %}
-    
-    <main class="content">
-      {{ content }}
-    </main>
-    
-    {% include footer.html %}
-  </div>
-  
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-  
-  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
 
+  <main id="main" class="site-main">
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {

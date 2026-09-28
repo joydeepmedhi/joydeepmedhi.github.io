@@ -48,7 +48,6 @@
   align-items: center;
   gap: var(--space-5);
   min-height: 4rem;
-  max-width: var(--wide);
 }
 
 .wordmark {
@@ -74,7 +73,7 @@
 
 .page-link {
   position: relative;
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2) 0.6rem;
   border-radius: var(--radius-sm);
   font-size: var(--text-sm);
   color: var(--muted);
@@ -94,8 +93,8 @@
     &::after {
       content: "";
       position: absolute;
-      left: var(--space-3);
-      right: var(--space-3);
+      left: 0.6rem;
+      right: 0.6rem;
       bottom: 2px;
       height: 2px;
       border-radius: 2px;
@@ -244,7 +243,6 @@
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-3) var(--space-5);
-  max-width: var(--wide);
 
   p {
     margin: 0;
