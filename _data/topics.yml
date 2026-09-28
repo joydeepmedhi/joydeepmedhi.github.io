@@ -1,5 +1,8 @@
 # Blog topics. Each has a crawlable page at /blog/topics/<slug>/.
 # A post belongs to a topic when the slug is in its `categories`.
+generative-ai:
+  name: "Generative AI"
+  description: "Vision-language models, retrieval-augmented generation and LLM systems, explained with the key equations and working code."
 computer-vision:
   name: "Computer Vision"
   description: "Posts on computer vision: object detection, feature pyramids, attention, pose estimation and self-supervised depth, with runnable PyTorch code."

@@ -750,3 +750,48 @@ div[class*="language-"] .code-lang + .highlight pre {
     break-inside: avoid;
   }
 }
+
+// Diagrams (inline SVG in posts). Colours come from theme tokens, so they
+// follow light and dark mode. On narrow screens the figure scrolls sideways
+// rather than shrinking the text.
+.diagram {
+  margin: var(--space-6) 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    min-width: 36rem;
+    height: auto;
+    font-family: var(--font-sans);
+    font-size: 13px;
+  }
+
+  figcaption {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+  .d-box { fill: var(--bg-elev); stroke: var(--border-strong); stroke-width: 1.2; }
+  .d-acc { stroke: var(--accent); stroke-width: 1.8; }
+  .d-text { fill: var(--text); font-weight: 600; }
+  .d-muted { fill: var(--muted); font-size: 11.5px; }
+  .d-label { fill: var(--accent); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; }
+  .d-line { fill: none; stroke: var(--muted); stroke-width: 1.4; }
+  .d-line-acc { stroke: var(--accent); stroke-dasharray: 4 4; }
+  .d-arrowhead { fill: var(--muted); }
+  .d-token rect { fill: var(--accent-soft); stroke: var(--accent); }
+  .d-token-text rect { fill: var(--surface); stroke: var(--border-strong); }
+}
+
+.diagram-scroll,
+.diagram {
+  overflow-x: auto;
+}
+
+// KaTeX display maths: scroll long equations instead of overflowing
+.post-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: var(--space-2) 0;
+}

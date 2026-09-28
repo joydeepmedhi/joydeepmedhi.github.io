@@ -95,3 +95,17 @@ layout: default
 </script>
 
 <script src="{{ '/assets/js/post.js' | relative_url }}" defer></script>
+{% if page.math %}
+<script src="{{ '/assets/katex/katex.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/katex/contrib/auto-render.min.js' | relative_url }}" defer></script>
+<script>
+  // kramdown writes maths as \( \) and \[ \]; KaTeX renders it in place (self-hosted, no CDN)
+  window.addEventListener('DOMContentLoaded', function () {
+    if (!window.renderMathInElement) return;
+    renderMathInElement(document.querySelector('.post-content'), {
+      delimiters: [{ left: '\\[', right: '\\]', display: true }, { left: '\\(', right: '\\)', display: false }],
+      throwOnError: false
+    });
+  });
+</script>
+{% endif %}
