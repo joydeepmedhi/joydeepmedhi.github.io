@@ -92,7 +92,7 @@ _B.TECH & M.TECH DUAL DEGREE IN MATHEMATICS AND COMPUTING - EQF LEVEL 7_ (July 2
 
 ## Publications and Patents Filed
 
-*   End-to-end differentiable 6DoF object pose estimation with local and global constraints, DiffCVGP Workshop, NeurIPS 2020
+*   [End-to-end differentiable 6DoF object pose estimation with local and global constraints](https://arxiv.org/abs/2011.11078), DiffCVGP Workshop, NeurIPS 2020
 *   System and Method for Dynamic Adjustment of Sound Zone for A Passenger in a Vehicle, 2020
 *   System and Method for Hand Cropping for Hand Pose Recognition, 2020
 *   System and Method for Occupancy Detection within a Vehicle, 2021

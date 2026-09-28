@@ -11,6 +11,9 @@ description: "Joydeep Medhi — Lead Data Scientist and ML Research Engineer spe
     <p class="location">Bengaluru, India</p>
     <p class="lead-subtitle">Specializing in Computer Vision, Generative AI, and Deep Learning solutions.</p>
     {% include social-links.html %}
+    <p class="hero-actions">
+      <a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="button button-outline" download>Download CV</a>
+    </p>
   </div>
 </div>
 
@@ -90,6 +93,32 @@ description: "Joydeep Medhi — Lead Data Scientist and ML Research Engineer spe
   </div>
   <p class="text-center mt-3">
     <a href="/projects/" class="button">View All Projects</a>
+  </p>
+</div>
+
+<div class="section">
+  <h2 class="section-title">Selected Publication</h2>
+  {% for paper in site.data.publications.papers %}{% if paper.selected %}
+    {% include publication.html paper=paper %}
+  {% endif %}{% endfor %}
+  <p class="text-center mt-3">
+    <a href="/publications/" class="button">Publications &amp; Patents</a>
+  </p>
+</div>
+
+<div class="section">
+  <h2 class="section-title">Latest Writing</h2>
+  <ul class="post-list">
+    {% for post in site.posts limit:3 %}
+    <li class="post-item">
+      <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} · {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+      <p class="post-excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 40 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="text-center mt-3">
+    <a href="/blog/" class="button">All Posts</a>
   </p>
 </div>
 

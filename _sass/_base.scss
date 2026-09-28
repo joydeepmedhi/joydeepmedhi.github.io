@@ -155,6 +155,12 @@ pre {
   color: inherit;
 }
 
+// Inline-code padding would otherwise indent only the first line of a block
+pre code {
+  padding: 0;
+  border-radius: 0;
+}
+
 
 hr {
   margin: $spacing-unit 0;
@@ -1011,4 +1017,133 @@ pre {
   .canvas-container canvas {
     height: 350px; // Slightly smaller on mobile
   }
+}
+// Publication extras: venue badge, author list, link buttons, collapsible summary/BibTeX
+.pub-badge {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-family: $font-family-mono;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $accent-color;
+  border: 1px solid rgba($accent-color, 0.4);
+  background-color: rgba($accent-color, 0.08);
+}
+
+.publication-item {
+  .publication-authors {
+    margin: 0 0 0.25rem;
+    font-size: 0.95rem;
+
+    strong {
+      text-decoration: underline;
+      text-decoration-color: rgba($accent-color, 0.6);
+      text-underline-offset: 3px;
+    }
+  }
+
+  h3 a {
+    color: inherit;
+  }
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.pub-link {
+  padding: 0.2rem 0.7rem;
+  border: 1px solid $accent-color;
+  border-radius: $border-radius;
+  font-family: $font-family-mono;
+  font-size: 0.8rem;
+  color: $accent-color;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba($accent-color, 0.12);
+    text-decoration: none;
+  }
+}
+
+.pub-details {
+  margin-top: 0.5rem;
+
+  summary {
+    cursor: pointer;
+    font-family: $font-family-mono;
+    font-size: 0.85rem;
+    color: $accent-color;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    line-height: 1.6;
+  }
+}
+
+.bibtex-wrap {
+  position: relative;
+  margin-top: 0.5rem;
+
+  pre.bibtex {
+    margin: 0;
+    padding: 0.9rem;
+    overflow-x: auto;
+    font-size: 0.78rem;
+    border-radius: $border-radius;
+
+    [data-theme="dark"] & { background-color: $code-background-dark; }
+    [data-theme="light"] & { background-color: $code-background-light; }
+  }
+
+  .copy-bibtex {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    font-family: $font-family-mono;
+    font-size: 0.75rem;
+    color: $accent-color;
+    background: transparent;
+    border: 1px solid $accent-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+  }
+}
+
+.patents-intro {
+  margin-bottom: 1.5rem;
+}
+
+// Respect users who prefer less motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hero-actions {
+  margin-top: 1.25rem;
+}
+
+.post-updated {
+  margin-left: 0.75rem;
+  font-size: 0.85em;
+  opacity: 0.75;
+}
+
+.patent-item .project-tech {
+  margin: 0.75rem 0 0;
 }
