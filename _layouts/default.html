@@ -46,9 +46,11 @@
   </main>
 
   {% include footer.html %}
+  {% include search.html %}
 
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {

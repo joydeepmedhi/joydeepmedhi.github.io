@@ -1,0 +1,15 @@
+<dialog class="search-dialog" id="search-dialog" aria-label="Search the site" data-index="{{ '/search.json' | relative_url }}">
+  <form class="search-input-row" method="dialog" role="search">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="search-input" type="search" placeholder="Search posts, papers, projects…" autocomplete="off" spellcheck="false"
+           role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list">
+    <kbd>Esc</kbd>
+  </form>
+  <ul class="search-results" id="search-results" role="listbox" aria-label="Results"></ul>
+  <p class="search-empty" id="search-empty" hidden>No matches. Try a broader term like “vision” or “SMOTE”.</p>
+  <div class="search-footer" aria-hidden="true">
+    <span><kbd>↑</kbd> <kbd>↓</kbd> to move</span>
+    <span><kbd>Enter</kbd> to open</span>
+    <span><kbd>Esc</kbd> to close</span>
+  </div>
+</dialog>
