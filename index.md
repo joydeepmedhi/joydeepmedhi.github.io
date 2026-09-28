@@ -15,7 +15,6 @@ description: "Lead Data Scientist in Bengaluru building Computer Vision and Gene
     <p class="lead-subtitle">Lead Data Scientist building <strong>Computer Vision</strong> and <strong>Generative AI</strong> systems (LLMs, VLMs, RAG and agents) that ship to production.</p>
     {% include social-links.html %}
     <p class="hero-actions">
-      <a href="/consulting/" class="button">Work with me</a>
       <a href="/assets/files/Joydeep_Medhi_Resume.pdf" class="button button-outline" download>Download CV</a>
     </p>
   </div>
@@ -123,10 +122,9 @@ description: "Lead Data Scientist in Bengaluru building Computer Vision and Gene
 </div>
 
 <div class="section">
-  <h2 class="section-title">Work With Me</h2>
-  <p>I help teams turn AI ideas into working systems, from strategy and architecture reviews to hands-on computer vision and GenAI builds. I'm also happy to talk about research collaborations, speaking and mentoring.</p>
-  <p class="text-center cta-row">
-    <a href="/consulting/" class="button">Consulting &amp; Advisory</a>
-    <a href="/contact/" class="button button-outline">Get in Touch</a>
+  <h2 class="section-title">Get In Touch</h2>
+  <p>Interested in collaborating, speaking, or <a href="/consulting/">consulting</a>? I'd be glad to hear from you.</p>
+  <p class="text-center">
+    <a href="/contact/" class="button">Contact Me</a>
   </p>
 </div>

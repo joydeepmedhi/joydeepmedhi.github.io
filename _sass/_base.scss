@@ -1233,63 +1233,11 @@ button.button {
 }
 
 // Consulting page
-.lead-in {
-  font-size: 1.15rem;
-  line-height: 1.7;
-}
-
-.services-grid,
-.formats-grid,
-.fit-grid {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.services-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.formats-grid {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.fit-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-  h3 { font-size: 1.05rem; margin-top: 0; }
-  ul { padding-left: 1.2rem; }
-  li { margin-bottom: 0.4rem; }
-}
-
-.service-card,
-.format-card {
-  padding: 1.25rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-
-  h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.1rem;
-    color: var(--accent-text);
-  }
-
-  p { margin: 0 0 0.75rem; line-height: 1.6; }
-
-  ul {
-    margin: 0;
-    padding-left: 1.1rem;
-    font-size: 0.92rem;
-    color: var(--text-muted);
-  }
-}
-
-.format-card p { margin: 0; }
-
-.process-steps {
-  padding-left: 1.3rem;
+.service-list {
+  padding-left: 1.2rem;
 
   li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
     line-height: 1.6;
   }
 }

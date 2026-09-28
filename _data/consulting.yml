@@ -1,28 +1,12 @@
-# Services shown on /consulting/ (also emitted as structured data)
+# Services listed on /consulting/ (also emitted as structured data)
 services:
-  - name: "AI Strategy & Advisory"
-    description: "Figure out where AI will genuinely move the needle for your business, what to build versus buy, and how to de-risk the first project."
-    points: ["Use-case discovery and prioritisation", "Build vs. buy and vendor evaluation", "Roadmaps your engineers can execute"]
-  - name: "Generative AI, RAG & Agents"
-    description: "Design and review LLM- and VLM-powered products: grounded assistants, document and image search, and agentic workflows that are reliable enough to ship."
-    points: ["RAG and GraphRAG architecture", "Evaluation, guardrails and hallucination control", "Latency and cost optimisation"]
-  - name: "Computer Vision Solutions"
-    description: "From proof of concept to production: detection, tracking, pose and gesture recognition, and multi-camera analytics for retail, automotive and industrial settings."
-    points: ["Dataset strategy and labelling plans", "Model selection, training and benchmarking", "Multi-camera tracking and analytics"]
-  - name: "Edge Deployment & Optimisation"
-    description: "Make models fast and small enough for real hardware: embedded and low-compute devices, NVIDIA DeepStream pipelines and multi-GPU training."
-    points: ["Quantisation and model compression", "Real-time inference pipelines", "Training-cost reduction"]
-  - name: "Technical Due Diligence & Reviews"
-    description: "An independent, experienced read on an AI system, team or vendor before you invest, hire or launch."
-    points: ["Architecture and code review", "Model and evaluation audits", "Risk and feasibility assessment"]
-  - name: "Workshops, Talks & Mentoring"
-    description: "Hands-on sessions that level up your team on applied computer vision, GenAI and ML engineering, plus mentoring for data scientists."
-    points: ["Custom team workshops", "Conference and meetup talks", "1:1 mentoring"]
-
-formats:
-  - name: "Advisory call"
-    detail: "A focused session to pressure-test an idea, architecture or plan."
-  - name: "Scoped project"
-    detail: "A defined deliverable, such as a prototype, review or design document, with a clear timeline."
-  - name: "Ongoing advisory"
-    detail: "Regular check-ins to guide your team as the work evolves."
+  - name: "AI strategy & advisory"
+    description: "Where AI can genuinely help, build vs. buy, and how to de-risk the first project."
+  - name: "Generative AI & RAG"
+    description: "Design and review of LLM/VLM assistants, retrieval (RAG, GraphRAG) and agentic workflows."
+  - name: "Computer vision"
+    description: "Detection, tracking, pose and multi-camera analytics, from prototype to production."
+  - name: "Edge deployment"
+    description: "Quantisation and real-time inference on embedded and low-compute hardware."
+  - name: "Reviews & workshops"
+    description: "Independent technical reviews of AI systems, plus team workshops and mentoring."
