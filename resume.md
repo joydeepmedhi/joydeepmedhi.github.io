@@ -22,7 +22,7 @@ permalink: /resume/
 **Lowe's Companies Inc** (Bengaluru, India)
 _LEAD DATA SCIENTIST - AI/ML_ (July 2022 - Present)
 
-*   Led R&D initiatives in Computer Vision and AI solutions for retail, driving $1M+ incremental revenue with estimated $500M enterprise impact
+*   Led R&D initiatives in Computer Vision and AI solutions for retail, driving $100M+ in business impact
 *   Developed customer experience optimization through real-time multi-person tracking and trajectory analysis
 *   Pioneered Generative AI solutions using RAG and VLMs for voice assistants and action recognition
 *   Architected Multi-Camera Multi-Target Tracking (MTMC) systems for enhanced cross-camera tracking

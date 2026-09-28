@@ -28,8 +28,8 @@ description: "Lead Data Scientist in Bengaluru building Computer Vision and Gene
 <section class="section prose" aria-labelledby="about">
   <h2 class="section-title" id="about">About</h2>
   <p>
-    At <strong>Lowe's Innovation Labs</strong> I lead R&amp;D in computer vision and GenAI: real-time multi-camera
-    customer tracking with <strong>$1M+ in revenue impact</strong>, and pioneering generative AI solutions built on
+    At <strong>Lowe's Companies, Inc.</strong> I lead R&amp;D in computer vision and GenAI: real-time multi-camera
+    customer tracking with <strong>$100M+ in business impact</strong>, and pioneering generative AI solutions built on
     <strong>vision-language models (VLMs)</strong> and <strong>retrieval-augmented generation (RAG)</strong>.
   </p>
   <p>
