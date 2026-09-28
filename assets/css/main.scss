@@ -1,34 +1,12 @@
 ---
 ---
 
-@import "variables";
+// Stylesheet entry point. Partials use @import because GitHub Pages compiles
+// with LibSass, which does not support @use. Dart Sass's @import deprecation
+// warning is silenced in _config.yml for local Jekyll 4 builds.
+@import "tokens";
 @import "base";
 @import "layout";
-@import "buttons";
-@import "education";
-@import "header";
-@import "projects";
-
-// Syntax highlighting (Rouge). Code blocks use a dark background in both
-// themes, so a single dark palette keeps every token readable.
-.highlight {
-  .c, .ch, .cm, .c1, .cs, .cpf { color: #6a9955; font-style: italic; }  // Comments
-  .cp { color: #c586c0; }                                                // Preprocessor
-  .err { color: #f44747; background: none; }
-  .k, .kc, .kd, .kn, .kp, .kr, .ow { color: #569cd6; }                  // Keywords
-  .kt { color: #4ec9b0; }                                                // Types
-  .o { color: #d4d4d4; }                                                 // Operators
-  .s, .sa, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss { color: #ce9178; }  // Strings
-  .m, .mb, .mf, .mh, .mi, .mo, .il { color: #b5cea8; }                  // Numbers
-  .na { color: #9cdcfe; }                                                // Attributes
-  .nb, .bp { color: #4fc1ff; }                                           // Builtins, self
-  .nc, .nn { color: #4ec9b0; }                                           // Classes, modules
-  .nf, .fm { color: #dcdcaa; }                                           // Functions, __dunder__
-  .ne { color: #4ec9b0; }                                                // Exceptions
-  .nd { color: #dcdcaa; }                                                // Decorators
-  .no, .nv, .vc, .vg, .vi { color: #9cdcfe; }                           // Constants, variables
-  .nt { color: #569cd6; }                                                // Tags
-  .gd { color: #f44747; }                                                // Diff deleted
-  .gi { color: #6a9955; }                                                // Diff inserted
-}
-
+@import "components";
+@import "pages";
+@import "syntax";

@@ -1,0 +1,243 @@
+// Page-specific styles
+
+// Home intro --------------------------------------------------------------------
+
+.intro {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-5) var(--space-6);
+  align-items: start;
+  margin-bottom: var(--space-7);
+}
+
+.intro-photo {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--border), 0 0 0 5px var(--bg), 0 0 0 6px var(--border);
+}
+
+.intro-name {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-3xl);
+  line-height: 1.1;
+}
+
+.intro-role {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--muted);
+
+  .sep {
+    margin: 0 0.4em;
+    opacity: 0.6;
+  }
+}
+
+.intro-bio {
+  margin: 0 0 var(--space-4);
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: var(--text-2);
+}
+
+@media (max-width: 600px) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-photo {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .intro-name {
+    font-size: var(--text-2xl);
+  }
+}
+
+// Expertise groups
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--space-5) var(--space-6);
+}
+
+.expertise-title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-base);
+}
+
+.expertise-summary {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+// Blog index -------------------------------------------------------------------------
+
+.hashtag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-item {
+  margin: 0;
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  h2,
+  h3 {
+    margin: 0 0 var(--space-1);
+    font-size: 1.35rem;
+  }
+
+  .post-link {
+    color: var(--text);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  .post-meta {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  .post-hashtags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-left: var(--space-3);
+  }
+
+  .post-excerpt {
+    margin: var(--space-2) 0 0;
+    color: var(--text-2);
+  }
+}
+
+// Post -----------------------------------------------------------------------------
+
+.post-header {
+  margin-bottom: var(--space-6);
+
+  .post-title {
+    margin-bottom: var(--space-3);
+    font-size: var(--text-3xl);
+    line-height: 1.12;
+  }
+
+  .post-description {
+    margin: 0 0 var(--space-4);
+    font-size: var(--text-lg);
+    color: var(--text-2);
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  .post-categories {
+    display: inline-flex;
+    gap: var(--space-3);
+  }
+
+  .post-category {
+    color: var(--muted);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .post-header .post-title {
+    font-size: var(--text-2xl);
+  }
+}
+
+.post-content {
+  font-size: 1.075rem;
+
+  h2 {
+    margin-top: var(--space-8);
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    margin-top: var(--space-6);
+  }
+
+  img {
+    border-radius: var(--radius);
+  }
+}
+
+.post-navigation {
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-sm);
+
+  .post-navigation-links {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-5);
+  }
+
+  .next {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+// SMOTE figures: the canvases paint a light background, so frame them like
+// figures in a paper in both themes.
+.canvas-container {
+  margin: var(--space-6) 0;
+  padding: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #f8f8f8;
+  overflow: hidden;
+
+  canvas {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+// 404 ------------------------------------------------------------------------------
+
+.not-found pre {
+  font-size: var(--text-sm);
+}
