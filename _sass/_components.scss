@@ -16,13 +16,21 @@
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.15s var(--ease), border-color 0.15s var(--ease), color 0.15s var(--ease);
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), box-shadow var(--dur) var(--ease);
 
   &:hover {
     background: var(--accent-hover);
     border-color: var(--accent-hover);
     color: var(--accent-contrast);
     text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px -8px var(--accent);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: none;
   }
 }
 
@@ -35,6 +43,7 @@
     background: var(--surface);
     border-color: var(--text-2);
     color: var(--text);
+    box-shadow: none;
   }
 }
 
@@ -71,6 +80,12 @@
   font-size: var(--text-xs);
   line-height: 1.6;
   white-space: nowrap;
+  transition: border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+
+  &:hover {
+    border-color: var(--border-strong);
+    color: var(--text);
+  }
 }
 
 .hashtag-link {
@@ -159,6 +174,7 @@
 
   a {
     color: var(--text);
+    transition: color var(--dur-fast) var(--ease);
 
     &:hover {
       color: var(--accent);
@@ -266,6 +282,7 @@
   font-size: var(--text-xs);
   color: var(--text-2);
   text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 
   &:hover {
     border-color: var(--accent);
@@ -324,8 +341,19 @@
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   cursor: pointer;
-  opacity: 0.75;
-  transition: opacity 0.15s var(--ease);
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease);
+
+  // Shown while hovering the block; always visible on touch and to keyboards
+  .highlight:hover &,
+  .bibtex-wrap:hover &,
+  pre:hover ~ & {
+    opacity: 0.8;
+  }
+
+  @media (hover: none) {
+    opacity: 0.8;
+  }
 
   &:hover,
   &:focus-visible {
@@ -358,7 +386,7 @@
   background: var(--bg-elev);
   color: var(--text-2);
   text-decoration: none;
-  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease-out);
 
   p:last-child {
     margin-bottom: 0;
@@ -559,6 +587,11 @@ a.contact-option {
   &[open] {
     display: flex;
     flex-direction: column;
+    animation: pop-in 0.22s var(--ease-out);
+
+    &::backdrop {
+      animation: fade-in 0.22s var(--ease);
+    }
   }
 }
 
@@ -606,6 +639,7 @@ a.contact-option {
     border-radius: var(--radius-sm);
     color: var(--text);
     text-decoration: none;
+    transition: background-color var(--dur-fast) var(--ease);
   }
 
   [aria-selected="true"] a,

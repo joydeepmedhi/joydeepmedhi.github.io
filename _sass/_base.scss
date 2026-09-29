@@ -26,7 +26,9 @@ body {
   font-size: var(--text-base);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
 }
 
 h1,
@@ -36,33 +38,39 @@ h4 {
   color: var(--text);
   line-height: 1.25;
   margin: var(--space-7) 0 var(--space-4);
+  text-wrap: balance;
 }
 
+// Serif headlines; the display face is light enough to want a touch of tracking
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.035em;
+  font-weight: 500;
+  letter-spacing: -0.018em;
 }
 
 h1 {
   font-size: var(--text-2xl);
   margin-top: 0;
+  line-height: 1.15;
 }
 
 h2 {
-  font-size: var(--text-xl);
+  font-size: calc(var(--text-xl) * 1.08);
 }
 
 h3 {
   font-size: var(--text-lg);
-  font-weight: 600;
-  letter-spacing: -0.005em;
 }
 
 h4 {
   font-size: var(--text-base);
   font-weight: 600;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 p,
@@ -102,7 +110,7 @@ a {
   text-decoration-color: transparent;
   text-underline-offset: 0.2em;
   text-decoration-thickness: 1px;
-  transition: color 0.15s var(--ease), text-decoration-color 0.15s var(--ease);
+  transition: color var(--dur-fast) var(--ease), text-decoration-color var(--dur-fast) var(--ease);
 
   &:hover {
     color: var(--accent-hover);
@@ -165,7 +173,7 @@ code,
 kbd,
 samp {
   font-family: var(--font-mono);
-  font-size: 0.86em;
+  font-size: 0.84em;
 }
 
 :not(pre) > code {
@@ -256,6 +264,66 @@ button {
 .mt-3 { margin-top: var(--space-5); }
 .mb-2 { margin-bottom: var(--space-4); }
 .mb-3 { margin-bottom: var(--space-5); }
+
+// Motion ---------------------------------------------------------------------
+// Above-the-fold content settles in with a short staggered rise (pure CSS, so
+// it never depends on JavaScript). main.js adds .reveal to content further
+// down the page, which fades in as it scrolls into view.
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.985);
+  }
+}
+
+.site-main .wrap > *:nth-child(-n + 6):not(.reading-progress),
+.intro > * {
+  animation: rise 0.6s var(--ease-out) backwards;
+}
+
+.site-main .wrap > :nth-child(2),
+.intro > :nth-child(2) { animation-delay: 0.06s; }
+.site-main .wrap > :nth-child(3) { animation-delay: 0.12s; }
+.site-main .wrap > :nth-child(4) { animation-delay: 0.18s; }
+.site-main .wrap > :nth-child(5) { animation-delay: 0.24s; }
+.site-main .wrap > :nth-child(6) { animation-delay: 0.3s; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+// Smooth light/dark switch: main.js sets .theme-transition for ~300ms
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease),
+    fill 0.3s var(--ease), stroke 0.3s var(--ease), box-shadow 0.3s var(--ease) !important;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,

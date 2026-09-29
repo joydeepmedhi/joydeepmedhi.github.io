@@ -17,12 +17,18 @@
   object-fit: cover;
   background: var(--surface);
   box-shadow: 0 0 0 1px var(--border), 0 0 0 5px var(--bg), 0 0 0 6px var(--border);
+  transition: transform 0.5s var(--ease-out), box-shadow var(--dur) var(--ease);
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .intro-name {
   margin: 0 0 var(--space-1);
   font-size: var(--text-3xl);
-  line-height: 1.1;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 
 .intro-role {
@@ -116,15 +122,13 @@
 
   .post-heading {
     margin: 0 0 var(--space-2);
-    font-family: var(--font-sans);
-    font-size: 1.2rem;
-    font-weight: 600;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
+    font-size: 1.35rem;
+    line-height: 1.3;
   }
 
   .post-link {
     color: var(--text);
+    transition: color var(--dur-fast) var(--ease);
 
     &:hover {
       color: var(--accent);
@@ -165,11 +169,11 @@
     width: 100%;
     height: auto;
     aspect-ratio: 1200 / 630;
-    transition: transform 0.3s var(--ease);
+    transition: transform 0.6s var(--ease-out);
   }
 
   &:hover img {
-    transform: scale(1.03);
+    transform: scale(1.035);
   }
 }
 
@@ -181,10 +185,7 @@
   padding-top: 0;
 
   .post-heading {
-    font-family: var(--font-display);
-    font-size: var(--text-xl);
-    font-weight: 600;
-    letter-spacing: -0.03em;
+    font-size: 1.65rem;
   }
 
   .post-thumb {
@@ -239,8 +240,8 @@
 
   .post-title {
     margin-bottom: var(--space-3);
-    font-size: var(--text-2xl);
-    line-height: 1.2;
+    font-size: calc(var(--text-2xl) * 1.1);
+    line-height: 1.15;
   }
 
   .post-description {
@@ -291,7 +292,7 @@
 
   h2 {
     margin-top: var(--space-8);
-    font-size: 1.5rem;
+    font-size: 1.65rem;
   }
 
   h3 {
@@ -469,9 +470,10 @@ div[class*="language-"] .code-lang + .highlight pre {
 
 .metric-value {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: -0.04em;
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-variant-numeric: lining-nums;
+  letter-spacing: -0.025em;
   line-height: 1.2;
   color: var(--text);
 }
@@ -690,7 +692,7 @@ div[class*="language-"] .code-lang + .highlight pre {
 
   h2 {
     margin: 0 0 var(--space-2);
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
   }
 
   p {
