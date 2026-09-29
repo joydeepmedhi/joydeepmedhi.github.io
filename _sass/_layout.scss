@@ -36,10 +36,12 @@
   -webkit-backdrop-filter: saturate(160%) blur(12px);
   backdrop-filter: saturate(160%) blur(12px);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.2s var(--ease);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  view-transition-name: site-header;
 
   &.is-scrolled {
     border-bottom-color: var(--border);
+    box-shadow: 0 6px 20px -14px rgba(0, 0, 0, 0.18);
   }
 }
 
@@ -52,16 +54,18 @@
 
 .wordmark {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   color: var(--text);
   text-decoration: none;
   white-space: nowrap;
+  transition: opacity var(--dur-fast) var(--ease);
 
   &:hover {
     color: var(--text);
     text-decoration: none;
+    opacity: 0.7;
   }
 }
 
@@ -79,11 +83,31 @@
   color: var(--muted);
   text-decoration: none;
   white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease);
+
+  // Underline grows from the left on hover and stays put on the current page
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+    opacity: 0.4;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--dur) var(--ease-out), opacity var(--dur) var(--ease);
+  }
 
   &:hover {
     color: var(--text);
-    background: var(--surface);
     text-decoration: none;
+
+    &::after {
+      transform: scaleX(1);
+    }
   }
 
   &.active {
@@ -91,14 +115,8 @@
     font-weight: 500;
 
     &::after {
-      content: "";
-      position: absolute;
-      left: 0.5rem;
-      right: 0.5rem;
-      bottom: 2px;
-      height: 2px;
-      border-radius: 2px;
-      background: var(--accent);
+      opacity: 1;
+      transform: scaleX(1);
     }
   }
 }
@@ -123,11 +141,17 @@
   background: var(--bg-elev);
   color: var(--muted);
   cursor: pointer;
-  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+  transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
 
   &:hover {
     color: var(--text);
     border-color: var(--border-strong);
+    background: var(--surface);
+  }
+
+  &:active {
+    transform: scale(0.94);
   }
 
   svg {
@@ -224,6 +248,12 @@
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     font-weight: 400;
+    letter-spacing: 0;
+    transition: color var(--dur-fast) var(--ease), transform var(--dur) var(--ease-out);
+
+    &:hover {
+      transform: translateX(3px);
+    }
   }
 }
 
@@ -269,7 +299,18 @@
   }
 }
 
-// Cross-document view transitions (progressive enhancement, Chromium only)
+// Cross-document view transitions (progressive enhancement, Chromium only).
+// The header stays put while the page content cross-fades quickly.
 @view-transition {
   navigation: auto;
+}
+
+::view-transition-group(site-header) {
+  animation-duration: 0s;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.22s;
+  animation-timing-function: var(--ease);
 }

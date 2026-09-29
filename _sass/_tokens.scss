@@ -41,19 +41,20 @@
 }
 
 :root {
-  // Geist superfamily: Geist Mono gives headings a technical, CS character;
-  // Geist Sans keeps long-form reading comfortable.
-  --font-display: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  // Serif headlines over a clean grotesque, in the spirit of anthropic.com.
+  // Anthropic's own typefaces are proprietary, so these are open-licence
+  // stand-ins: Newsreader (serif), Hanken Grotesk (sans), JetBrains Mono.
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --text-xs: 0.78rem;
   --text-sm: 0.88rem;
   --text-base: 1.0625rem;
   --text-lg: 1.2rem;
   --text-xl: 1.4rem;
-  --text-2xl: 1.9rem;
-  --text-3xl: 2.35rem;
+  --text-2xl: 2.1rem;
+  --text-3xl: 2.9rem;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -69,6 +70,9 @@
   --radius: 10px;
   --radius-sm: 6px;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.15s;
+  --dur: 0.25s;
 
   // Code blocks stay dark in both themes (matches the syntax palette)
   --code-bg: #16191c;

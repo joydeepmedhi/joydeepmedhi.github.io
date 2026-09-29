@@ -1,7 +1,7 @@
 // Network-first service worker: always try the network so visitors see the
 // latest content, and fall back to the cache only when offline.
 // Bump CACHE_VERSION to force old caches to be cleared.
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const CACHE_NAME = `joydeep-portfolio-${CACHE_VERSION}`;
 
 const urlsToCache = [
