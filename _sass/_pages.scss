@@ -812,3 +812,93 @@ div[class*="language-"] .code-lang + .highlight pre {
   overflow-y: hidden;
   padding: var(--space-2) 0;
 }
+
+// Charts in posts (inline SVG). Series colours are a validated categorical
+// palette (colourblind-safe as a set) with separate light and dark steps.
+.chart {
+  --c-1: #257de0;
+  --c-2: #f47230;
+  --c-3: #00b894;
+  margin: var(--space-6) 0;
+  overflow-x: auto;
+
+  // Below this width the labels get too small; scroll sideways instead
+  svg {
+    display: block;
+    width: 100%;
+    min-width: 34rem;
+    height: auto;
+    font-family: var(--font-sans);
+  }
+
+  figcaption {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+  .c-grid { stroke: var(--border); stroke-width: 1; }
+  .c-guide { stroke: var(--border-strong); }
+  .c-axis { stroke: var(--border-strong); stroke-width: 1; }
+  .c-tick { fill: var(--muted); font-family: var(--font-mono); font-size: 11px; }
+  .c-axis-title { fill: var(--text-2); font-size: 12px; font-weight: 600; }
+  .c-label { fill: var(--text); font-size: 12px; }
+  .c-label-muted { fill: var(--muted); }
+  .c-line { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .c-accent { stroke: var(--accent); }
+  .c-1 { stroke: var(--c-1); }
+  .c-2 { stroke: var(--c-2); }
+  .c-3 { stroke: var(--c-3); }
+  .c-other { stroke: var(--border-strong); }
+  .c-dot { stroke: var(--bg); stroke-width: 2; }
+  .c-accent-fill { fill: var(--accent); }
+  .c-1-fill { fill: var(--c-1); }
+  .c-2-fill { fill: var(--c-2); }
+  .c-3-fill { fill: var(--c-3); }
+  .c-other-fill { fill: var(--border-strong); }
+  .c-heat { fill: var(--c-1); }
+  .c-hit { fill: transparent; cursor: default; }
+  g:hover > .c-dot,
+  g:hover > circle + circle { stroke: var(--text); }
+}
+
+[data-theme="dark"] .chart {
+  --c-1: #338ced;
+  --c-2: #e76624;
+  --c-3: #00a888;
+}
+
+// Every chart carries its numbers as a table, for screen readers and for print
+.chart-data {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+
+  summary {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  table {
+    margin: var(--space-3) 0 0;
+  }
+}
+
+// A raster figure that should keep its own colours in both themes
+.figure-image {
+  margin: var(--space-6) 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  figcaption {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+}
