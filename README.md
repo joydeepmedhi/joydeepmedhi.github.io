@@ -1,7 +1,7 @@
 # joydeepmedhi.github.io
 
 Source for [joydeepmedhi.github.io](https://joydeepmedhi.github.io), the personal site of
-Joydeep Medhi: Lead Data Scientist working on computer vision, generative AI and ML systems.
+Joydeep Medhi: ML Engineer at Adobe working on computer vision, generative AI and ML systems.
 
 Built with Jekyll and published by GitHub Pages straight from `main` (no custom workflow).
 

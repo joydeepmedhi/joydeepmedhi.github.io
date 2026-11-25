@@ -1,6 +1,6 @@
 ---
 layout: default
-description: "Joydeep Medhi, Lead Data Scientist in Bengaluru: 8+ years shipping computer vision and GenAI (VLMs, RAG, agents) at Lowe's and Mercedes-Benz. IIT Delhi, NeurIPS."
+description: "Joydeep Medhi, ML Engineer at Adobe: 8+ years shipping computer vision and GenAI (VLMs, RAG, agents) at Lowe's and Mercedes-Benz. IIT Delhi, NeurIPS."
 ---
 
 <section class="intro" aria-label="Introduction">
@@ -10,12 +10,12 @@ description: "Joydeep Medhi, Lead Data Scientist in Bengaluru: 8+ years shipping
   </picture>
   <div>
     <h1 class="intro-name">Joydeep Medhi</h1>
-    <p class="intro-role">Lead Data Scientist<span class="sep">·</span>Computer Vision &amp; GenAI<span class="sep">·</span>Bengaluru</p>
+    <p class="intro-role">ML Engineer, Adobe<span class="sep">·</span>Computer Vision &amp; GenAI<span class="sep">·</span>Bengaluru</p>
     <p class="intro-bio">
       I build <strong>computer vision</strong> and <strong>generative AI</strong> systems that hold up under real
-      conditions: tight latency budgets, sparse labels and unpredictable environments. I lead the CV and GenAI
-      programme at <strong>Lowe's</strong>, and before that owned the in-cabin perception stack of the
-      <strong>Mercedes-Benz MBUX Interior Assistant</strong>.
+      conditions: tight latency budgets, sparse labels and unpredictable environments. I'm now an
+      <strong>ML Engineer at Adobe</strong>. Before that I led the CV and GenAI programme at <strong>Lowe's</strong>
+      and owned the in-cabin perception stack of the <strong>Mercedes-Benz MBUX Interior Assistant</strong>.
     </p>
     {% include social-links.html %}
     <p class="cta-row">
@@ -31,8 +31,9 @@ description: "Joydeep Medhi, Lead Data Scientist in Bengaluru: 8+ years shipping
 <section class="section prose" aria-labelledby="about">
   <h2 class="section-title" id="about">About</h2>
   <p>
-    At <strong>Lowe's Companies Inc.</strong>, a Fortune 50 retailer with 1,700+ stores, I run the computer vision
-    and GenAI programme across store intelligence, associate tooling, inventory and checkout automation, leading
+    I recently joined <strong>Adobe</strong> as an ML Engineer. Before that, at <strong>Lowe's Companies Inc.</strong>,
+    a Fortune 50 retailer with 1,700+ stores, I ran the computer vision and GenAI programme across store
+    intelligence, associate tooling, inventory and checkout automation, leading
     <strong>10+ DS/AI engineers</strong>. Our real-time <strong>multi-camera multi-target tracking</strong> pilot
     delivered $1M+ in incremental revenue and grew into a programme with <strong>$100M+ in business impact</strong>;
     I also built a GenAI voice assistant combining <strong>RAG</strong>, <strong>VLM</strong> visual grounding and

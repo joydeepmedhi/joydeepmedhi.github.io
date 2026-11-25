@@ -22,10 +22,10 @@
     "jobTitle": {{ site.data.resume.headline | jsonify }},
     "description": {{ site.description | strip_newlines | jsonify }},
     "email": {{ 'mailto:' | append: site.email | jsonify }},
-    "worksFor": { "@type": "Organization", "name": "Lowe's Companies Inc.", "url": "https://www.lowes.com/" },
+    "worksFor": { "@type": "Organization", "name": "Adobe", "url": "https://www.adobe.com/" },
     "hasOccupation": {
       "@type": "Occupation",
-      "name": "Lead Data Scientist",
+      "name": "ML Engineer",
       "occupationLocation": { "@type": "City", "name": "Bengaluru" },
       "skills": {{ site.data.resume.skills | map: 'items' | join: ', ' | jsonify }}
     },

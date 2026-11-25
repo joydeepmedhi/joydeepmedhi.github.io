@@ -7,8 +7,8 @@ BEGIN:VCARD
 VERSION:3.0
 N:Medhi;Joydeep;;;
 FN:{{ site.author }}
-TITLE:Lead Data Scientist — Computer Vision\, Generative AI\, ML Systems
-ORG:Lowe's Companies Inc.
+TITLE:ML Engineer — Computer Vision\, Generative AI\, ML Systems
+ORG:Adobe
 EMAIL;TYPE=INTERNET,PREF:{{ site.email }}
 ADR;TYPE=WORK:;;;Bengaluru;Karnataka;;India
 URL:{{ site.url }}/

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Resume – Lead Data Scientist (CV & GenAI)"
-description: "Resume of Joydeep Medhi, Lead Data Scientist at Lowe's: CV & GenAI programme, 10+ engineers, $100M+ impact. Ex-Mercedes-Benz R&D, 5 patents, IIT Delhi."
+title: "Resume – ML Engineer (CV & GenAI)"
+description: "Resume of Joydeep Medhi, ML Engineer at Adobe. Previously led the CV & GenAI programme at Lowe's ($100M+ impact, 10+ engineers); ex-Mercedes-Benz R&D, 5 patents, IIT Delhi."
 permalink: /resume/
 ---
 {%- assign r = site.data.resume -%}

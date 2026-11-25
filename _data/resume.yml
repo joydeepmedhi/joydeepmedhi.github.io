@@ -1,9 +1,10 @@
 # Single source for resume content, transcribed from
-# assets/files/Joydeep_Medhi_Resume.pdf (August 2026 edition).
+# assets/files/Joydeep_Medhi_Resume.pdf (August 2026 edition; the Adobe role
+# was added to this file in November 2026, ahead of a refreshed PDF).
 # Used by /resume/, the homepage, structured data and search.
 
-headline: "Lead Data Scientist — Computer Vision · Generative AI · ML Systems"
-updated: 2026-08-19
+headline: "ML Engineer at Adobe — Computer Vision · Generative AI · ML Systems"
+updated: 2026-11-25
 pdf: /assets/files/Joydeep_Medhi_Resume.pdf
 previous_pdf: /assets/files/archive/Joydeep_Medhi_Resume_2024-10.pdf
 
@@ -20,18 +21,28 @@ profile: >-
   experiments. My work sits at the junction of computer vision, deep learning and applied GenAI,
   with the bulk of it shipped to production: a perception stack inside every MBUX Interior
   Assistant vehicle, and multi-camera tracking and VLM systems running across Lowe's store network.
+  Now an ML Engineer at Adobe.
 
 experience:
+  - title: "ML Engineer"
+    org: "Adobe"
+    location: "India"
+    start: "2026"
+    end: "Present"
+    short: "Adobe"
+    summary: "Joined Adobe as an ML Engineer, building machine learning systems."
+    highlights:
+      - "Joined Adobe as an ML Engineer in 2026."
   - title: "Lead Data Scientist — AI/ML and Computer Vision"
     org: "Lowe's Companies Inc."
     org_note: "Fortune 50 retailer, $90B revenue, 1,700+ stores"
     location: "Bengaluru, India"
     start: "Jul 2022"
-    end: "Present"
+    end: "2026"
     short: "Lowe's"
-    summary: "Leads the computer vision and GenAI programme: multi-camera tracking, VLM/RAG assistants and checkout automation."
+    summary: "Led the computer vision and GenAI programme: multi-camera tracking, VLM/RAG assistants and checkout automation."
     highlights:
-      - "Run the computer vision and GenAI programme across store intelligence, associate tooling, inventory optimisation and checkout automation, managing 10+ DS/AI engineers alongside product, engineering and business leadership."
+      - "Ran the computer vision and GenAI programme across store intelligence, associate tooling, inventory optimisation and checkout automation, managing 10+ DS/AI engineers alongside product, engineering and business leadership."
       - "Built a real-time Multi-Camera Multi-Target Tracking system for customer-service alerting; the pilot delivered $1M+ incremental revenue and grew into a programme with $100M+ in business impact."
       - "Designed semi-supervised and active-learning pipelines for in-store object detection — +15% mAP with a 40% reduction in manual annotation overhead."
       - "Improved self-checkout recognition with self-supervised contrastive pre-training — 25%+ throughput gain and a measurably lower loss-prevention error rate."
