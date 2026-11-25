@@ -1,7 +1,7 @@
 title: Joydeep Medhi
-tagline: ML Engineer at Adobe – Computer Vision & GenAI
+tagline: Machine Learning Engineer at Adobe – Computer Vision & GenAI
 description: >-
-  Joydeep Medhi is an ML Engineer at Adobe, based in Bengaluru, India, with 8+ years
+  Joydeep Medhi is a Machine Learning Engineer at Adobe, based in Bengaluru, India, with 8+ years
   shipping computer vision and generative AI (LLMs, VLMs, RAG, agentic AI) at
   Lowe's and Mercedes-Benz R&D. IIT Delhi, NeurIPS 2020, five patents.
 author: Joydeep Medhi
@@ -44,7 +44,7 @@ defaults:
         path: /assets/images/og-card.jpg
         width: 1200
         height: 630
-        alt: "Joydeep Medhi – ML Engineer at Adobe, Computer Vision & Generative AI"
+        alt: "Joydeep Medhi – Machine Learning Engineer at Adobe, Computer Vision & Generative AI"
 
 # Search engine ownership verification (jekyll-seo-tag). Paste the codes
 # from Google Search Console / Bing Webmaster Tools and uncomment.

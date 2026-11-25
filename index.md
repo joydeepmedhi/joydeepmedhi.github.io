@@ -1,6 +1,6 @@
 ---
 layout: default
-description: "Joydeep Medhi, ML Engineer at Adobe: 8+ years shipping computer vision and GenAI (VLMs, RAG, agents) at Lowe's and Mercedes-Benz. IIT Delhi, NeurIPS."
+description: "Joydeep Medhi, Machine Learning Engineer at Adobe: 8+ years shipping computer vision and GenAI (VLMs, RAG, agents) at Lowe's and Mercedes-Benz. IIT Delhi, NeurIPS."
 ---
 
 <section class="intro" aria-label="Introduction">
@@ -10,11 +10,11 @@ description: "Joydeep Medhi, ML Engineer at Adobe: 8+ years shipping computer vi
   </picture>
   <div>
     <h1 class="intro-name">Joydeep Medhi</h1>
-    <p class="intro-role">ML Engineer, Adobe<span class="sep">·</span>Computer Vision &amp; GenAI<span class="sep">·</span>Bengaluru</p>
+    <p class="intro-role">Machine Learning Engineer, Adobe<span class="sep">·</span>Computer Vision &amp; GenAI<span class="sep">·</span>Bengaluru</p>
     <p class="intro-bio">
       I build <strong>computer vision</strong> and <strong>generative AI</strong> systems that hold up under real
       conditions: tight latency budgets, sparse labels and unpredictable environments. I'm now an
-      <strong>ML Engineer at Adobe</strong>. Before that I led the CV and GenAI programme at <strong>Lowe's</strong>
+      <strong>Machine Learning Engineer at Adobe</strong>. Before that I led the CV and GenAI programme at <strong>Lowe's</strong>
       and owned the in-cabin perception stack of the <strong>Mercedes-Benz MBUX Interior Assistant</strong>.
     </p>
     {% include social-links.html %}
@@ -31,7 +31,7 @@ description: "Joydeep Medhi, ML Engineer at Adobe: 8+ years shipping computer vi
 <section class="section prose" aria-labelledby="about">
   <h2 class="section-title" id="about">About</h2>
   <p>
-    I recently joined <strong>Adobe</strong> as an ML Engineer. Before that, at <strong>Lowe's Companies Inc.</strong>,
+    I recently joined <strong>Adobe</strong> as a Machine Learning Engineer. Before that, at <strong>Lowe's Companies Inc.</strong>,
     a Fortune 50 retailer with 1,700+ stores, I ran the computer vision and GenAI programme across store
     intelligence, associate tooling, inventory and checkout automation, leading
     <strong>10+ DS/AI engineers</strong>. Our real-time <strong>multi-camera multi-target tracking</strong> pilot
@@ -53,28 +53,37 @@ description: "Joydeep Medhi, ML Engineer at Adobe: 8+ years shipping computer vi
     {% for job in site.data.resume.experience %}
     <li class="entry">
       <span class="entry-meta">{{ job.start | split: ' ' | last }} – {% if job.end == "Present" %}now{% else %}{{ job.end | split: ' ' | last }}{% endif %}</span>
-      <div>
-        <h3 class="entry-title">{{ job.title }}</h3>
-        <p class="entry-sub">{{ job.org }}</p>
-        <p class="entry-body">{{ job.summary }}</p>
+      <div class="entry-org">
+        {% include org-logo.html item=job %}
+        <div>
+          <h3 class="entry-title">{{ job.title }}</h3>
+          <p class="entry-sub">{{ job.org }}</p>
+          <p class="entry-body">{{ job.summary }}</p>
+        </div>
       </div>
     </li>
     {% endfor %}
     {% for job in site.data.resume.earlier %}
     <li class="entry">
       <span class="entry-meta">{{ job.dates | split: ' ' | last }}</span>
-      <div>
-        <h3 class="entry-title">{{ job.title }}</h3>
-        <p class="entry-sub">{{ job.org }}</p>
+      <div class="entry-org">
+        {% include org-logo.html item=job %}
+        <div>
+          <h3 class="entry-title">{{ job.title }}</h3>
+          <p class="entry-sub">{{ job.org }}</p>
+        </div>
       </div>
     </li>
     {% endfor %}
     {% for ed in site.data.resume.education %}
     <li class="entry">
       <span class="entry-meta">{{ ed.dates | replace: ' — ', ' – ' }}</span>
-      <div>
-        <h3 class="entry-title">{{ ed.degree }}</h3>
-        <p class="entry-sub">{{ ed.school }}</p>
+      <div class="entry-org">
+        {% include org-logo.html item=ed %}
+        <div>
+          <h3 class="entry-title">{{ ed.degree }}</h3>
+          <p class="entry-sub">{{ ed.school }}</p>
+        </div>
       </div>
     </li>
     {% endfor %}

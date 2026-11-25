@@ -7,7 +7,7 @@ BEGIN:VCARD
 VERSION:3.0
 N:Medhi;Joydeep;;;
 FN:{{ site.author }}
-TITLE:ML Engineer — Computer Vision\, Generative AI\, ML Systems
+TITLE:Machine Learning Engineer — Computer Vision\, Generative AI\, ML Systems
 ORG:Adobe
 EMAIL;TYPE=INTERNET,PREF:{{ site.email }}
 ADR;TYPE=WORK:;;;Bengaluru;Karnataka;;India

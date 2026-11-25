@@ -542,6 +542,21 @@ div[class*="language-"] .code-lang + .highlight pre {
   }
 }
 
+.role.has-logo {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+
+  .role-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  > .org-logo {
+    margin-top: 0.1rem;
+  }
+}
+
 .role-header {
   display: flex;
   flex-wrap: wrap;

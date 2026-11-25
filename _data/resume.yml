@@ -3,7 +3,7 @@
 # was added to this file in November 2026, ahead of a refreshed PDF).
 # Used by /resume/, the homepage, structured data and search.
 
-headline: "ML Engineer at Adobe — Computer Vision · Generative AI · ML Systems"
+headline: "Machine Learning Engineer at Adobe — Computer Vision · Generative AI · ML Systems"
 updated: 2026-11-25
 pdf: /assets/files/Joydeep_Medhi_Resume.pdf
 previous_pdf: /assets/files/archive/Joydeep_Medhi_Resume_2024-10.pdf
@@ -21,24 +21,26 @@ profile: >-
   experiments. My work sits at the junction of computer vision, deep learning and applied GenAI,
   with the bulk of it shipped to production: a perception stack inside every MBUX Interior
   Assistant vehicle, and multi-camera tracking and VLM systems running across Lowe's store network.
-  Now an ML Engineer at Adobe.
+  Since November 2026, a Machine Learning Engineer at Adobe.
 
 experience:
-  - title: "ML Engineer"
+  - title: "Machine Learning Engineer"
     org: "Adobe"
+    logo: /assets/images/logos/adobe.svg
     location: "India"
-    start: "2026"
+    start: "Nov 2026"
     end: "Present"
     short: "Adobe"
-    summary: "Joined Adobe as an ML Engineer, building machine learning systems."
+    summary: "Building production machine learning systems at Adobe, drawing on a background in computer vision and generative AI."
     highlights:
-      - "Joined Adobe as an ML Engineer in 2026."
+      - "Joined Adobe as a Machine Learning Engineer in November 2026, applying experience in computer vision, generative AI and ML systems to production machine learning."
   - title: "Lead Data Scientist — AI/ML and Computer Vision"
     org: "Lowe's Companies Inc."
+    mono: "L"
     org_note: "Fortune 50 retailer, $90B revenue, 1,700+ stores"
     location: "Bengaluru, India"
     start: "Jul 2022"
-    end: "2026"
+    end: "Oct 2026"
     short: "Lowe's"
     summary: "Led the computer vision and GenAI programme: multi-camera tracking, VLM/RAG assistants and checkout automation."
     highlights:
@@ -50,6 +52,7 @@ experience:
       - "Won 1st Prize at Lowe's AI Hackathon 2025 and 3rd Place at the global AI Hackathon 2024 (200+ teams); three proposals selected for the executive AI strategy pipeline."
   - title: "Senior ML Research Engineer"
     org: "Mercedes-Benz Research and Development India"
+    logo: /assets/images/logos/mercedes-benz.svg
     location: "Bengaluru, India / Stuttgart, Germany"
     start: "Dec 2018"
     end: "Jun 2022"
@@ -65,17 +68,20 @@ experience:
 earlier:
   - title: "Deep Learning Research Engineer"
     org: "Silversparro Technologies"
+    mono: "S"
     dates: "Jul — Nov 2018"
     location: "Gurgaon"
     summary: "CCTV retail models for detection, tracking and age/gender classification. KMeans anchor initialisation for Faster-RCNN cut convergence 50%, with +6% mAP and +7.3% F1."
   - title: "Research Intern"
     org: "KAUST, Computational Bioscience Research Center"
+    mono: "K"
     dates: "May — Jul 2017"
     location: "Saudi Arabia"
     summary: "Deep neural models for genetic disease-variant classification under Prof. Robert Hoehndorf — ROC-AUC 0.967, AP 0.964 on genome-sequencing test data."
 
 education:
   - school: "Indian Institute of Technology Delhi"
+    mono: "IIT"
     degree: "B.Tech and M.Tech Dual Degree, Mathematics and Computing"
     location: "New Delhi, India"
     dates: "2013 — 2018"

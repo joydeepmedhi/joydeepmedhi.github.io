@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Resume – ML Engineer (CV & GenAI)"
-description: "Resume of Joydeep Medhi, ML Engineer at Adobe. Previously led the CV & GenAI programme at Lowe's ($100M+ impact, 10+ engineers); ex-Mercedes-Benz R&D, 5 patents, IIT Delhi."
+title: "Resume – Machine Learning Engineer (CV & GenAI)"
+description: "Resume of Joydeep Medhi, Machine Learning Engineer at Adobe. Previously led the CV & GenAI programme at Lowe's ($100M+ impact, 10+ engineers); ex-Mercedes-Benz R&D, 5 patents, IIT Delhi."
 permalink: /resume/
 ---
 {%- assign r = site.data.resume -%}
@@ -33,26 +33,32 @@ permalink: /resume/
 <section class="section" aria-labelledby="experience">
   <h2 class="section-title" id="experience">Experience</h2>
   {% for job in r.experience %}
-  <article class="role">
-    <header class="role-header">
-      <h3 class="role-title">{{ job.title }}</h3>
-      <span class="role-dates">{{ job.start }} — {{ job.end }}</span>
-    </header>
-    <p class="role-org">{{ job.org }}{% if job.org_note %} — {{ job.org_note }}{% endif %} · {{ job.location }}</p>
-    <ul class="role-highlights">
-      {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
-    </ul>
+  <article class="role has-logo">
+    {% include org-logo.html item=job %}
+    <div class="role-main">
+      <header class="role-header">
+        <h3 class="role-title">{{ job.title }}</h3>
+        <span class="role-dates">{{ job.start }} — {{ job.end }}</span>
+      </header>
+      <p class="role-org">{{ job.org }}{% if job.org_note %} — {{ job.org_note }}{% endif %} · {{ job.location }}</p>
+      <ul class="role-highlights">
+        {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
+      </ul>
+    </div>
   </article>
   {% endfor %}
 
   <h3 class="resume-subhead">Earlier roles</h3>
   {% for job in r.earlier %}
-  <article class="role role-compact">
-    <header class="role-header">
-      <h4 class="role-title">{{ job.title }} — {{ job.org }}</h4>
-      <span class="role-dates">{{ job.dates }} · {{ job.location }}</span>
-    </header>
-    <p>{{ job.summary }}</p>
+  <article class="role role-compact has-logo">
+    {% include org-logo.html item=job %}
+    <div class="role-main">
+      <header class="role-header">
+        <h4 class="role-title">{{ job.title }} — {{ job.org }}</h4>
+        <span class="role-dates">{{ job.dates }} · {{ job.location }}</span>
+      </header>
+      <p>{{ job.summary }}</p>
+    </div>
   </article>
   {% endfor %}
 </section>
@@ -60,13 +66,16 @@ permalink: /resume/
 <section class="section" aria-labelledby="education">
   <h2 class="section-title" id="education">Education</h2>
   {% for ed in r.education %}
-  <article class="role">
-    <header class="role-header">
-      <h3 class="role-title">{{ ed.school }}</h3>
-      <span class="role-dates">{{ ed.dates }}</span>
-    </header>
-    <p class="role-org">{{ ed.degree }} · {{ ed.location }}</p>
-    <p>{{ ed.details }}</p>
+  <article class="role has-logo">
+    {% include org-logo.html item=ed %}
+    <div class="role-main">
+      <header class="role-header">
+        <h3 class="role-title">{{ ed.school }}</h3>
+        <span class="role-dates">{{ ed.dates }}</span>
+      </header>
+      <p class="role-org">{{ ed.degree }} · {{ ed.location }}</p>
+      <p>{{ ed.details }}</p>
+    </div>
   </article>
   {% endfor %}
 </section>
