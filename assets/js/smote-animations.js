@@ -1,4 +1,95 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme-aware drawing. The animations below were written with fixed colours
+    // and Arial; this adapter maps each of those colours to a role and resolves
+    // the role against the page's current theme every time it is set, so the
+    // figures follow the light/dark toggle live (the animation loop redraws
+    // every frame). Data colours are a colourblind-safe set: blue, orange and
+    // aqua, with the majority class in neutral grey and stars drawn in ink.
+    const SERIES = {
+      light: { synthetic: '#257de0', minority: '#f47230', special: '#00b894', majority: '#9aa0a7' },
+      dark:  { synthetic: '#338ced', minority: '#e76624', special: '#00a888', majority: '#6f777f' }
+    };
+    const ROLE = {
+      '#4caf50': 'synthetic',
+      '#ff5252': 'minority', '#e91e63': 'minority',
+      '#ff9800': 'special', '#ff8f00': 'special', '#ff0000': 'special',
+      '#8884d8': 'majority',
+      '#9c27b0': 'ink',
+      '#333': 'ink', '#000': 'ink', '#666': 'ink-2', '#999': 'muted', '#aaa': 'muted',
+      '#f8f8f8': 'panel', '#ccc': 'rule-strong', '#ddd': 'rule', '#e8e8e8': 'rule',
+      'rgba(240,240,240,0.9)': 'panel-glass'
+    };
+    let tokens = null;
+    function readTokens() {
+      const css = getComputedStyle(document.documentElement);
+      const v = name => css.getPropertyValue(name).trim();
+      const mode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const panel = v('--surface') || '#f2f2ed';
+      const hex = panel.replace('#', '');
+      const rgb = hex.length === 6 ? [0, 2, 4].map(i => parseInt(hex.slice(i, i + 2), 16)).join(', ') : '242, 242, 237';
+      tokens = Object.assign({}, SERIES[mode], {
+        ink: v('--text') || '#1b1d1f',
+        'ink-2': v('--text-2') || '#3b4046',
+        muted: v('--muted') || '#5b616a',
+        panel: panel,
+        'panel-glass': `rgba(${rgb}, 0.92)`,
+        rule: v('--border') || '#e2e2db',
+        'rule-strong': v('--border-strong') || '#cdcdc4',
+        font: v('--font-sans') || 'system-ui, sans-serif'
+      });
+    }
+    readTokens();
+    new MutationObserver(readTokens).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    const roleOf = value => typeof value === 'string' ? ROLE[value.toLowerCase().replace(/\s+/g, '')] : undefined;
+    const isSeries = role => role === 'synthetic' || role === 'minority' || role === 'special' || role === 'majority';
+
+    function themed(ctx) {
+      let fillRole;
+      return new Proxy(ctx, {
+        get(target, prop) {
+          if (prop === 'fillText') {
+            // Text never wears a series colour: labels drawn in one use the ink colour instead
+            return function(...args) {
+              if (!isSeries(fillRole)) return target.fillText(...args);
+              const keep = target.fillStyle;
+              target.fillStyle = tokens.ink;
+              target.fillText(...args);
+              target.fillStyle = keep;
+            };
+          }
+          const value = Reflect.get(target, prop, target);
+          return typeof value === 'function' ? value.bind(target) : value;
+        },
+        set(target, prop, value) {
+          if (prop === 'fillStyle' || prop === 'strokeStyle') {
+            const role = roleOf(value);
+            if (prop === 'fillStyle') fillRole = role;
+            // Point outlines become a ring in the panel colour, separating overlapping marks
+            if (prop === 'strokeStyle' && role === 'ink' && value === '#333') value = tokens.panel;
+            else if (role) value = tokens[role];
+          } else if (prop === 'font' && typeof value === 'string') {
+            value = value.replace(/Arial/, tokens.font);
+          }
+          return Reflect.set(target, prop, value, target);
+        }
+      });
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      let line = '';
+      text.split(' ').forEach(word => {
+        const next = line ? line + ' ' + word : word;
+        if (ctx.measureText(next).width > maxWidth && line) {
+          ctx.fillText(line, x, y);
+          line = word;
+          y += lineHeight;
+        } else {
+          line = next;
+        }
+      });
+      if (line) ctx.fillText(line, x, y);
+    }
     // Configuration for all animations
     const config = {
       majorityPoints: 30,    // Reduced from 80
@@ -21,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const canvas = document.getElementById(canvasId);
       if (!canvas) return;
       
-      const ctx = canvas.getContext('2d');
+      const ctx = themed(canvas.getContext('2d'));
       
       // Canvas dimensions
       const width = canvas.width;
@@ -31,16 +122,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
+      // Scale with the column instead of a fixed 700px, so phones see the whole figure
+      canvas.style.width = '100%';
+      canvas.style.height = 'auto';
+      canvas.style.aspectRatio = `${width} / ${height}`;
       ctx.scale(dpr, dpr);
       
       // Run the specific animation for this canvas
       animationFunction(canvas, ctx, width, height);
       
-      // Add visible border to canvas
-      canvas.style.border = '1px solid #ddd';
-      canvas.style.borderRadius = '4px';
+
     }
     
     // Standard SMOTE Animation
@@ -49,14 +140,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const plotArea = {
         x: 50,
         y: 50,
-        width: width - 250,
+        width: width - 270,
         height: height - 100
       };
       
       const legendArea = {
         x: plotArea.x + plotArea.width + 20,
         y: 50,
-        width: 200,
+        width: 190,
         height: 160
       };
       
@@ -430,7 +521,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.font = 'bold 14px Arial';
         ctx.fillText('Current Step:', x, y);
         ctx.font = '14px Arial';
-        ctx.fillText(descriptions[phase], x, y + 20);
+        wrapText(ctx, descriptions[phase], x, y + 20, 165, 18);
       }
       
       function drawPoints(points, defaultColor, shape = 'circle') {
@@ -503,14 +594,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const plotArea = {
         x: 50,
         y: 50,
-        width: width - 250,
+        width: width - 270,
         height: height - 100
       };
       
       const legendArea = {
         x: plotArea.x + plotArea.width + 20,
         y: 50,
-        width: 200,
+        width: 190,
         height: 180
       };
       
@@ -957,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.font = 'bold 14px Arial';
         ctx.fillText('Current Step:', x, y);
         ctx.font = '14px Arial';
-        ctx.fillText(descriptions[phase], x, y + 20);
+        wrapText(ctx, descriptions[phase], x, y + 20, 165, 18);
       }
       
       function drawPoints(points, defaultColor, shape = 'circle') {
@@ -1030,14 +1121,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const plotArea = {
         x: 50,
         y: 50,
-        width: width - 250,
+        width: width - 270,
         height: height - 100
       };
       
       const legendArea = {
         x: plotArea.x + plotArea.width + 20,
         y: 50,
-        width: 200,
+        width: 190,
         height: 180
       };
       
@@ -1432,18 +1523,15 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.font = 'bold 14px Arial';
         ctx.fillText('Current Step:', x, y);
         ctx.font = '14px Arial';
-        ctx.fillText(descriptions[phase], x, y + 20);
+        wrapText(ctx, descriptions[phase], x, y + 20, 165, 18);
       }
       
       function drawMinorityPointsWithDifficulty(points) {
         points.forEach(point => {
           ctx.beginPath();
           
-          // Color based on difficulty (red intensity increases with difficulty)
-          const intensity = Math.floor(55 + 200 * point.difficulty);
-          const color = `rgb(${intensity}, ${Math.max(0, 82 - 50 * point.difficulty)}, ${Math.max(0, 82 - 82 * point.difficulty)})`;
-          
-          ctx.fillStyle = color;
+          // Two difficulty bands, matching the legend (high: 0.5 and above)
+          ctx.fillStyle = point.difficulty >= 0.5 ? '#ff0000' : '#ff5252';
           ctx.arc(point.x, point.y, point.radius, 0, 2 * Math.PI);
           
           ctx.fill();
@@ -1554,7 +1642,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const plotArea = {
         x: 50,
         y: 50,
-        width: width - 250,
+        width: width - 270,
         height: height - 100
       };
       
@@ -2042,7 +2130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.font = 'bold 14px Arial';
         ctx.fillText('Current Step:', x, y);
         ctx.font = '14px Arial';
-        ctx.fillText(descriptions[phase], x, y + 20);
+        wrapText(ctx, descriptions[phase], x, y + 20, 165, 18);
       }
       
       function drawPoints(points, defaultColor, shape = 'circle') {
@@ -2114,14 +2202,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const plotArea = {
         x: 50,
         y: 50,
-        width: width - 250,
+        width: width - 270,
         height: height - 100
       };
       
       const legendArea = {
         x: plotArea.x + plotArea.width + 20,
         y: 50,
-        width: 200,
+        width: 190,
         height: 180
       };
       
@@ -2501,7 +2589,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const endX = midX + unitPerpX * lineLength/2;
         const endY = midY + unitPerpY * lineLength/2;
         
-        // Draw the decision boundary
+        // Draw the decision boundary, clipped to the plot
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(plotArea.x, plotArea.y, plotArea.width, plotArea.height);
+        ctx.clip();
         ctx.beginPath();
         ctx.moveTo(startX, startY);
         ctx.lineTo(endX, endY);
@@ -2516,6 +2608,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.textAlign = 'center';
         ctx.fillText('Decision Boundary', midX, midY - 10);
         ctx.textAlign = 'left'; // Reset
+        ctx.restore();
         }
         
         function drawFormulaBox(box, alpha, progress) {
@@ -2608,7 +2701,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.font = 'bold 14px Arial';
         ctx.fillText('Current Step:', x, y);
         ctx.font = '14px Arial';
-        ctx.fillText(descriptions[phase], x, y + 20);
+        wrapText(ctx, descriptions[phase], x, y + 20, 165, 18);
         }
         
         function drawPoints(points, defaultColor, shape = 'circle') {

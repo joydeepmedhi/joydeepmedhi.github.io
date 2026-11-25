@@ -33,7 +33,7 @@ SMOTE (Chawla et al., 2002) fills the space *between* minority examples instead.
 
 ## Standard SMOTE
 
-Purple points are the majority class, red points the minority. Watch where the green synthetic points appear.
+Grey points are the majority class and orange points the minority. Watch where the blue synthetic points appear; stars mark the point being worked on and its chosen neighbour.
 
 <div class="canvas-container">
   <canvas id="standard-smote-canvas" width="700" height="400" class="border rounded"></canvas>
