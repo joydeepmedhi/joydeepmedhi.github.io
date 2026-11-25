@@ -4,7 +4,7 @@
   the organisation name is always printed beside it.
 {%- endcomment -%}
 {%- if include.item.logo -%}
-<span class="org-logo" aria-hidden="true"><img src="{{ include.item.logo | relative_url }}" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
+<span class="org-logo{% if include.item.logo_wide %} org-logo-wide{% endif %}" aria-hidden="true"><img src="{{ include.item.logo | relative_url }}" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
 {%- elsif include.item.mono -%}
 <span class="org-logo org-logo-mono" aria-hidden="true">{{ include.item.mono }}</span>
 {%- endif -%}

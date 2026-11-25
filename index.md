@@ -49,41 +49,41 @@ description: "Joydeep Medhi, Machine Learning Engineer at Adobe: 8+ years shippi
 
 <section class="section" aria-labelledby="experience">
   <h2 class="section-title" id="experience">Experience <a class="section-more" href="/resume/">Full resume →</a></h2>
-  <ol class="entries">
+  <ol class="timeline">
     {% for job in site.data.resume.experience %}
-    <li class="entry">
-      <span class="entry-meta">{{ job.start | split: ' ' | last }} – {% if job.end == "Present" %}now{% else %}{{ job.end | split: ' ' | last }}{% endif %}</span>
-      <div class="entry-org">
-        {% include org-logo.html item=job %}
-        <div>
+    <li class="tl-item">
+      <div class="tl-mark">{% include org-logo.html item=job %}</div>
+      <div class="tl-body">
+        <div class="tl-head">
           <h3 class="entry-title">{{ job.title }}</h3>
-          <p class="entry-sub">{{ job.org }}</p>
-          <p class="entry-body">{{ job.summary }}</p>
+          <span class="tl-dates">{{ job.start | split: ' ' | last }} – {% if job.end == "Present" %}now{% else %}{{ job.end | split: ' ' | last }}{% endif %}</span>
         </div>
+        <p class="entry-sub">{{ job.org }}</p>
+        <p class="entry-body">{{ job.summary }}</p>
       </div>
     </li>
     {% endfor %}
     {% for job in site.data.resume.earlier %}
-    <li class="entry">
-      <span class="entry-meta">{{ job.dates | split: ' ' | last }}</span>
-      <div class="entry-org">
-        {% include org-logo.html item=job %}
-        <div>
+    <li class="tl-item">
+      <div class="tl-mark">{% include org-logo.html item=job %}</div>
+      <div class="tl-body">
+        <div class="tl-head">
           <h3 class="entry-title">{{ job.title }}</h3>
-          <p class="entry-sub">{{ job.org }}</p>
+          <span class="tl-dates">{{ job.dates | split: ' ' | last }}</span>
         </div>
+        <p class="entry-sub">{{ job.org }}</p>
       </div>
     </li>
     {% endfor %}
     {% for ed in site.data.resume.education %}
-    <li class="entry">
-      <span class="entry-meta">{{ ed.dates | replace: ' — ', ' – ' }}</span>
-      <div class="entry-org">
-        {% include org-logo.html item=ed %}
-        <div>
+    <li class="tl-item">
+      <div class="tl-mark">{% include org-logo.html item=ed %}</div>
+      <div class="tl-body">
+        <div class="tl-head">
           <h3 class="entry-title">{{ ed.degree }}</h3>
-          <p class="entry-sub">{{ ed.school }}</p>
+          <span class="tl-dates">{{ ed.dates | replace: ' — ', ' – ' }}</span>
         </div>
+        <p class="entry-sub">{{ ed.school }}</p>
       </div>
     </li>
     {% endfor %}

@@ -37,6 +37,7 @@ experience:
   - title: "Lead Data Scientist — AI/ML and Computer Vision"
     org: "Lowe's Companies Inc."
     logo: /assets/images/logos/lowes.svg
+    logo_wide: true
     org_note: "Fortune 50 retailer, $90B revenue, 1,700+ stores"
     location: "Bengaluru, India"
     start: "Jul 2022"
