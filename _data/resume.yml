@@ -1,9 +1,10 @@
 # Single source for resume content, transcribed from
-# assets/files/Joydeep_Medhi_Resume.pdf (August 2026 edition).
+# assets/files/Joydeep_Medhi_Resume.pdf (August 2026 edition; the Adobe role
+# was added to this file in November 2026, ahead of a refreshed PDF).
 # Used by /resume/, the homepage, structured data and search.
 
-headline: "Lead Data Scientist — Computer Vision · Generative AI · ML Systems"
-updated: 2026-08-19
+headline: "Machine Learning Engineer at Adobe — Computer Vision · Generative AI · ML Systems"
+updated: 2026-11-25
 pdf: /assets/files/Joydeep_Medhi_Resume.pdf
 previous_pdf: /assets/files/archive/Joydeep_Medhi_Resume_2024-10.pdf
 
@@ -20,18 +21,31 @@ profile: >-
   experiments. My work sits at the junction of computer vision, deep learning and applied GenAI,
   with the bulk of it shipped to production: a perception stack inside every MBUX Interior
   Assistant vehicle, and multi-camera tracking and VLM systems running across Lowe's store network.
+  Since November 2026, a Machine Learning Engineer at Adobe.
 
 experience:
+  - title: "Machine Learning Engineer"
+    org: "Adobe"
+    logo: /assets/images/logos/adobe.svg
+    location: "India"
+    start: "Nov 2026"
+    end: "Present"
+    short: "Adobe"
+    summary: "Building production machine learning systems at Adobe, drawing on a background in computer vision and generative AI."
+    highlights:
+      - "Joined Adobe as a Machine Learning Engineer in November 2026, applying experience in computer vision, generative AI and ML systems to production machine learning."
   - title: "Lead Data Scientist — AI/ML and Computer Vision"
     org: "Lowe's Companies Inc."
+    logo: /assets/images/logos/lowes.svg
+    logo_wide: true
     org_note: "Fortune 50 retailer, $90B revenue, 1,700+ stores"
     location: "Bengaluru, India"
     start: "Jul 2022"
-    end: "Present"
+    end: "Oct 2026"
     short: "Lowe's"
-    summary: "Leads the computer vision and GenAI programme: multi-camera tracking, VLM/RAG assistants and checkout automation."
+    summary: "Led the computer vision and GenAI programme: multi-camera tracking, VLM/RAG assistants and checkout automation."
     highlights:
-      - "Run the computer vision and GenAI programme across store intelligence, associate tooling, inventory optimisation and checkout automation, managing 10+ DS/AI engineers alongside product, engineering and business leadership."
+      - "Ran the computer vision and GenAI programme across store intelligence, associate tooling, inventory optimisation and checkout automation, managing 10+ DS/AI engineers alongside product, engineering and business leadership."
       - "Built a real-time Multi-Camera Multi-Target Tracking system for customer-service alerting; the pilot delivered $1M+ incremental revenue and grew into a programme with $100M+ in business impact."
       - "Designed semi-supervised and active-learning pipelines for in-store object detection — +15% mAP with a 40% reduction in manual annotation overhead."
       - "Improved self-checkout recognition with self-supervised contrastive pre-training — 25%+ throughput gain and a measurably lower loss-prevention error rate."
@@ -39,6 +53,7 @@ experience:
       - "Won 1st Prize at Lowe's AI Hackathon 2025 and 3rd Place at the global AI Hackathon 2024 (200+ teams); three proposals selected for the executive AI strategy pipeline."
   - title: "Senior ML Research Engineer"
     org: "Mercedes-Benz Research and Development India"
+    logo: /assets/images/logos/mercedes-benz.svg
     location: "Bengaluru, India / Stuttgart, Germany"
     start: "Dec 2018"
     end: "Jun 2022"
@@ -54,17 +69,20 @@ experience:
 earlier:
   - title: "Deep Learning Research Engineer"
     org: "Silversparro Technologies"
+    mono: "S"
     dates: "Jul — Nov 2018"
     location: "Gurgaon"
     summary: "CCTV retail models for detection, tracking and age/gender classification. KMeans anchor initialisation for Faster-RCNN cut convergence 50%, with +6% mAP and +7.3% F1."
   - title: "Research Intern"
     org: "KAUST, Computational Bioscience Research Center"
+    mono: "K"
     dates: "May — Jul 2017"
     location: "Saudi Arabia"
     summary: "Deep neural models for genetic disease-variant classification under Prof. Robert Hoehndorf — ROC-AUC 0.967, AP 0.964 on genome-sequencing test data."
 
 education:
   - school: "Indian Institute of Technology Delhi"
+    mono: "IIT"
     degree: "B.Tech and M.Tech Dual Degree, Mathematics and Computing"
     location: "New Delhi, India"
     dates: "2013 — 2018"

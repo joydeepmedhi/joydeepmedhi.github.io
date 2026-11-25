@@ -198,6 +198,122 @@
   }
 }
 
+// Employer / school marks. Round white tiles so every logo, light or dark,
+// reads the same in both themes; wide wordmarks get almost no padding.
+.org-logo {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease-out);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.org-logo-wide {
+  padding: 0.2rem;
+}
+
+// Monogram fallback until a real logo file is added to /assets/images/logos/
+.org-logo-mono {
+  padding: 0;
+  background: var(--surface);
+  color: var(--text-2);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.role:hover > .org-logo,
+.tl-item:hover .org-logo {
+  border-color: var(--muted);
+  transform: scale(1.04);
+}
+
+// Career timeline (homepage Experience): logos on a vertical rail
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  column-gap: var(--space-5);
+  margin: 0;
+}
+
+.tl-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // The rail joins this logo to the next one
+  &::after {
+    content: "";
+    flex: 1;
+    width: 1px;
+    min-height: var(--space-4);
+    margin: var(--space-2) 0;
+    background: var(--border-strong);
+  }
+
+  .tl-item:last-child &::after {
+    background: transparent;
+  }
+}
+
+.tl-body {
+  min-width: 0;
+  padding: 0.55rem 0 var(--space-6);
+
+  .tl-item:last-child & {
+    padding-bottom: 0;
+  }
+}
+
+.tl-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0 var(--space-4);
+}
+
+.tl-dates {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .tl-item {
+    column-gap: var(--space-4);
+  }
+
+  .tl-head {
+    flex-direction: column-reverse;
+    gap: 0.1rem;
+  }
+}
+
 @media (max-width: 560px) {
   .entry {
     grid-template-columns: 1fr;
