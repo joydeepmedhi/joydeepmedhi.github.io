@@ -418,19 +418,21 @@ div[class*="language-"] .code-lang + .highlight pre {
   }
 }
 
-// SMOTE figures: the canvases paint a light background, so frame them like
-// figures in a paper in both themes.
+// SMOTE figures: animated canvases that redraw in the page's theme colours
+// (see the adapter at the top of smote-animations.js).
 .canvas-container {
   margin: var(--space-6) 0;
   padding: var(--space-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: #f8f8f8;
-  overflow: hidden;
+  background: var(--bg-elev);
+  overflow-x: auto;
 
+  // Same rule as the charts: below this width, scroll rather than shrink the text
   canvas {
     display: block;
     width: 100%;
+    min-width: 34rem;
     max-width: 700px;
     margin: 0 auto;
   }
@@ -856,6 +858,7 @@ div[class*="language-"] .code-lang + .highlight pre {
   .c-2-fill { fill: var(--c-2); }
   .c-3-fill { fill: var(--c-3); }
   .c-other-fill { fill: var(--border-strong); }
+  .c-heat-base { fill: var(--surface); }
   .c-heat { fill: var(--c-1); }
   .c-hit { fill: transparent; cursor: default; }
   g:hover > .c-dot,
@@ -866,6 +869,9 @@ div[class*="language-"] .code-lang + .highlight pre {
   --c-1: #338ced;
   --c-2: #e76624;
   --c-3: #00a888;
+
+  // On the dark page the surface step is too close to the background to see
+  .c-heat-base { fill: var(--border); }
 }
 
 // Every chart carries its numbers as a table, for screen readers and for print
@@ -884,21 +890,70 @@ div[class*="language-"] .code-lang + .highlight pre {
   }
 }
 
-// A raster figure that should keep its own colours in both themes
-.figure-image {
+// Resolution comparison (VLM post): four renders in a grid, captions in page text
+.res-figure {
   margin: var(--space-6) 0;
+
+  > figcaption {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+}
+
+.res-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.res-panel {
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
 
   img {
     display: block;
     width: 100%;
     height: auto;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 0;
+    image-rendering: pixelated; // keep the enlarged pixels crisp
   }
 
   figcaption {
-    margin-top: var(--space-3);
+    display: grid;
+    gap: 0.1rem;
+    margin-top: var(--space-2);
     font-size: var(--text-sm);
+    line-height: 1.4;
+    color: var(--text-2);
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+  }
+
+  .res-meta {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
     color: var(--muted);
+  }
+
+  .res-note {
+    color: var(--muted);
+  }
+
+  &.is-best {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+}
+
+@media (max-width: 560px) {
+  .res-grid {
+    grid-template-columns: 1fr;
   }
 }
